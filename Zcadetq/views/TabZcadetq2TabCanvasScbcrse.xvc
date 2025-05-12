@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="ZCBCRSE"/>
+	<interactionblock name="SCRGMOD"/>
+	<interactionblock name="FORM_HEADER"/>
+	<interactionblock name="SCRSCHD"/>
+	<interactionblock name="SCHD_CTRL"/>
+	<interactionblock name="SCBCRSE"/>
+	<interactionblock name="BUTTON_CONTROL_BLOCK"/>
+	<interactionblock name="GMOD_CTRL"/>
+	<collapsiblepanel label="scbcrse.label" width="100%">
+	
+	<panel label="scbcrse.text242.text">
+		
+			<framepanel name="rect193" label="keyBlock.scacrseCrseNumb.prompt" width="100%">
+				<gridlayout cols="2" >
+					<gridcell>
+						<textbox block="SCBCRSE" datatype="String" enabled="false" height="23px" label="scbcrse.scbcrseEffTerm.prompt" member="SCBCRSE_EFF_TERM" name="scbcrseEffTerm" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="SCBCRSE" datatype="String" height="23px" label="scbcrse.scbcrkyTermCodeEnd.prompt" member="SCBCRKY_TERM_CODE_END" name="scbcrkyTermCodeEnd" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox autoskip="true" block="SCBCRSE" datatype="String" height="23px" label="scbcrse.scbcrseTitle.prompt" member="SCBCRSE_TITLE" name="scbcrseTitle" width="239px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<component label="scbcrse.scbcrseCollCode.prompt">
+						<textbox autoskip="true" block="SCBCRSE" case="upper" datatype="String" enabled="false" height="23px" keyactions="NEXT_ITEM" label="scbcrse.scbcrseCollCode.prompt" member="SCBCRSE_COLL_CODE" name="scbcrseCollCode" style="ui-buttoninput ui-hidelabel" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="21px" icon="search" member="SCBCRSE_COLL_CODE_LBT" name="scbcrseCollCodeLbt" navigable="false" style="ui-buttoninput" tooltip="buttonControlBlock.scbcrseCollCodeLbt.tooltip" width="20px">
+							<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+						</button>
+						<textfield block="SCBCRSE" datatype="String" height="23px" member="COLLEGE_DESCRIPTION" name="collegeDescription" width="282px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textfield>
+						</component>
+					</gridcell>
+				
+					<gridcell>
+						<component label="scbcrse.scbcrseDeptCode.prompt">
+						<textbox autoskip="true" block="SCBCRSE" case="upper" datatype="String" enabled="false" height="23px" keyactions="NEXT_ITEM" label="scbcrse.scbcrseDeptCode.prompt" member="SCBCRSE_DEPT_CODE" name="scbcrseDeptCode" style="ui-buttoninput ui-hidelabel" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="21px" icon="search" member="SCBCRSE_DEPT_CODE_LBT" name="scbcrseDeptCodeLbt" navigable="false" style="ui-buttoninput" tooltip="buttonControlBlock.scbcrseDeptCodeLbt.tooltip" width="20px">
+							<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+						</button>
+						<textfield block="SCBCRSE" datatype="String" height="23px" member="DEPARTMENT_DESCRIPTION" name="departmentDescription" width="262px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textfield>
+						</component>
+					</gridcell>
+					
+					<gridcell>
+						<component label="scbcrse.scbcrseCstaCode.prompt">
+						<textbox autoskip="true" block="SCBCRSE" case="upper" datatype="String" enabled="false" height="23px" keyactions="NEXT_ITEM" label="scbcrse.scbcrseCstaCode.prompt" member="SCBCRSE_CSTA_CODE" name="scbcrseCstaCode" style="ui-buttoninput ui-hidelabel" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="21px" icon="search" member="SCBCRSE_CSTA_CODE_LBT" name="scbcrseCstaCodeLbt" navigable="false" style="ui-buttoninput" tooltip="buttonControlBlock.scbcrseCstaCodeLbt.tooltip" width="20px">
+							<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+						</button>
+						<textfield block="SCBCRSE" datatype="String" height="23px" member="STATUS_DESCRIPTION" name="statusDescription" width="282px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textfield>
+						</component>
+					</gridcell>
+					
+				</gridlayout>
+			</framepanel>
+			
+			<framepanel name="rect191" label="scbcrse.text77.text" style="ui-table-matrix" width="100%">
+			
+				<gridflowlayout orientation="horizontal" cols="4" >
+					
+					<text></text>
+					<text style="ui-table-header">scbcrse.scbcrseCreditHrLow.prompt</text>
+					<text style="ui-table-header">scbcrse.scbcrseCreditHrInd.prompt</text>
+					<text style="ui-table-header">scbcrse.scbcrseCreditHrHigh.prompt</text>
+					
+					<text>scbcrse.text122.text</text>	
+						<textbox autoskip="true" block="SCBCRSE" datatype="Number" enabled="false" height="23px" label="scbcrse.scbcrseCreditHrLow.prompt" formatmask="99D99" style="ui-hidelabel" member="SCBCRSE_CREDIT_HR_LOW" name="scbcrseCreditHrLow" width="120px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+						<textbox autoskip="true" block="SCBCRSE" case="upper" datatype="String" enabled="false" height="25px" label="scbcrse.scbcrseCreditHrInd.prompt" style="ui-hidelabel" member="SCBCRSE_CREDIT_HR_IND" name="scbcrseCreditHrInd" width="120px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+						<textbox autoskip="true" block="SCBCRSE" datatype="Number" enabled="false" height="23px" label="scbcrse.scbcrseCreditHrHigh.prompt" formatmask="99D99" style="ui-hidelabel" member="SCBCRSE_CREDIT_HR_HIGH" name="scbcrseCreditHrHigh" width="120px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					
+					<text>scbcrse.scbcrseBillHrLow.prompt</text>	
+						<textbox autoskip="true" block="SCBCRSE" datatype="Number" enabled="false" height="23px" label="scbcrse.scbcrseBillHrLow.prompt" formatmask="99D99" style="ui-hidelabel" member="SCBCRSE_BILL_HR_LOW" name="scbcrseBillHrLow" width="120px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+						<textbox autoskip="true" block="SCBCRSE" case="upper" datatype="String" enabled="false" height="23px" member="SCBCRSE_BILL_HR_IND" style="ui-hidelabel" name="scbcrseBillHrInd" width="120px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+						<textbox autoskip="true" block="SCBCRSE" case="upper" datatype="Number" enabled="false" height="23px" member="SCBCRSE_BILL_HR_HIGH" formatmask="99D99" style="ui-hidelabel" name="scbcrseBillHrHigh" width="120px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					
+					
+				
+<!-- 					<gridcell> -->
+<!-- 						<textbox autoskip="true" block="SCBCRSE" datatype="Number" enabled="false" height="23px" label="scbcrse.scbcrseCreditHrLow.prompt" member="SCBCRSE_CREDIT_HR_LOW" name="scbcrseCreditHrLow" width="50px"> -->
+<!-- 							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/> -->
+<!-- 						</textbox> -->
+<!-- 					</gridcell> -->
+<!-- 					<gridcell> -->
+<!-- 						<textbox autoskip="true" block="SCBCRSE" case="upper" datatype="String" enabled="false" height="25px" label="scbcrse.scbcrseCreditHrInd.prompt" member="SCBCRSE_CREDIT_HR_IND" name="scbcrseCreditHrInd" width="50px"> -->
+<!-- 							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/> -->
+<!-- 						</textbox> -->
+<!-- 					</gridcell> -->
+<!-- 					<gridcell> -->
+<!-- 						<textbox autoskip="true" block="SCBCRSE" datatype="Number" enabled="false" height="23px" label="scbcrse.scbcrseCreditHrHigh.prompt" member="SCBCRSE_CREDIT_HR_HIGH" name="scbcrseCreditHrHigh" width="50px"> -->
+<!-- 							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/> -->
+<!-- 						</textbox> -->
+<!-- 					</gridcell> -->
+<!-- 					<gridcell> -->
+<!-- 						<textbox autoskip="true" block="SCBCRSE" datatype="Number" enabled="false" height="23px" label="scbcrse.scbcrseBillHrLow.prompt" member="SCBCRSE_BILL_HR_LOW" name="scbcrseBillHrLow" width="50px"> -->
+<!-- 							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/> -->
+<!-- 						</textbox> -->
+<!-- 					</gridcell> -->
+<!-- 					<gridcell> -->
+<!-- 						<textbox autoskip="true" block="SCBCRSE" case="upper" datatype="String" enabled="false" height="23px" member="SCBCRSE_BILL_HR_IND" name="scbcrseBillHrInd" width="50px"> -->
+<!-- 							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/> -->
+<!-- 						</textbox> -->
+<!-- 					</gridcell> -->
+<!-- 					<gridcell> -->
+<!-- 						<textbox autoskip="true" block="SCBCRSE" case="upper" datatype="Number" enabled="false" height="23px" member="SCBCRSE_BILL_HR_HIGH" name="scbcrseBillHrHigh" width="50px"> -->
+<!-- 							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/> -->
+<!-- 						</textbox> -->
+<!-- 					</gridcell> -->
+
+
+					</gridflowlayout>
+				</framepanel>
+			<pager block="SCBCRSE"/>
+			</panel>
+			
+			
+		</collapsiblepanel>
+			
+			<collapsiblepanel label="scbcrse.text80.text" width="100%">
+	
+			<panel name="rect189" style="ui-section" width="100%">
+				<gridlayout cols="2" >
+					<gridcell>
+						<textbox block="GMOD_CTRL" datatype="String" enabled="false" height="23px" label="gmodCtrl.scrgmodTermCodeFrom.prompt" member="SCRGMOD_TERM_CODE_FROM" name="scrgmodTermCodeFrom" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="GMOD_CTRL" datatype="String" enabled="false" height="23px" label="gmodCtrl.scrgmodTermCodeTo.prompt" member="SCRGMOD_TERM_CODE_TO" name="scrgmodTermCodeTo" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+						</gridcell>
+				</gridlayout>
+			</panel>
+					
+					
+			<panel name="rect190" style="ui-section" width="100%">
+				<gridview block="SCRGMOD" name="grdScrgmod" width="100%">			
+					<viewheader>
+						<viewcolumn autoskip="true" block="SCRGMOD" case="upper" datatype="String" height="23px" keyactions="NEXT_ITEM" label="scrgmod.scrgmodGmodCode.prompt" member="SCRGMOD_GMOD_CODE" name="scrgmodGmodCode" style="ui-buttoninput" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+<!-- 							<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="21px" icon="search" member="SCRGMOD_GMOD_CODE_LBT" name="scrgmodGmodCodeLbt" navigable="false" style="ui-buttoninput" tooltip="buttonControlBlock.scrgmodGmodCodeLbt.tooltip" width="19px"> -->
+<!-- 								<xl:event action="WHEN-MOUSE-CLICK" name="click"/> -->
+<!-- 							</button> -->
+								<editor>
+									<lovbox></lovbox>
+								</editor>
+						</viewcolumn>
+						
+					
+						<viewcolumn block="SCRGMOD" datatype="String" height="23px" label="scrgmod.stvgmodDescription.prompt" member="STVGMOD_DESCRIPTION" name="stvgmodDescription" width="342px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+			</panel>
+			</collapsiblepanel>
+			
+			<collapsiblepanel label="scbcrse.text74.text" width="100%">
+			
+			<panel name="rect192" style="ui-section" width="100%">
+				<gridlayout cols="2" >
+					<gridcell>
+						<textbox autoskip="true" block="ZCBCRSE" case="upper" datatype="String" height="23px" keyactions="NEXT_ITEM" label="zcbcrse.zcbcrseSubjCodeXlist.prompt" member="ZCBCRSE_SUBJ_CODE_XLIST" name="zcbcrseSubjCodeXlist" style="ui-buttoninput" width="53px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="21px" icon="search" member="ZCBCRSE_SUBJ_CODE_XLIST_LBT" name="zcbcrseSubjCodeXlistLbt" navigable="false" style="ui-buttoninput" tooltip="buttonControlBlock.zcbcrseSubjCodeXlistLbt.tooltip" width="20px">
+							<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+						</button>
+						<textfield block="ZCBCRSE" datatype="String" height="23px" member="SUBJ_CODE_XLIST_DESC" name="subjCodeXlistDesc" width="225px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textfield>
+					</gridcell>
+					<gridcell>
+						<textbox autoskip="true" block="ZCBCRSE" case="upper" datatype="String" enabled="false" height="23px" label="zcbcrse.zcbcrseCrseNumbXlist.prompt" member="ZCBCRSE_CRSE_NUMB_XLIST" name="zcbcrseCrseNumbXlist" width="53px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+				</gridlayout>
+			</panel>
+			
+			
+				<framepanel name="rect125" label="scbcrse.text46.text" width="100%">
+					<gridlayout cols="2">
+						<gridcell>
+							<textbox autoskip="true" block="SCBCRSE" datatype="Number" enabled="false" height="23px" label="scbcrse.scbcrseRepeatLimit.prompt" member="SCBCRSE_REPEAT_LIMIT" name="scbcrseRepeatLimit" textalign="right" width="50px">
+								<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							</textbox>
+						</gridcell>
+						
+						<gridcell>
+							<textbox autoskip="true" block="SCBCRSE" case="upper" datatype="Number" enabled="false" formatmask="999G999D999" height="23px" label="scbcrse.scbcrseMaxRptUnits.prompt" member="SCBCRSE_MAX_RPT_UNITS" name="scbcrseMaxRptUnits" textalign="right" width="94px">
+								<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							</textbox>
+						</gridcell>
+						
+						<gridcell>
+							<textbox autoskip="true" block="SCBCRSE" case="upper" datatype="String" enabled="false" height="23px" keyactions="NEXT_ITEM" label="scbcrse.scbcrseRepsCode.prompt" member="SCBCRSE_REPS_CODE" name="scbcrseRepsCode" style="ui-buttoninput" width="50px">
+								<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							</textbox>
+							<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="21px" icon="search" label="buttonControlBlock.scbcrseRepsCodeLbt.label" member="SCBCRSE_REPS_CODE_LBT" name="scbcrseRepsCodeLbt" navigable="false" style="ui-buttoninput" tooltip="buttonControlBlock.scbcrseRepsCodeLbt.tooltip" width="20px">
+								<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+							</button>
+						</gridcell>
+	
+					</gridlayout>
+				</framepanel>	
+				<pager block="ZCBCRSE"/>
+			</collapsiblepanel>	
+			
+			<collapsiblepanel label="scbcrse.text242.text" width="100%" >
+			<panel name="rect128" label="scbcrse.text242.text"   style="ui-section"  width="100%">
+			
+				<gridlayout cols="2" >
+					<gridcell>
+						<textbox block="SCHD_CTRL" datatype="String" enabled="false" height="23px" label="schdCtrl.scrschdTermCodeFrom.prompt" member="SCRSCHD_TERM_CODE_FROM" name="scrschdTermCodeFrom" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					
+					<gridcell>
+						<textbox block="SCHD_CTRL" datatype="String" enabled="false" height="23px" label="schdCtrl.scrschdTermCodeTo.prompt" member="SCRSCHD_TERM_CODE_TO" name="scrschdTermCodeTo" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					
+<!-- 						<gridcell> -->
+<!-- 							<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="21px" icon="search" member="SCRSCHD_SCHD_CODE_LBT" name="scrschdSchdCodeLbt" navigable="false" tooltip="buttonControlBlock.scrschdSchdCodeLbt.tooltip" width="20px"> -->
+<!-- 								<xl:event action="WHEN-MOUSE-CLICK" name="click"/> -->
+<!-- 							</button> -->
+<!-- 						</gridcell> -->
+				</gridlayout>
+				</panel>
+			
+			
+
+			<panel width="100%" style="ui-section">
+				<gridview block="SCRSCHD" name="grdScrschd" width="100%">
+					<viewheader>
+						<viewcolumn autoskip="true" block="SCRSCHD" case="upper" datatype="String" keyactions="NEXT_ITEM" label="scrschd.scrschdSchdCode.prompt" labelstyle="DEFAULT" member="SCRSCHD_SCHD_CODE" name="scrschdSchdCode" width="60px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+
+								<editor>
+									<lovbox></lovbox>
+								</editor>
+						</viewcolumn>
+						<viewcolumn block="SCRSCHD" datatype="String" enabled="false" label="scrschd.scrschdSeq.prompt" labelstyle="DEFAULT" member="SCRSCHD_SEQ" name="scrschdSeq" width="60px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn block="SCRSCHD" datatype="String" label="scrschd.stvschdDesc.prompt" labelstyle="DEFAULT" member="STVSCHD_DESC" name="stvschdDesc" width="239px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+			</panel>
+			
+			</collapsiblepanel>
+			
+</config>

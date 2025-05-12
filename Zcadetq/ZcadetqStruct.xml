@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<FormStructure AlertDataPath="/net/hedtech/ucdavis/ps/banner/student/Zcadetq/ZcadetqAlerts.xml" FirstNavigationBlock="KEY_BLOCK" LovDataPath="/net/hedtech/ucdavis/ps/banner/student/Zcadetq/ZcadetqLovs.xml" Name="ZCADETQ">
+	<Visual>
+		<Window Id="MAIN_WINDOW" Url="net/hedtech/ucdavis/ps/banner/student/Zcadetq/views/ViewMainWindow">
+			<StackedCanvas Id="G$_NAV_CANVAS" Visible="false"/>
+<!-- 			<ContentCanvas Id="TEMP_CANVAS" Visible="false"/> -->
+			<StackedCanvas Id="ZCADETQ_1_CANVAS"/>
+			<ContentCanvas Id="KEY_BLOCK_CANVAS"/>
+			<TabPageCanvas Id="ZCADETQ_2_TAB_CANVAS">
+				<Page Id="SCBCRSE"/>
+				<Page Id="SCRLEVL"/>
+				<Page Id="ZCRGECO"/>
+				<Page Id="RESTRICTION"/>
+				<Page Id="ZCRDUPC"/>
+			</TabPageCanvas>
+			<TabPageCanvas Id="RESTRICTION_CANVAS">
+				<Page Id="RESTRICTION1_TAB"/>
+				<Page Id="RESTRICTION2_TAB"/>
+				<Page Id="RESTRICTION3_TAB"/>
+			</TabPageCanvas>
+			<StackedCanvas Id="G$_WELCOME_CANVAS" Visible="false"/>
+		</Window>
+		<Window Id="ZCRGECO_WINDOW" Url="net/hedtech/ucdavis/ps/banner/student/Zcadetq/views/ViewZcrgecoWindow"/>
+		<Window Id="SCRSCHD_WINDOW" Url="net/hedtech/ucdavis/ps/banner/student/Zcadetq/views/ViewScrschdWindow"/>
+	</Visual>
+	<Logic>
+		<Block Id="G$_SDKEY"/>
+		<Block Id="G$_SDISP"/>
+		<Block Id="G$_VPDI_BLOCK"/>
+		<Block Id="G$_NAV_BLOCK"/>
+		<Block Id="FORM_HEADER">
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="TERM_CODE_END" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="CURRENT_INSTITUTION" MaxLength="30" Navigable="false" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="CURRENT_DATE" MaxLength="11" Navigable="false" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="CURRENT_TIME" MaxLength="8" Navigable="false" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="CALLFLD" MaxLength="60" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="CURRENT_USER" MaxLength="30" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCBCRKY_TERM_CODE_END" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Id="CURRENT_FORM" MaxLength="7" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="CURRENT_RELEASE" MaxLength="10" Navigable="false" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="HOLD_CURRENT_BLOCK" MaxLength="55" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="HOLD_CURRENT_FIELD" MaxLength="55" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="HOLD_CURRENT_BLOCK_FIELD" MaxLength="120" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="COURSE_OK" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="LOOK_FOR_LESS" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="DATA_SEPARATOR_LINE_2" MaxLength="24" Navigable="false" PageName="RESTRICTION1_TAB" Type="DisplayItem"/>
+			<Item AllowInsert="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="DATA_SEPARATOR_LINE_18" MaxLength="24" Navigable="false" PageName="RESTRICTION2_TAB" Type="DisplayItem"/>
+			<Item AllowInsert="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="DATA_SEPARATOR_LINE_10" MaxLength="24" Navigable="false" PageName="RESTRICTION3_TAB" Type="DisplayItem"/>
+			<Item AllowInsert="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="DATA_SEPARATOR_LINE_4" MaxLength="24" Navigable="false" PageName="SCRLEVL" Type="DisplayItem"/>
+			<Item AllowInsert="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="DATA_SEPARATOR_LINE_6" MaxLength="24" Navigable="false" PageName="ZCRGECO" Type="DisplayItem"/>
+			<Item AllowInsert="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="DATA_SEPARATOR_LINE_7" MaxLength="24" Navigable="false" PageName="ZCRGECO" Type="DisplayItem"/>
+			<Item AllowInsert="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="DATA_SEPARATOR_LINE_8" MaxLength="24" Navigable="false" PageName="ZCRDUPC" Type="DisplayItem"/>
+			<Item AllowInsert="false" Enabled="false" Id="DATA_SEPARATOR_LINE_12" MaxLength="24" Navigable="false" Type="DisplayItem"/>
+			<Item AllowInsert="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="DATA_SEPARATOR_LINE_13" MaxLength="24" Navigable="false" PageName="SCBCRSE" Type="DisplayItem"/>
+		</Block>
+		<Block Id="KEY_BLOCK">
+			<Item AutoSkip="true" CanvasName="KEY_BLOCK_CANVAS" Id="SCACRSE_SUBJ_CODE" Lov="STVSUBJ_LOV" MaxLength="30" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="KEY_BLOCK_CANVAS" Id="SUBJ_DESC" MaxLength="30" Navigable="false" Type="DisplayItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="COURSE_ADD" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="LEVL_ADD" MaxLength="2" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="GMOD_ADD" MaxLength="2" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCHD_ADD" MaxLength="2" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AutoSkip="true" CanvasName="KEY_BLOCK_CANVAS" Id="SCACRSE_CRSE_NUMB" Lov="SCQSUBJ_LOV" MaxLength="30" Type="TextItem"/>
+			<Item AutoSkip="true" CanvasName="KEY_BLOCK_CANVAS" Id="STVTERM_CODE" Lov="STQTERM_LOV" MaxLength="30" Type="TextItem"/>
+			<Item CanvasName="KEY_BLOCK_CANVAS" Id="EXECUTE_BTN" MaxLength="30" Type="Button"/>
+			<Item CanvasName="KEY_BLOCK_CANVAS" Id="KEY-CLRFRM_BTN" MaxLength="30" Type="Button" Visible="false"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCBCRSE">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCBCRSE_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCBCRSE_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCBCRSE_EFF_TERM" MaxLength="6" Navigable="false" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCBCRSE_TITLE" MaxLength="30" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCBCRKY_TERM_CODE_END" MaxLength="6" Navigable="false" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCBCRSE_COLL_CODE" Lov="STVCOLL_LOV" MaxLength="30" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="COLLEGE_DESCRIPTION" MaxLength="30" Navigable="false" PageName="SCBCRSE" Type="DisplayItem"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCBCRSE_DEPT_CODE" Lov="STVDEPT_LOV" MaxLength="30" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="DEPARTMENT_DESCRIPTION" MaxLength="30" Navigable="false" PageName="SCBCRSE" Type="DisplayItem"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCBCRSE_CSTA_CODE" Lov="STVCSTA_LOV" MaxLength="30" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="STATUS_DESCRIPTION" MaxLength="30" Navigable="false" PageName="SCBCRSE" Type="DisplayItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCBCRSE_CREDIT_HR_LOW" MaxLength="5" MaxValue="99.99" MinValue="0.0" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCBCRSE_CREDIT_HR_IND" MaxLength="2" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCBCRSE_CREDIT_HR_HIGH" MaxLength="5" MaxValue="99.99" MinValue="0.0" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCBCRSE_BILL_HR_LOW" MaxLength="5" MaxValue="99.99" MinValue="0.0" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCBCRSE_BILL_HR_IND" MaxLength="2" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCBCRSE_BILL_HR_HIGH" MaxLength="5" MaxValue="99.99" MinValue="0.0" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCBCRSE_REPEAT_LIMIT" MaxLength="2" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AllowSearch="false" AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCBCRSE_MAX_RPT_UNITS" MaxLength="11" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCBCRSE_REPS_CODE" Lov="STVREPS_LOV" MaxLength="30" PageName="SCBCRSE" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="GMOD_CTRL">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRGMOD_TERM_CODE_FROM" MaxLength="6" Navigable="false" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRGMOD_TERM_CODE_TO" MaxLength="6" Navigable="false" PageName="SCBCRSE" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCRGMOD">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRGMOD_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRGMOD_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRGMOD_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRGMOD_ACTIVITY_DATE" MaxLength="11" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="GMOD_INSERT" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="TEMP_DEF" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCRGMOD_GMOD_CODE" Lov="STVGMOD_LOV" MaxLength="30" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="STVGMOD_DESCRIPTION" MaxLength="30" Navigable="false" PageName="SCBCRSE" Type="DisplayItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="ZCBCRSE">
+			<Item Id="ZCBCRSE_SUBJ_CODE" MaxLength="4" Type="TextItem"/>
+			<Item Id="ZCBCRSE_CRSE_NUMB" MaxLength="5" Type="TextItem"/>
+			<Item Id="ZCBCRSE_EFF_TERM" MaxLength="6" Type="TextItem"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCBCRSE_SUBJ_CODE_XLIST" Lov="STVSUBJ_LOV" MaxLength="30" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SUBJ_CODE_XLIST_DESC" MaxLength="30" Navigable="false" PageName="SCBCRSE" Type="DisplayItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="ZCBCRSE_CRSE_NUMB_XLIST" MaxLength="7" PageName="SCBCRSE" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCHD_CTRL">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRSCHD_TERM_CODE_FROM" MaxLength="6" Navigable="false" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRSCHD_TERM_CODE_TO" MaxLength="6" Navigable="false" PageName="SCBCRSE" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCRSCHD" MultiRecord="true">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRSCHD_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRSCHD_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRSCHD_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRSCHD_ACTIVITY_DATE" MaxLength="11" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCHD_INSERT" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCRSCHD_SCHD_CODE" Lov="STVSCHD_LOV" MaxLength="30" PageName="SCBCRSE" Type="TextItem"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRSCHD_SEQ" MaxLength="1" MaxValue="9" MinValue="1" PageName="SCBCRSE" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="STVSCHD_DESC" MaxLength="30" Navigable="false" PageName="SCBCRSE" Type="DisplayItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="LEVL_CTRL">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRLEVL_TERM_CODE_FROM" MaxLength="6" Navigable="false" PageName="SCRLEVL" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRLEVL_TERM_CODE_TO" MaxLength="6" Navigable="false" PageName="SCRLEVL" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCRLEVL" MultiRecord="true">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRLEVL_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRLEVL_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRLEVL_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCRLEVL_LEVL_CODE" Lov="STVLEVL_LOV" MaxLength="30" PageName="SCRLEVL" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="STVLEVL_DESC" MaxLength="30" Navigable="false" PageName="SCRLEVL" Type="DisplayItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="TEXT_CTRL">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="HOLD_NUMBER1" MaxLength="25" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="HOLD_NUMBER2" MaxLength="25" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="RESEQUENCE_IND" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRTEXT_TERM_CODE_FROM" MaxLength="6" Navigable="false" PageName="SCRLEVL" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRTEXT_TERM_CODE_TO" MaxLength="6" Navigable="false" PageName="SCRLEVL" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCRTEXT" MultiRecord="true">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRTEXT_ACTIVITY_DATE" MaxLength="11" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRTEXT_TEXT_CODE" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRTEXT_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRTEXT_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRTEXT_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="TEXT_INSERT" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="END_TEXT" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRTEXT_SEQNO" MaxLength="25" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCRTEXT_TEXT" MaxLength="60" PageName="SCRLEVL" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="GECO_CTRL">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="ZCRGECO_TERM_CODE_FROM" MaxLength="6" Navigable="false" PageName="SCRLEVL" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="ZCRGECO_TERM_CODE_TO" MaxLength="6" Navigable="false" PageName="SCRLEVL" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="ZCRGECO">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="ZCRGECO_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="ZCRGECO_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="ZCRGECO_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="ZCRGECO_TYPE" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="ZCRGECO_ACTIVITY_DATE" MaxLength="11" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRGECO_SUBJ_CODE_COCRSE" Lov="STVSUBJ_LOV" MaxLength="30" PageName="SCRLEVL" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRGECO_SUBJ_CODE_COCRSE_DESC" MaxLength="30" Navigable="false" PageName="SCRLEVL" Type="DisplayItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="ZCRGECO_CRSE_NUMB_COCRSE" MaxLength="5" PageName="SCRLEVL" Type="TextItem"/>
+			<Item AllowSearch="false" AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="ZCRGECO_GE_VERSION" MaxLength="1" PageName="SCRLEVL" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="EQIV_CTRL">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCREQIV_TERM_CODE_FROM" MaxLength="6" Navigable="false" PageName="SCRLEVL" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCREQIV_TERM_CODE_TO" MaxLength="6" Navigable="false" PageName="SCRLEVL" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCREQIV" MultiRecord="true">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCREQIV_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCREQIV_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCREQIV_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCREQIV_ACTIVITY_DATE" MaxLength="11" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="EQIV_INSERT" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="END_EQIV" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCREQIV_SUBJ_CODE_EQIV" Lov="STVSUBJ_LOV" MaxLength="30" PageName="SCRLEVL" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCREQIV_SUBJ_CODE_EQIV_DESC" MaxLength="30" Navigable="false" PageName="SCRLEVL" Type="DisplayItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCREQIV_CRSE_NUMB_EQIV" MaxLength="7" PageName="SCRLEVL" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCREQIV_START_TERM" MaxLength="6" PageName="SCRLEVL" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCREQIV_END_TERM" MaxLength="6" PageName="SCRLEVL" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="ATTR_CTRL">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRATTR_TERM_CODE_FROM" MaxLength="6" Navigable="false" PageName="SCRLEVL" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRATTR_TERM_CODE_TO" MaxLength="6" Navigable="false" PageName="SCRLEVL" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCRATTR" MultiRecord="true">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRATTR_ACTIVITY_DATE" MaxLength="11" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRATTR_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRATTR_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRATTR_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="ATTR_INSERT" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="END_ATTR" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="STVATTR_GE_USE_IND" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCRATTR_ATTR_CODE" Lov="STVATTR_LOV" MaxLength="30" PageName="SCRLEVL" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="STVATTR_DESC" MaxLength="30" Navigable="false" PageName="SCRLEVL" Type="DisplayItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="RTST_CTRL">
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRRTST_TERM_CODE_FROM" Lov="STVTERM_LOV" MaxLength="6" Navigable="false" PageName="ZCRGECO" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRRTST_TERM_CODE_TO" Lov="STVTERM_LOV" MaxLength="6" Navigable="false" PageName="ZCRGECO" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCRRTST" MultiRecord="true">
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCRRTST_CONNECTOR" MaxLength="2" PageName="ZCRGECO" Type="TextItem"/>
+			<Item AllowSearch="false" Id="SCRRTST_ENDCOPY" MaxLength="1" Navigable="false" Type="TextItem"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRRTST_LPAREN" MaxLength="1" PageName="ZCRGECO" Type="TextItem"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRRTST_TESC_CODE" Lov="STVTESC_LOV" MaxLength="30" PageName="ZCRGECO" Type="TextItem"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRRTST_TEST_SCORE" MaxLength="5" PageName="ZCRGECO" Type="TextItem"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRRTST_SUBJ_CODE_PREQ" Lov="STVSUBJ_LOV" MaxLength="30" PageName="ZCRGECO" Type="TextItem"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRRTST_CRSE_NUMB_PREQ" Lov="SCQSUBJT_LOV" MaxLength="30" PageName="ZCRGECO" Type="TextItem"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRRTST_LEVL_CODE" MaxLength="30" PageName="ZCRGECO" Type="TextItem"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRRTST_MIN_GRDE" MaxLength="6" PageName="ZCRGECO" Type="TextItem"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRRTST_CONCURRENCY_IND" MaxLength="1" PageName="ZCRGECO" RecordGroup="SCRRTST__SCRRTST_CONCURRENCY_IND_RG" Type="List"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRRTST_RPAREN" MaxLength="1" PageName="ZCRGECO" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRTST_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRTST_CRSE_NUMB" MaxLength="5" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRTST_TERM_CODE_EFF" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRTST_SEQNO" MaxLength="25" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRTST_ACTIVITY_DATE" MaxLength="11" Navigable="false" Type="TextItem" Visible="false"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="FEE_CTRL">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRFEES_TERM_CODE_FROM" MaxLength="6" Navigable="false" PageName="ZCRGECO" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRFEES_TERM_CODE_TO" MaxLength="6" Navigable="false" PageName="ZCRGECO" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCRFEES" MultiRecord="true">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRFEES_ACTIVITY_DATE" MaxLength="11" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRFEES_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRFEES_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRFEES_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="FEES_INSERT" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="END_FEES" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRFEES_FEE_IND_IND" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCRFEES_DETL_CODE" Lov="TBBDETC_LOV" MaxLength="30" PageName="ZCRGECO" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="TBBDETC_DESC" MaxLength="30" Navigable="false" PageName="ZCRGECO" Type="DisplayItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRFEES_FEE_AMOUNT" MaxLength="7" PageName="ZCRGECO" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="SCRFEES_FEE_IND" MaxLength="1" PageName="ZCRGECO" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRRCOL_1">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRCOL_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRCOL_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRCOL_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRCOL_COLL_IND" MaxLength="1" PageName="RESTRICTION1_TAB" Type="RadioGroup">
+				<Item Id="INCLUDE" Type="RadioButton" Value="I"/>
+				<Item Id="EXCLUDE" Type="RadioButton" Value="E"/>
+			</Item>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRCOL_TERM_CODE_FROM" MaxLength="6" PageName="RESTRICTION1_TAB" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRCOL_TERM_CODE_TO" MaxLength="6" Navigable="false" PageName="RESTRICTION1_TAB" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCRRCOL_2" MultiRecord="true">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRRCOL_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRCOL_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRRCOL_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Id="STVCOLL_DESC" MaxLength="31" Navigable="false" PageName="RESTRICTION1_TAB" Type="DisplayItem"/>
+			<Item AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRCOL_COLL_CODE" Lov="STVCOLL_LOV" MaxLength="30" PageName="RESTRICTION1_TAB" Type="TextItem"/>
+		</Block>
+		
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="RMAJ_CTRL_BLOCK">
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRMAJ_EFF_TERM_1" MaxLength="6" Navigable="false" PageName="RESTRICTION1_TAB" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRMAJ_TERM_CODE_TO" MaxLength="6" Navigable="false" PageName="RESTRICTION1_TAB" Type="TextItem"/>
+			<Item AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRMAJ_MAJOR_IND_1" MaxLength="1" PageName="RESTRICTION1_TAB" Required="true" Type="RadioGroup">
+				<Item Id="INCLUDE" Type="RadioButton" Value="I"/>
+				<Item Id="EXCLUDE" Type="RadioButton" Value="E"/>
+			</Item>
+			<Item AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" FalseValue="N" Id="FOS_ALL" MaxLength="1" PageName="RESTRICTION1_TAB" Type="Checkbox" Value="Y"/>
+			<Item AllowUpdate="false" AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRMAJ_LFST_CODE" MaxLength="30" PageName="RESTRICTION1_TAB" Type="TextItem"/>
+			<Item Id="REC_TYPE" MaxLength="30" Type="TextItem"/>
+			<Item Id="SCRRMAJ_SUBJ_CODE" MaxLength="30" Type="TextItem"/>
+			<Item Id="SCRRMAJ_CRSE_NUMB" MaxLength="30" Type="TextItem"/>
+			<Item Id="SCRRMAJ_EFF_TERM" MaxLength="30" Type="TextItem"/>
+			<Item Id="SCRRMAJ_MAJOR_IND" MaxLength="30" Type="TextItem"/>
+		</Block>
+		
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCRRMAJ" MultiRecord="true">
+			<Item AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRMAJ_MAJR_CODE" Lov="STVMAJR_LOV" MaxLength="30" PageName="RESTRICTION1_TAB" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Id="MAJOR_DESCRIPTION" MaxLength="30" Navigable="false" PageName="RESTRICTION1_TAB" Type="DisplayItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRMAJ_ACTIVITY_DATE" MaxLength="20" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRMAJ_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRMAJ_CRSE_NUMB" MaxLength="5" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRMAJ_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRMAJ_REC_TYPE" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item Id="SCRRMAJ_LFST_CODE" MaxLength="30" Type="TextItem" Visible="false"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRRCLS_1">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRCLS_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRCLS_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRCLS_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRCLS_CLASS_IND" MaxLength="1" PageName="RESTRICTION1_TAB" Type="RadioGroup">
+				<Item Id="INCLUDE" Type="RadioButton" Value="I"/>
+				<Item Id="EXCLUDE" Type="RadioButton" Value="E"/>
+			</Item>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRCLS_TERM_CODE_FROM" MaxLength="6" PageName="RESTRICTION1_TAB" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRCLS_TERM_CODE_TO" MaxLength="6" Navigable="false" PageName="RESTRICTION1_TAB" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCRRCLS_2" MultiRecord="true">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRRCLS_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRCLS_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRRCLS_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRCLS_CLAS_CODE" Lov="STVCLAS_LOV" MaxLength="30" PageName="RESTRICTION1_TAB" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Id="STVCLAS_DESC" MaxLength="31" Navigable="false" PageName="RESTRICTION1_TAB" Type="DisplayItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRRLVL_1">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRLVL_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRLVL_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRLVL_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRLVL_LEVL_IND" MaxLength="1" PageName="RESTRICTION1_TAB" Type="RadioGroup">
+				<Item Id="INCLUDE" Type="RadioButton" Value="I"/>
+				<Item Id="EXCLUDE" Type="RadioButton" Value="E"/>
+			</Item>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRLVL_TERM_CODE_FROM" MaxLength="6" PageName="RESTRICTION1_TAB" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRLVL_TERM_CODE_TO" MaxLength="6" Navigable="false" PageName="RESTRICTION1_TAB" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCRRLVL_2" MultiRecord="true">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRRLVL_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRLVL_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRRLVL_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRLVL_LEVL_CODE" Lov="STVLEVL_LOV" MaxLength="30" PageName="RESTRICTION1_TAB" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Id="STVLEVL_DESC" MaxLength="31" Navigable="false" PageName="RESTRICTION1_TAB" Type="DisplayItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRRDEG_1">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRDEG_TERM_CODE_EFFECTIVE" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRDEG_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRDEG_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRDEG_DEGC_IND" MaxLength="1" PageName="RESTRICTION2_TAB" Type="RadioGroup">
+				<Item Id="INCLUDE" Type="RadioButton" Value="I"/>
+				<Item Id="EXCLUDE" Type="RadioButton" Value="E"/>
+			</Item>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRDEG_TERM_CODE_FROM" Lov="STVTERM_LOV" MaxLength="6" PageName="RESTRICTION2_TAB" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRDEG_TERM_CODE_TO" Lov="STVTERM_LOV" MaxLength="6" Navigable="false" PageName="RESTRICTION2_TAB" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCRRDEG_2" MultiRecord="true">
+			<Item AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRDEG_DEGC_CODE" Lov="STVDEGC_LOV" MaxLength="30" PageName="RESTRICTION2_TAB" Required="true" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Id="DEGC_DESCRIPTION" MaxLength="30" Navigable="false" PageName="RESTRICTION2_TAB" Type="DisplayItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRDEG_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRDEG_CRSE_NUMB" MaxLength="5" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRDEG_TERM_CODE_EFFECTIVE" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRRPRG_1">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRPRG_TERM_CODE_EFFECTIVE" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRPRG_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRPRG_PROGRAM_IND" MaxLength="1" PageName="RESTRICTION2_TAB" Type="RadioGroup">
+				<Item Id="INCLUDE" Type="RadioButton" Value="I"/>
+				<Item Id="EXCLUDE" Type="RadioButton" Value="E"/>
+			</Item>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRPRG_TERM_CODE_TO" Lov="STVTERM_LOV" MaxLength="6" Navigable="false" PageName="RESTRICTION2_TAB" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRPRG_TERM_CODE_FROM" Lov="STVTERM_LOV" MaxLength="6" PageName="RESTRICTION2_TAB" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCRRPRG_2" MultiRecord="true">
+			<Item AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRPRG_PROGRAM" Lov="SMRPRLE_LOV" MaxLength="30" PageName="RESTRICTION2_TAB" Required="true" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Id="PROGRAM_DESCRIPTION" MaxLength="30" Navigable="false" PageName="RESTRICTION2_TAB" Type="DisplayItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRPRG_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRPRG_CRSE_NUMB" MaxLength="5" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRPRG_TERM_CODE_EFFECTIVE" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRRCAM_1">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRCAM_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRCAM_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRCAM_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRCAM_CAMP_IND" MaxLength="1" PageName="RESTRICTION2_TAB" Type="RadioGroup">
+				<Item Id="INCLUDE" Type="RadioButton" Value="I"/>
+				<Item Id="EXCLUDE" Type="RadioButton" Value="E"/>
+			</Item>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRCAM_TERM_CODE_FROM" Lov="STVTERM_LOV" MaxLength="6" PageName="RESTRICTION2_TAB" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRCAM_TERM_CODE_TO" Lov="STVTERM_LOV" MaxLength="6" Navigable="false" PageName="RESTRICTION2_TAB" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCRRCAM_2" MultiRecord="true">
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRCAM_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRCAM_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRCAM_CRSE_NUMB" MaxLength="5" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRCAM_CAMP_CODE" Lov="STVCAMP_LOV" MaxLength="30" PageName="RESTRICTION2_TAB" Required="true" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Id="CAMP_DESCRIPTION" MaxLength="30" Navigable="false" PageName="RESTRICTION2_TAB" Type="DisplayItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRRDEP_1">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRDEP_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRDEP_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRDEP_CRSE_NUMB" MaxLength="7" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRDEP_DEPT_IE_CDE" MaxLength="1" PageName="RESTRICTION2_TAB" Type="RadioGroup">
+				<Item Id="INCLUDE" Type="RadioButton" Value="I"/>
+				<Item Id="EXCLUDE" Type="RadioButton" Value="E"/>
+			</Item>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRDEP_TERM_CODE_TO" Lov="STVTERM_LOV" MaxLength="6" Navigable="false" PageName="RESTRICTION2_TAB" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRDEP_TERM_CODE_FROM" Lov="STVTERM_LOV" MaxLength="6" PageName="RESTRICTION2_TAB" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCRRDEP_2" MultiRecord="true">
+			<Item AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRDEP_DEPT_CODE" Lov="STVDEPT_LOV" MaxLength="30" PageName="RESTRICTION2_TAB" Required="true" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Id="STVDEPT_DESC" MaxLength="30" Navigable="false" PageName="RESTRICTION2_TAB" Type="DisplayItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRDEP_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRDEP_CRSE_NUMB" MaxLength="5" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRDEP_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRRATT_1">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRATT_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRATT_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRATT_CRSE_NUMB" MaxLength="5" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRATT_ATTS_IE_CDE" MaxLength="1" PageName="RESTRICTION3_TAB" Type="RadioGroup">
+				<Item Id="INCLUDE" Type="RadioButton" Value="I"/>
+				<Item Id="EXCLUDE" Type="RadioButton" Value="E"/>
+			</Item>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRATT_TERM_CODE_FROM" Lov="STVTERM_LOV" MaxLength="6" PageName="RESTRICTION3_TAB" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRATT_TERM_CODE_TO" Lov="STVTERM_LOV" MaxLength="6" Navigable="false" PageName="RESTRICTION3_TAB" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCRRATT_2" MultiRecord="true">
+			<Item AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRATT_ATTS_CODE" Lov="STVATTS_LOV" MaxLength="30" PageName="RESTRICTION3_TAB" Required="true" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Id="STVATTS_DESC" MaxLength="30" Navigable="false" PageName="RESTRICTION3_TAB" Type="DisplayItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRATT_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRATT_CRSE_NUMB" MaxLength="5" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRATT_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRRCHR_1">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRCHR_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRCHR_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRCHR_CRSE_NUMB" MaxLength="5" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRCHR_CHRT_IE_CDE" MaxLength="1" PageName="RESTRICTION3_TAB" Type="RadioGroup">
+				<Item Id="INCLUDE" Type="RadioButton" Value="I"/>
+				<Item Id="EXCLUDE" Type="RadioButton" Value="E"/>
+			</Item>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRCHR_TERM_CODE_FROM" MaxLength="6" PageName="RESTRICTION3_TAB" Type="TextItem"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Enabled="false" Id="SCRRCHR_TERM_CODE_TO" MaxLength="6" Navigable="false" PageName="RESTRICTION3_TAB" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="SCRRCHR_2" MultiRecord="true">
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRRCHR_EFF_TERM" MaxLength="6" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="SCRRCHR_SUBJ_CODE" MaxLength="4" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="SCRRCHR_CRSE_NUMB" MaxLength="5" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AutoSkip="true" CanvasName="RESTRICTION_CANVAS" Id="SCRRCHR_CHRT_CODE" Lov="STVCHRT_LOV" MaxLength="30" PageName="RESTRICTION3_TAB" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="RESTRICTION_CANVAS" Id="STVCHRT_DESC" MaxLength="31" Navigable="false" PageName="RESTRICTION3_TAB" Type="DisplayItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="DUPC_CTRL_BLOCK">
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="ZCRDUPC_TERM_CODE_FROM" MaxLength="6" Navigable="false" PageName="ZCRDUPC" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Enabled="false" Id="ZCRDUPC_TERM_CODE_TO" MaxLength="6" Navigable="false" PageName="ZCRDUPC" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="ZCRDUPC" MultiRecord="true">
+			<Item AllowSearch="false" Id="ZCRDUPC_ENDCOPY" MaxLength="1" Navigable="false" Type="TextItem"/>
+			<Item Id="ZCRDUPC_SUBJ_CODE" MaxLength="30" Type="TextItem"/>
+			<Item Id="ZCRDUPC_CRSE_NUMB" MaxLength="30" Type="TextItem"/>
+			<Item Id="ZCRDUPC_TERM_CODE_EFF" MaxLength="30" Type="TextItem"/>
+			<Item AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRDUPC_RULE" MaxLength="10" PageName="ZCRDUPC" Required="true" Type="DisplayItem"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRDUPC_TYPE" MaxLength="3" PageName="ZCRDUPC" RecordGroup="ZCRDUPC__ZCRDUPC_TYPE_RG" Required="true" Type="List"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRDUPC_UNITS" MaxLength="6" PageName="ZCRDUPC" Required="true" Type="TextItem"/>
+			<Item Id="ZCRDUPC_ACTIVITY_DATE" MaxLength="30" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="RULE_INSERT" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="END_RULE" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="ZCRDUPR" MultiRecord="true">
+			<Item AutoSkip="true" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRDUPR_SUBJ_CODE" Lov="STVSUBJ_LOV" MaxLength="30" PageName="ZCRDUPC" Required="true" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRDUPR_SUBJ_CODE_DESC" MaxLength="30" Navigable="false" PageName="ZCRDUPC" Type="DisplayItem"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRDUPR_CRSE_NUMB" MaxLength="5" PageName="ZCRDUPC" Required="true" Type="TextItem"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRDUPR_TERM_CODE_START" MaxLength="6" PageName="ZCRDUPC" Required="true" Type="TextItem"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRDUPR_TERM_CODE_END" MaxLength="6" PageName="ZCRDUPC" Required="true" Type="TextItem"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRDUPR_GRDE_CODE_MIN" MaxLength="3" PageName="ZCRDUPC" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="ZCRDUPR_DUPC_RULE" MaxLength="10" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item Id="ZCRDUPR_ACTIVITY_DATE" MaxLength="30" Type="TextItem"/>
+		</Block>
+		<Block AllowDelete="false" AllowInsert="false" AllowUpdate="false" Id="ZCRDUPS">
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRDUPS_DESCRIPTION" MaxLength="60" PageName="ZCRDUPC" Required="true" Type="TextItem"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRDUPS_TERM_CODE_START" MaxLength="6" PageName="ZCRDUPC" Required="true" Type="TextItem"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRDUPS_TERM_CODE_END" MaxLength="6" PageName="ZCRDUPC" Required="true" Type="TextItem"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRDUPS_FROM_TABLE" MaxLength="40" PageName="ZCRDUPC" Required="true" Type="TextItem"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRDUPS_WHERE_PIDM" MaxLength="30" PageName="ZCRDUPC" Required="true" Type="TextItem"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRDUPS_WHERE_LEVL" MaxLength="30" PageName="ZCRDUPC" Required="true" Type="TextItem"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRDUPS_WHERE_TERM" MaxLength="30" PageName="ZCRDUPC" Required="true" Type="TextItem"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRDUPS_WHERE_STMT" MaxLength="500" PageName="ZCRDUPC" Required="true" Type="TextItem"/>
+			<Item AllowSearch="false" AllowUpdate="false" Enabled="false" Id="ZCRDUPS_DUPC_RULE" MaxLength="10" Navigable="false" Type="TextItem" Visible="false"/>
+		</Block>
+		<Block Id="BUTTON_CONTROL_BLOCK">
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCRRTST_LEVL_CODE_LBT" MaxLength="4" Navigable="false" PageName="ZCRGECO" Type="Button"/>
+			<Item Id="SCRRTST_MIN_GRDE_BTN" MaxLength="0" Navigable="false" Type="Button"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCRRTST_SUBJ_CODE_PREQ_LBT" MaxLength="4" Navigable="false" PageName="ZCRGECO" Type="Button"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCRRTST_TESC_CODE_LBT" MaxLength="4" Navigable="false" PageName="ZCRGECO" Type="Button"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCRFEES_DETL_CODE_LBT" MaxLength="30" Navigable="false" PageName="ZCRGECO" Type="Button"/>
+			<Item CanvasName="KEY_BLOCK_CANVAS" Id="SCACRSE_SUBJ_CODE_LBT" MaxLength="8" Navigable="false" Type="Button"/>
+			<Item CanvasName="KEY_BLOCK_CANVAS" Id="SCACRSE_CRSE_NUMB_LBT" MaxLength="8" Navigable="false" Type="Button"/>
+			<Item CanvasName="KEY_BLOCK_CANVAS" Id="STVTERM_CODE_LBT" MaxLength="5" Navigable="false" Type="Button"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCBCRSE_COLL_CODE_LBT" MaxLength="13" Navigable="false" PageName="SCBCRSE" Type="Button"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCBCRSE_DEPT_CODE_LBT" MaxLength="16" Navigable="false" PageName="SCBCRSE" Type="Button"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCBCRSE_CSTA_CODE_LBT" MaxLength="12" Navigable="false" PageName="SCBCRSE" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="SCBCRSE_APRV_CODE_LBT" MaxLength="14" Navigable="false" Type="Button"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCBCRSE_SUBJ_CODE_XLIST_LBT" MaxLength="8" Navigable="false" PageName="SCBCRSE" Type="Button"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCRLEVL_LEVL_CODE_LBT" MaxLength="8" Navigable="false" PageName="SCRLEVL" Type="Button"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCRGMOD_GMOD_CODE_LBT" MaxLength="8" Navigable="false" PageName="SCBCRSE" Type="Button"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCRSCHD_SCHD_CODE_LBT" MaxLength="8" Navigable="false" PageName="SCBCRSE" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="SCRSCHD_1_ROLLBACK_BTN" MaxLength="10" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="SCRSCHD_2_ROLLBACK_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="SCRSCHD_3_ROLLBACK_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="SCRSCHD_1_SAVE_BTN" MaxLength="10" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="SCRSCHD_3_SAVE_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="SCRSCHD_2_SAVE_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="SCRSCHD_1_EXIT_BTN" MaxLength="10" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="SCRSCHD_2_EXIT_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="TEMP_CANVAS" Id="SCRSCHD_3_EXIT_BTN" MaxLength="30" Navigable="false" Type="Button"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCREQIV_SUBJ_CODE_EQIV_LBT" MaxLength="27" Navigable="false" PageName="SCRLEVL" Type="Button"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRDUPR_SUBJ_CODE_LBT" MaxLength="27" Navigable="false" PageName="ZCRDUPC" Type="Button"/>
+			<Item Id="SCRCORQ_SUBJ_CODE_CORQ_LBT" MaxLength="34" Navigable="false" Type="Button"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="ZCRGECO_SUBJ_CODE_COCRSE_LBT" MaxLength="34" Navigable="false" PageName="SCRLEVL" Type="Button"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCRATTR_ATTR_CODE_LBT" MaxLength="8" Navigable="false" PageName="SCRLEVL" Type="Button"/>
+			<Item CanvasName="RESTRICTION_CANVAS" Id="SCRRCOL_COLL_CODE_LBT" MaxLength="10" Navigable="false" PageName="RESTRICTION1_TAB" Type="Button"/>
+			<Item CanvasName="RESTRICTION_CANVAS" Id="SCRRCLS_CLAS_CODE_LBT" MaxLength="10" Navigable="false" PageName="RESTRICTION1_TAB" Type="Button"/>
+			<Item CanvasName="RESTRICTION_CANVAS" Id="SCRRMAJ_MAJR_CODE_LBT" MaxLength="10" Navigable="false" PageName="RESTRICTION1_TAB" Type="Button"/>
+			<Item CanvasName="RESTRICTION_CANVAS" Id="SCRRLVL_LEVL_CODE_LBT" MaxLength="10" Navigable="false" PageName="RESTRICTION1_TAB" Type="Button"/>
+			<Item CanvasName="ZCADETQ_2_TAB_CANVAS" Id="SCBCRSE_REPS_CODE_LBT" MaxLength="19" Navigable="false" PageName="SCBCRSE" Type="Button"/>
+			<Item AllowInsert="false" AllowSearch="false" AllowUpdate="false" Id="CHECK_KEYS" MaxLength="1" Navigable="false" Type="TextItem" Visible="false"/>
+			<Item CanvasName="RESTRICTION_CANVAS" Id="SCRRDEG_DEGC_CODE_LBT" MaxLength="30" Navigable="false" PageName="RESTRICTION2_TAB" Type="Button"/>
+			<Item CanvasName="RESTRICTION_CANVAS" Id="SCRRATT_ATTS_CODE_LBT" MaxLength="30" Navigable="false" PageName="RESTRICTION3_TAB" Type="Button"/>
+			<Item CanvasName="RESTRICTION_CANVAS" Id="SCRRPRG_PROGRAM_LBT" MaxLength="7" Navigable="false" PageName="RESTRICTION2_TAB" Type="Button"/>
+			<Item CanvasName="RESTRICTION_CANVAS" Id="SCRRDEP_DEPT_CODE_LBT" MaxLength="7" Navigable="false" PageName="RESTRICTION2_TAB" Type="Button"/>
+			<Item CanvasName="RESTRICTION_CANVAS" Id="SCRRCAM_CAMP_CODE_LBT" MaxLength="6" Navigable="false" PageName="RESTRICTION2_TAB" Type="Button"/>
+			<Item CanvasName="RESTRICTION_CANVAS" Id="SCRRCHR_CHRT_CODE_LBT" MaxLength="6" Navigable="false" PageName="RESTRICTION3_TAB" Type="Button"/>
+		</Block>
+	</Logic>
+</FormStructure>

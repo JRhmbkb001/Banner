@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<panel width="100%">
+		<tabpanel id="tabZcadetq2TabCanvas" name="ZCADETQ_2_TAB_CANVAS">
+			<xl:event action="WHEN-TAB-PAGE-CHANGED" name="change"/>
+			<tab id="page_scbcrse" label="scbcrse.label" name="SCBCRSE">
+				<include src="net/hedtech/ucdavis/ps/banner/student/Zcadetq/views/TabZcadetq2TabCanvasScbcrse"/>
+			</tab>
+			<tab id="page_scrlevl" label="scrlevl.label" name="SCRLEVL">
+				<include src="net/hedtech/ucdavis/ps/banner/student/Zcadetq/views/TabZcadetq2TabCanvasScrlevl"/>
+			</tab>
+			<tab id="page_zcrgeco" label="zcrgeco.label" name="ZCRGECO">
+				<include src="net/hedtech/ucdavis/ps/banner/student/Zcadetq/views/TabZcadetq2TabCanvasZcrgeco"/>
+			</tab>
+			<tab id="page_restriction" label="restriction.label" name="RESTRICTION">
+				<include src="net/hedtech/ucdavis/ps/banner/student/Zcadetq/views/TabZcadetq2TabCanvasRestriction"/>
+			</tab>
+			<tab id="page_zcrdupc" label="zcrdupc.label" name="ZCRDUPC">
+				<include src="net/hedtech/ucdavis/ps/banner/student/Zcadetq/views/TabZcadetq2TabCanvasZcrdupc"/>
+			</tab>
+		</tabpanel>
+	</panel>
+</config>

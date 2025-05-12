@@ -1,0 +1,204 @@
+﻿<Lovs>
+  <Lov Name="STQTERM_LOV" Title="Terms for Course" Width="575" Height="267" RecordGroup="STQTERM_RG" AutoSelect="true">
+    <Columns>
+      <Column DataMember="STVTERM_CODE" Title="Term" Width="48" ReturnItem="GLOBAL.VALUE">
+      </Column>
+      <Column DataMember="STVTERM_DESC" Title="Description" Width="247" ReturnItem="">
+      </Column>
+      <Column DataMember="STVTERM_START_DATE" Title="Start Date" Width="80" ReturnItem="">
+      </Column>
+      <Column DataMember="STVTERM_END_DATE" Title="End Date" Width="64" ReturnItem="">
+      </Column>
+      <Column DataMember="STVTERM_ACTIVITY_DATE" Title="Activity Date" Width="96" ReturnItem="">
+      </Column>
+    </Columns>
+  </Lov>
+  <Lov Name="SCQSUBJ_LOV" Title="Existing Courses" Width="575" Height="267" RecordGroup="SCQSUBJ_RG">
+    <Columns>
+      <Column DataMember="SCBCRKY_SUBJ_CODE" Title="Subject" Width="56" ReturnItem="GLOBAL.SCBCRKY_SUBJ_CODE">
+      </Column>
+      <Column DataMember="SCBCRKY_CRSE_NUMB" Title="Course" Width="48" ReturnItem="GLOBAL.VALUE">
+      </Column>
+      <Column DataMember="SCBCRKY_TERM_CODE_START" Title="Start Term" Width="80" ReturnItem="">
+      </Column>
+      <Column DataMember="SCBCRKY_TERM_CODE_END" Title="End Term" Width="64" ReturnItem="">
+      </Column>
+      <Column DataMember="SCBCRKY_ACTIVITY_DATE" Title="Activity Date" Width="96" ReturnItem="">
+      </Column>
+    </Columns>
+  </Lov>
+  <Lov Name="STVATTR_LOV" Title="Attribute Code Validation" Width="575" Height="267" RecordGroup="STVATTR_RG">
+    <Columns>
+      <Column DataMember="STVATTR_CODE" Title="Code" Width="40" ReturnItem="GLOBAL.VALUE">
+      </Column>
+      <Column DataMember="STVATTR_DESC" Title="Description" Width="247" ReturnItem="">
+      </Column>
+    </Columns>
+  </Lov>
+  <Lov Name="STVCLAS_LOV" Title="Class Code Validation" Width="575" Height="267" RecordGroup="STVCLAS_RG">
+    <Columns>
+      <Column DataMember="STVCLAS_CODE" Title="Code" Width="24" ReturnItem="GLOBAL.VALUE">
+      </Column>
+      <Column DataMember="STVCLAS_DESC" Title="Description" Width="247" ReturnItem="">
+      </Column>
+    </Columns>
+  </Lov>
+  <Lov Name="STVCSTA_LOV" Title="" Width="575" Height="267" RecordGroup="STVCSTA_RG">
+    <Columns>
+      <Column DataMember="STVCSTA_CODE" Title="Stvcsta_Code" Width="16" ReturnItem="GLOBAL.VALUE">
+      </Column>
+      <Column DataMember="STVCSTA_DESC" Title="Stvcsta_Desc" Width="247" ReturnItem="">
+      </Column>
+    </Columns>
+  </Lov>
+  <Lov Name="STVAPRV_LOV" Title="" Width="575" Height="267" RecordGroup="STVAPRV_RG">
+    <Columns>
+      <Column DataMember="STVAPRV_CODE" Title="Stvaprv_Code" Width="16" ReturnItem="GLOBAL.VALUE">
+      </Column>
+      <Column DataMember="STVAPRV_DESC" Title="Stvaprv_Desc" Width="247" ReturnItem="">
+      </Column>
+    </Columns>
+  </Lov>
+  <Lov Name="STVGMOD_LOV" Title="Grading Mode Code Validation" Width="575" Height="267" RecordGroup="STVGMOD_RG">
+    <Columns>
+      <Column DataMember="STVGMOD_CODE" Title="Code" Width="32" ReturnItem="GLOBAL.VALUE">
+      </Column>
+      <Column DataMember="STVGMOD_DESC" Title="Description" Width="247" ReturnItem="">
+      </Column>
+    </Columns>
+  </Lov>
+  <Lov Name="STVSCHD_LOV" Title="Schedule Code Validation" Width="575" Height="267" RecordGroup="STVSCHD_RG">
+    <Columns>
+      <Column DataMember="STVSCHD_CODE" Title="Code" Width="32" ReturnItem="GLOBAL.VALUE">
+      </Column>
+      <Column DataMember="STVSCHD_DESC" Title="Description" Width="88" ReturnItem="">
+      </Column>
+    </Columns>
+  </Lov>
+  <Lov Name="STVTERM_LOV" Title="Term Code Validation" Width="575" Height="267" RecordGroup="STVTERM_RG">
+    <Columns>
+      <Column DataMember="STVTERM_CODE" Title="Term" Width="56" ReturnItem="GLOBAL.VALUE">
+      </Column>
+      <Column DataMember="STVTERM_DESC" Title="Description" Width="247" ReturnItem="">
+      </Column>
+      <Column DataMember="STVTERM_START_DATE" Title="Stvterm_Start_Date" Width="96" ReturnItem="">
+      </Column>
+      <Column DataMember="STVTERM_END_DATE" Title="Stvterm_End_Date" Width="96" ReturnItem="">
+      </Column>
+      <Column DataMember="STVTERM_FA_PROC_YR" Title="Stvterm_Fa_Proc_Yr" Width="40" ReturnItem="">
+      </Column>
+      <Column DataMember="STVTERM_ACTIVITY_DATE" Title="Stvterm_Activity_Date" Width="96" ReturnItem="">
+      </Column>
+      <Column DataMember="STVTERM_FA_TERM" Title="Stvterm_Fa_Term" Width="16" ReturnItem="">
+      </Column>
+      <Column DataMember="STVTERM_FA_PERIOD" Title="Stvterm_Fa_Period" Width="40" ReturnItem="">
+      </Column>
+      <Column DataMember="STVTERM_FA_END_PERIOD" Title="Stvterm_Fa_End_Period" Width="40" ReturnItem="">
+      </Column>
+      <Column DataMember="STVTERM_ACYR_CODE" Title="Stvterm_Acyr_Code" Width="40" ReturnItem="">
+      </Column>
+      <Column DataMember="STVTERM_HOUSING_START_DATE" Title="Stvterm_Housing_Start_Date" Width="96" ReturnItem="">
+      </Column>
+      <Column DataMember="STVTERM_HOUSING_END_DATE" Title="Stvterm_Housing_End_Date" Width="96" ReturnItem="">
+      </Column>
+      <Column DataMember="STVTERM_SYSTEM_REQ_IND" Title="Stvterm_System_Req_Ind" Width="16" ReturnItem="">
+      </Column>
+      <Column DataMember="STVTERM_CONT_PROG_IND" Title="Stvterm_Cont_Prog_Ind" Width="16" ReturnItem="">
+      </Column>
+      <Column DataMember="STVTERM_FULL_TIME_IND" Title="Stvterm_Full_Time_Ind" Width="16" ReturnItem="">
+      </Column>
+      <Column DataMember="STVTERM_RESTRICT_HRS_IND" Title="Stvterm_Restrict_Hrs_Ind" Width="16" ReturnItem="">
+      </Column>
+      <Column DataMember="STVTERM_TRMT_CODE" Title="Stvterm_Trmt_Code" Width="16" ReturnItem="">
+      </Column>
+    </Columns>
+  </Lov>
+  <Lov Name="TBBDETC_LOV" Title="" Width="575" Height="267" RecordGroup="TBBDETC_RG">
+    <Columns>
+      <Column DataMember="TBBDETC_DETAIL_CODE" Title="Tbbdetc_Detail_Code" Width="40" ReturnItem="GLOBAL.VALUE">
+      </Column>
+      <Column DataMember="TBBDETC_DESC" Title="Tbbdetc_Desc" Width="247" ReturnItem="">
+      </Column>
+      <Column DataMember="TBBDETC_TYPE_IND" Title="Tbbdetc_Type_Ind" Width="16" ReturnItem="">
+      </Column>
+      <Column DataMember="TBBDETC_PRIORITY" Title="Tbbdetc_Priority" Width="32" ReturnItem="">
+      </Column>
+      <Column DataMember="TBBDETC_LIKE_TERM_IND" Title="Tbbdetc_Like_Term_Ind" Width="16" ReturnItem="">
+      </Column>
+      <Column DataMember="TBBDETC_DCAT_CODE" Title="Tbbdetc_Dcat_Code" Width="32" ReturnItem="">
+      </Column>
+      <Column DataMember="TBBDETC_AMOUNT" Title="Tbbdetc_Amount" Width="40" ReturnItem="">
+      </Column>
+      <Column DataMember="TBBDETC_TERM_CODE" Title="Tbbdetc_Term_Code" Width="56" ReturnItem="">
+      </Column>
+      <Column DataMember="TBBDETC_EFFECTIVE_DATE" Title="Tbbdetc_Effective_Date" Width="96" ReturnItem="">
+      </Column>
+      <Column DataMember="TBBDETC_REFUNDABLE_IND" Title="Tbbdetc_Refundable_Ind" Width="16" ReturnItem="">
+      </Column>
+      <Column DataMember="TBBDETC_RECEIPT_IND" Title="Tbbdetc_Receipt_Ind" Width="16" ReturnItem="">
+      </Column>
+      <Column DataMember="TBBDETC_REFUND_IND" Title="Tbbdetc_Refund_Ind" Width="16" ReturnItem="">
+      </Column>
+      <Column DataMember="TBBDETC_ACTIVITY_DATE" Title="Tbbdetc_Activity_Date" Width="96" ReturnItem="">
+      </Column>
+      <Column DataMember="TBBDETC_PAYT_CODE" Title="Tbbdetc_Payt_Code" Width="16" ReturnItem="">
+      </Column>
+      <Column DataMember="TBBDETC_PREBILL_PRINT_IND" Title="Tbbdetc_Prebill_Print_Ind" Width="16" ReturnItem="">
+      </Column>
+      <Column DataMember="TBBDETC_GL_NOS_ENTERABLE" Title="Tbbdetc_Gl_Nos_Enterable" Width="16" ReturnItem="">
+      </Column>
+      <Column DataMember="TBBDETC_TAXT_CODE" Title="Tbbdetc_Taxt_Code" Width="24" ReturnItem="">
+      </Column>
+    </Columns>
+  </Lov>
+  <Lov Name="SCQSUBJT_LOV" Title="Existing Courses for Prerequisites" Width="575" Height="267" RecordGroup="SCQSUBJT_RG">
+    <Columns>
+      <Column DataMember="SCBCRKY_SUBJ_CODE" Title="Subject" Width="56" ReturnItem="GLOBAL.SCBCRKY_SUBJ_CODE">
+      </Column>
+      <Column DataMember="SCBCRKY_CRSE_NUMB" Title="Course" Width="48" ReturnItem="GLOBAL.SCBCRKY_CRSE_NUMB">
+      </Column>
+      <Column DataMember="SCBCRSE_TITLE" Title="Title" Width="266" ReturnItem="GLOBAL.KEY_TITLE">
+      </Column>
+      <Column DataMember="SCBCRKY_TERM_CODE_START" Title="Start Term" Width="80" ReturnItem="">
+      </Column>
+      <Column DataMember="SCBCRKY_TERM_CODE_END" Title="End Term" Width="64" ReturnItem="">
+      </Column>
+      <Column DataMember="SCBCRKY_ACTIVITY_DATE" Title="Activity Date" Width="104" ReturnItem="">
+      </Column>
+    </Columns>
+  </Lov>
+  <Lov Name="SCQSUBJX_LOV" Title="Existing Courses for Prerequisites" Width="575" Height="267" RecordGroup="SCQSUBJX_RG">
+    <Columns>
+      <Column DataMember="SCBCRKY_SUBJ_CODE" Title="Subject" Width="56" ReturnItem="GLOBAL.SCBCRKY_SUBJ_CODE">
+      </Column>
+      <Column DataMember="SCBCRKY_CRSE_NUMB" Title="Course" Width="48" ReturnItem="GLOBAL.SCBCRKY_CRSE_NUMB">
+      </Column>
+      <Column DataMember="SCBCRSE_TITLE" Title="Title" Width="266" ReturnItem="GLOBAL.KEY_TITLE">
+      </Column>
+      <Column DataMember="SCBCRKY_TERM_CODE_START" Title="Start Term" Width="80" ReturnItem="">
+      </Column>
+      <Column DataMember="SCBCRKY_TERM_CODE_END" Title="End Term" Width="64" ReturnItem="">
+      </Column>
+      <Column DataMember="SCBCRKY_ACTIVITY_DATE" Title="Activity Date" Width="104" ReturnItem="">
+      </Column>
+    </Columns>
+  </Lov>
+  <Lov Name="SMRPRLE_LOV" Title="Existing Programs" Width="575" Height="267" RecordGroup="SMRPRLE_RG" AutoSelect="true">
+    <Columns>
+      <Column DataMember="SMRPRLE_PROGRAM" Title="Program" Width="138" ReturnItem="GLOBAL.VALUE">
+      </Column>
+      <Column DataMember="SMRPRLE_PROGRAM_DESC" Title="Description" Width="399" ReturnItem="">
+      </Column>
+      <Column DataMember="SMRPRLE_COLL_CODE" Title="COL" Width="24" ReturnItem="">
+      </Column>
+      <Column DataMember="SMRPRLE_CAMP_CODE" Title="CAM" Width="24" ReturnItem="">
+      </Column>
+      <Column DataMember="SMRPRLE_DEGC_CODE" Title="Degree" Width="56" ReturnItem="">
+      </Column>
+      <Column DataMember="SMRPRLE_LEVL_CODE" Title="CR LV" Width="40" ReturnItem="">
+      </Column>
+      <Column DataMember="SMRPRLE_LEVL_CODE_STU" Title="ST LV" Width="40" ReturnItem="">
+      </Column>
+    </Columns>
+  </Lov>
+</Lovs>

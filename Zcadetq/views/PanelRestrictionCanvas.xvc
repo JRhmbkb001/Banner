@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<panel width="100%" >
+		<tabpanel id="tabRestrictionCanvas" name="RESTRICTION_CANVAS">
+			<xl:event action="WHEN-TAB-PAGE-CHANGED" name="change"/>
+			<tab id="page_restriction1Tab" label="restriction1Tab.label" name="RESTRICTION1_TAB">
+				<include src="net/hedtech/ucdavis/ps/banner/student/Zcadetq/views/TabRestrictionCanvasRestriction1Tab"/>
+			</tab>
+			<tab id="page_restriction2Tab" label="restriction2Tab.label" name="RESTRICTION2_TAB">
+				<include src="net/hedtech/ucdavis/ps/banner/student/Zcadetq/views/TabRestrictionCanvasRestriction2Tab"/>
+			</tab>
+			<tab id="page_restriction3Tab" label="restriction3Tab.label" name="RESTRICTION3_TAB">
+				<include src="net/hedtech/ucdavis/ps/banner/student/Zcadetq/views/TabRestrictionCanvasRestriction3Tab"/>
+			</tab>
+		</tabpanel>
+	</panel>
+</config>

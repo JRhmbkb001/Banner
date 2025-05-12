@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="SCRRCOL_1"/>
+	<interactionblock name="SCRRCOL_2"/>
+	<interactionblock name="SCRRCLS_1"/>
+	<interactionblock name="FORM_HEADER"/>
+	<interactionblock name="SCRRMAJ"/>
+	<interactionblock name="SCRRLVL_1"/>
+	<interactionblock name="SCRRLVL_2"/>
+	<interactionblock name="RMAJ_CTRL_BLOCK"/>
+	<interactionblock name="BUTTON_CONTROL_BLOCK"/>
+	<interactionblock name="SCRRCLS_2"/>
+	<panel width="100%">
+		<collapsiblepanel label="restriction1Tab.text92.text" name="rect666" width="100%">
+			<panel width="100%" style="ui-section">
+				
+				<gridlayout cols="2" orientation="vertical">
+					<gridcell>
+						<textbox block="SCRRCOL_1" datatype="String" enabled="false" height="23px" label="scrrcol1.scrrcolTermCodeFrom.prompt" member="SCRRCOL_TERM_CODE_FROM" name="scrrcolTermCodeFrom" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="SCRRCOL_1" datatype="String" enabled="false" height="23px" label="scrrcol1.scrrcolTermCodeTo.prompt" member="SCRRCOL_TERM_CODE_TO" name="scrrcolTermCodeTo" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+				</gridlayout>
+			</panel>		
+					
+			<panel width="100%" style="ui-section">
+				<gridlayout cols="2" orientation="vertical">	
+					<gridcell>
+						<component label="scrrcol1.scrrcolCollInd.prompt">
+						<radiogroup block="SCRRCOL_1" datatype="String" id="scrrcolCollInd" member="SCRRCOL_COLL_IND" name="scrrcolCollInd">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<radiobox group="scrrcolCollInd" height="19px" label="scrrcol1.scrrcolCollInd.include.label" labelalign="start" labelposition="left" name="rb_ScrrcolCollInd_Include" value="I" width="90px"/>
+							<radiobox group="scrrcolCollInd" height="19px" label="scrrcol1.scrrcolCollInd.exclude.label" labelalign="start" labelposition="left" name="rb_ScrrcolCollInd_Exclude" value="E" width="90px"/>
+						</radiogroup>
+						</component>
+<!-- 						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="search" member="SCRRCOL_COLL_CODE_LBT" name="scrrcolCollCodeLbt" navigable="false" tooltip="buttonControlBlock.scrrcolCollCodeLbt.tooltip" width="20px"> -->
+<!-- 							<xl:event action="WHEN-MOUSE-CLICK" name="click"/> -->
+<!-- 						</button> -->
+					</gridcell>
+				</gridlayout>
+				</panel>
+				
+				<panel width="100%" style="ui-section" >
+				<gridview block="SCRRCOL_2"  name="grdScrrcol2" width="100%">
+					<viewheader>
+						<viewcolumn autoskip="true" block="SCRRCOL_2" case="upper" datatype="String" keyactions="NEXT_ITEM" label="scrrcol2.scrrcolCollCode.prompt" labelstyle="DEFAULT" member="SCRRCOL_COLL_CODE" name="scrrcolCollCode" width="40px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<editor>
+								<lovbox></lovbox>
+							</editor>
+						</viewcolumn>
+						<viewcolumn block="SCRRCOL_2" datatype="String" label="scrrcol2.stvcollDesc.prompt" labelstyle="DEFAULT" member="STVCOLL_DESC" name="stvcollDesc" width="335px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+				
+			</panel>
+		</collapsiblepanel>
+		
+		<collapsiblepanel label="restriction1Tab.text98.text" name="rect667" width="100%">
+			<panel width="100%" style="ui-section">
+				
+				<gridlayout cols="2" orientation="vertical">
+					<gridcell>
+						<textbox block="RMAJ_CTRL_BLOCK" datatype="String" enabled="false" height="23px" label="rmajCtrlBlock.scrrmajEffTerm.prompt" member="SCRRMAJ_EFF_TERM_1" name="scrrmajEffTerm1" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="RMAJ_CTRL_BLOCK" datatype="String" enabled="false" height="23px" label="rmajCtrlBlock.scrrmajTermCodeTo.prompt" member="SCRRMAJ_TERM_CODE_TO" name="scrrmajTermCodeTo" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+				</gridlayout>
+			</panel>				
+			
+					
+			<panel width="100%" style="ui-section">
+				<gridlayout cols="2" orientation="vertical">	
+					<gridcell>
+						<component label="scrrcol1.scrrcolCollInd.prompt">
+						<radiogroup block="RMAJ_CTRL_BLOCK" datatype="String" id="scrrmajMajorInd" member="SCRRMAJ_MAJOR_IND_1" name="scrrmajMajorInd1">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<radiobox group="scrrmajMajorInd" height="19px" label="rmajCtrlBlock.scrrmajMajorInd.include.label" labelalign="start" labelposition="left" name="rb_ScrrmajMajorInd_Include" value="I" width="74px"/>
+							<radiobox group="scrrmajMajorInd" height="19px" label="rmajCtrlBlock.scrrmajMajorInd.exclude.label" labelalign="start" labelposition="left" name="rb_ScrrmajMajorInd_Exclude" value="E" width="74px"/>
+						</radiogroup>
+						</component>
+					</gridcell>
+					<gridcell>
+						<textbox autoskip="true" block="RMAJ_CTRL_BLOCK" case="upper" datatype="String" height="23px" label="rmajCtrlBlock.scrrmajLfstCode.prompt" member="SCRRMAJ_LFST_CODE" name="scrrmajLfstCode" width="148px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<checkbox action="WHEN-CHECKBOX-CHANGED" block="RMAJ_CTRL_BLOCK" falsevalue="N" height="19px" keyactions="NEXT_ITEM" label="rmajCtrlBlock.fosAll.prompt" member="FOS_ALL" name="fosAll" unmatchedvalue="N" value="Y" width="43px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</checkbox>
+					</gridcell>
+<!-- 					<gridcell> -->
+<!-- 						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="search" member="SCRRMAJ_MAJR_CODE_LBT" name="scrrmajMajrCodeLbt" navigable="false" tooltip="buttonControlBlock.scrrmajMajrCodeLbt.tooltip" width="20px"> -->
+<!-- 							<xl:event action="WHEN-MOUSE-CLICK" name="click"/> -->
+<!-- 						</button> -->
+<!-- 					</gridcell> -->
+				</gridlayout>
+				</panel>
+				
+				<panel width="100%" style="ui-section">
+				<gridview block="SCRRMAJ"  name="grdScrrmaj" width="100%">
+					<viewheader>
+						<viewcolumn autoskip="true" block="SCRRMAJ" case="upper" datatype="String" keyactions="NEXT_ITEM" label="scrrmaj.scrrmajMajrCode.prompt" labelstyle="DEFAULT" member="SCRRMAJ_MAJR_CODE" name="scrrmajMajrCode" width="53px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<editor>
+								<lovbox></lovbox>
+							</editor>
+						</viewcolumn>
+						<viewcolumn block="SCRRMAJ" datatype="String" label="scrrmaj.majorDescription.prompt" labelstyle="DEFAULT" member="MAJOR_DESCRIPTION" name="majorDescription" width="332px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+				
+			</panel>
+		</collapsiblepanel>
+		
+		<collapsiblepanel label="restriction1Tab.text95.text" name="rect668" width="100%">
+			<panel width="100%" style="ui-section">
+				
+				<gridlayout cols="2" orientation="vertical">
+					<gridcell>
+						<textbox block="SCRRCLS_1" datatype="String" enabled="false" height="23px" label="scrrcls1.scrrclsTermCodeFrom.prompt" member="SCRRCLS_TERM_CODE_FROM" name="scrrclsTermCodeFrom" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="SCRRCLS_1" datatype="String" enabled="false" height="23px" label="scrrcls1.scrrclsTermCodeTo.prompt" member="SCRRCLS_TERM_CODE_TO" name="scrrclsTermCodeTo" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+				</gridlayout>
+			</panel>				
+			
+			
+			<panel width="100%" style="ui-section">
+				<gridlayout cols="2" orientation="vertical">	
+					<gridcell>
+						<component label="scrrcol1.scrrcolCollInd.prompt">
+						<radiogroup block="SCRRCLS_1" datatype="String" id="scrrclsClassInd" member="SCRRCLS_CLASS_IND" name="scrrclsClassInd">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<radiobox group="scrrclsClassInd" height="19px" label="scrrcls1.scrrclsClassInd.include.label" labelalign="start" labelposition="left" name="rb_ScrrclsClassInd_Include" value="I" width="90px"/>
+							<radiobox group="scrrclsClassInd" height="19px" label="scrrcls1.scrrclsClassInd.exclude.label" labelalign="start" labelposition="left" name="rb_ScrrclsClassInd_Exclude" value="E" width="90px"/>
+							
+						</radiogroup>
+						</component>
+					</gridcell>
+<!-- 					<gridcell> -->
+<!-- 						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="search" member="SCRRCLS_CLAS_CODE_LBT" name="scrrclsClasCodeLbt" navigable="false" tooltip="buttonControlBlock.scrrclsClasCodeLbt.tooltip" width="20px"> -->
+<!-- 							<xl:event action="WHEN-MOUSE-CLICK" name="click"/> -->
+<!-- 						</button> -->
+<!-- 					</gridcell> -->
+				</gridlayout>
+				 </panel>
+				
+				<panel width="100%" style="ui-section">
+				<gridview block="SCRRCLS_2"  name="grdScrrcls2" width="100%">
+					<viewheader>
+						<viewcolumn autoskip="true" block="SCRRCLS_2" case="upper" datatype="String" keyactions="NEXT_ITEM" label="scrrcls2.scrrclsClasCode.prompt" labelstyle="DEFAULT" member="SCRRCLS_CLAS_CODE" name="scrrclsClasCode" width="40px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<editor>
+								<lovbox></lovbox>
+							</editor>
+						</viewcolumn>
+						<viewcolumn block="SCRRCLS_2" datatype="String" label="scrrcls2.stvclasDesc.prompt" labelstyle="DEFAULT" member="STVCLAS_DESC" name="stvclasDesc" width="344px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+				
+			</panel>
+		</collapsiblepanel> 
+		
+		<collapsiblepanel label="restriction1Tab.text101.text" name="rect669" width="100%">
+			<panel width="100%" style="ui-section">
+			
+				<gridlayout cols="2" orientation="vertical">
+					<gridcell>
+						<textbox block="SCRRLVL_1" datatype="String" enabled="false" height="23px" label="scrrlvl1.scrrlvlTermCodeFrom.prompt" member="SCRRLVL_TERM_CODE_FROM" name="scrrlvlTermCodeFrom" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="SCRRLVL_1" datatype="String" enabled="false" height="23px" label="scrrlvl1.scrrlvlTermCodeTo.prompt" member="SCRRLVL_TERM_CODE_TO" name="scrrlvlTermCodeTo" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+				</gridlayout>
+			</panel>			
+			
+			<panel width="100%" style="ui-section">
+				<gridlayout cols="2" orientation="vertical">	
+					<gridcell>
+						<component label="scrrcol1.scrrcolCollInd.prompt">
+						<radiogroup block="SCRRLVL_1" datatype="String" id="scrrlvlLevlInd" member="SCRRLVL_LEVL_IND" name="scrrlvlLevlInd">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<radiobox group="scrrlvlLevlInd" height="19px" label="scrrlvl1.scrrlvlLevlInd.include.label" labelalign="start" labelposition="left" name="rb_ScrrlvlLevlInd_Include" value="I" width="90px"/>
+							<radiobox group="scrrlvlLevlInd" height="19px" label="scrrlvl1.scrrlvlLevlInd.exclude.label" labelalign="start" labelposition="left" name="rb_ScrrlvlLevlInd_Exclude" value="E" width="90px"/>
+				
+						</radiogroup>
+						</component>
+<!-- 						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="search" member="SCRRLVL_LEVL_CODE_LBT" name="scrrlvlLevlCodeLbt" navigable="false" tooltip="buttonControlBlock.scrrlvlLevlCodeLbt.tooltip" width="20px"> -->
+<!-- 							<xl:event action="WHEN-MOUSE-CLICK" name="click"/> -->
+<!-- 						</button> -->
+					</gridcell>
+				</gridlayout>
+				</panel>
+				<panel width="100%" style="ui-section">
+				<gridview block="SCRRLVL_2"  name="grdScrrlvl2" width="100%">
+					<viewheader>
+						<viewcolumn autoskip="true" block="SCRRLVL_2" case="upper" datatype="String" keyactions="NEXT_ITEM" label="scrrlvl2.scrrlvlLevlCode.prompt" labelstyle="DEFAULT" member="SCRRLVL_LEVL_CODE" name="scrrlvlLevlCode" width="40px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<editor>
+								<lovbox></lovbox>
+							</editor>
+						</viewcolumn>
+						<viewcolumn block="SCRRLVL_2" datatype="String" label="scrrlvl2.stvlevlDesc.prompt" labelstyle="DEFAULT" member="STVLEVL_DESC" name="stvlevlDesc" width="343px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+				
+			</panel>
+		</collapsiblepanel>
+	</panel>
+</config>

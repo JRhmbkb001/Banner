@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="ZCRDUPC"/>
+	<interactionblock name="FORM_HEADER"/>
+	<interactionblock name="ZCRDUPS"/>
+	<interactionblock name="BUTTON_CONTROL_BLOCK"/>
+	<interactionblock name="ZCRDUPR"/>
+	<interactionblock name="DUPC_CTRL_BLOCK"/>
+	<panel width="100%">
+		<collapsiblepanel label="zcrdupc.text160.text" name="rect712" width="100%">
+			
+				<panel width="100%" style="ui-section">
+				<gridlayout>
+					<gridcell>
+						<textbox block="DUPC_CTRL_BLOCK" datatype="String" enabled="false" height="23px" label="dupcCtrlBlock.zcrdupcTermCodeFrom.prompt" member="ZCRDUPC_TERM_CODE_FROM" name="zcrdupcTermCodeFrom" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="DUPC_CTRL_BLOCK" datatype="String" enabled="false" height="23px" label="dupcCtrlBlock.zcrdupcTermCodeTo.prompt" member="ZCRDUPC_TERM_CODE_TO" name="zcrdupcTermCodeTo" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+				</gridlayout>
+				</panel>
+				
+				
+				<panel width="100%" style="ui-section">
+				<gridview block="ZCRDUPC"  name="grdZcrdupc" width="100%">
+					<viewheader>
+						<viewcolumn block="ZCRDUPC" datatype="Number" label="zcrdupc.zcrdupcRule.prompt" labelstyle="DEFAULT" member="ZCRDUPC_RULE" name="zcrdupcRule" width="64px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn block="ZCRDUPC" label="zcrdupc.zcrdupcType.prompt" labelstyle="DEFAULT" member="ZCRDUPC_TYPE" name="zcrdupcType" width="72px">
+							<editor>
+								<combobox action="WHEN-LIST-CHANGED">
+									<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+									<model/>
+								</combobox>
+							</editor>
+						</viewcolumn>
+						<viewcolumn block="ZCRDUPC" datatype="Number" label="zcrdupc.zcrdupcUnits.prompt" labelstyle="DEFAULT" member="ZCRDUPC_UNITS" name="zcrdupcUnits" width="64px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+				</panel>
+			</collapsiblepanel>
+			
+			<collapsiblepanel label="zcrdupc.text161.text" name="rect713" width="100%">
+				<panel width="100%" style="ui-section">
+<!-- 				<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="search" label="zcrdupc.text161.text" member="ZCRDUPR_SUBJ_CODE_LBT" name="zcrduprSubjCodeLbt" navigable="false" tooltip="buttonControlBlock.zcrduprSubjCodeLbt.tooltip" width="20px"> -->
+<!-- 					<xl:event action="WHEN-MOUSE-CLICK" name="click"/> -->
+<!-- 				</button> -->
+				<gridview block="ZCRDUPR"  name="grdZcrdupr" width="100%">
+					<viewheader>
+						<viewcolumn autoskip="true" block="ZCRDUPR" case="upper" datatype="String" keyactions="NEXT_ITEM" label="zcrdupr.zcrduprSubjCode.prompt" labelstyle="DEFAULT" member="ZCRDUPR_SUBJ_CODE" name="zcrduprSubjCode" width="53px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+								<editor>
+									<lovbox></lovbox>
+								</editor>
+						</viewcolumn>
+						<viewcolumn block="ZCRDUPR" datatype="String" label="zcrdupr.zcrduprSubjCodeDesc.prompt" labelstyle="DEFAULT" member="ZCRDUPR_SUBJ_CODE_DESC" name="zcrduprSubjCodeDesc" width="153px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn block="ZCRDUPR" case="upper" datatype="String" label="zcrdupr.zcrduprCrseNumb.prompt" labelstyle="DEFAULT" member="ZCRDUPR_CRSE_NUMB" name="zcrduprCrseNumb" width="48px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn block="ZCRDUPR" case="upper" datatype="String" label="zcrdupr.zcrduprTermCodeStart.prompt" labelstyle="DEFAULT" member="ZCRDUPR_TERM_CODE_START" name="zcrduprTermCodeStart" width="64px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn block="ZCRDUPR" case="upper" datatype="String" label="zcrdupr.zcrduprTermCodeEnd.prompt" labelstyle="DEFAULT" member="ZCRDUPR_TERM_CODE_END" name="zcrduprTermCodeEnd" width="64px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn block="ZCRDUPR" case="upper" datatype="String" label="zcrdupr.zcrduprGrdeCodeMin.prompt" labelstyle="DEFAULT" member="ZCRDUPR_GRDE_CODE_MIN" name="zcrduprGrdeCodeMin" width="40px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+				</panel>
+			
+			</collapsiblepanel>
+		
+		
+			<collapsiblepanel label="zcrdupc.graphic162.text" name="rect714" width="100%">
+			
+			<panel width="100%" style="ui-section">
+				<gridlayout cols="2" orientation="vertical">
+					<gridcell>
+						<textbox block="ZCRDUPS" datatype="String" height="23px" label="zcrdups.zcrdupsDescription.prompt" member="ZCRDUPS_DESCRIPTION" name="zcrdupsDescription" width="239px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					
+					<gridcell>
+						<textbox block="ZCRDUPS" datatype="String" height="23px" label="zcrdups.zcrdupsTermCodeStart.prompt" member="ZCRDUPS_TERM_CODE_START" name="zcrdupsTermCodeStart" width="64px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="ZCRDUPS" datatype="String" height="23px" label="zcrdups.zcrdupsTermCodeEnd.prompt" member="ZCRDUPS_TERM_CODE_END" name="zcrdupsTermCodeEnd" width="64px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					
+					<gridcell>
+						<textbox block="ZCRDUPS" datatype="String" height="23px" label="zcrdups.zcrdupsFromTable.prompt" member="ZCRDUPS_FROM_TABLE" name="zcrdupsFromTable" width="335px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					
+					<gridcell>
+						<textbox block="ZCRDUPS" datatype="String" height="23px" label="zcrdups.zcrdupsWherePidm.prompt" member="ZCRDUPS_WHERE_PIDM" name="zcrdupsWherePidm" width="311px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					
+					<gridcell>
+						<textbox block="ZCRDUPS" datatype="String" height="23px" label="zcrdups.zcrdupsWhereLevl.prompt" member="ZCRDUPS_WHERE_LEVL" name="zcrdupsWhereLevl" width="311px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+				
+					<gridcell>
+						<textbox block="ZCRDUPS" datatype="String" height="23px" label="zcrdups.zcrdupsWhereTerm.prompt" member="ZCRDUPS_WHERE_TERM" name="zcrdupsWhereTerm" width="311px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+				</gridlayout>
+				</panel>	
+					
+				<panel width="100%" style="ui-section">	
+				<gridlayout cols="1" orientation="vertical">
+					<gridcell>
+						<textbox block="ZCRDUPS" datatype="String" height="53px" label="zcrdups.zcrdupsWhereStmt.prompt" member="ZCRDUPS_WHERE_STMT" multiline="true" name="zcrdupsWhereStmt" width="563px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+				</gridlayout>
+				</panel>
+			</collapsiblepanel>
+			
+	</panel>
+</config>

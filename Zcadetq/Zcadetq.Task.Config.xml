@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:task http://www.morphis-tech.com/schema/foundations/task.xsd">
+	<!-- Attached Libs -->
+	<b:import resource="classpath:net/hedtech/general/common/libraries/Goqwflw/GOQWFLW.Library.Config.xml"/>		
+	<b:import resource="classpath:net/hedtech/general/common/libraries/Goqrpls/GOQRPLS.Library.Config.xml"/>		
+	<b:import resource="classpath:net/hedtech/general/common/libraries/Eoqrpls/EOQRPLS.Library.Config.xml"/>		
+	
+	
+	
+	<!-- model definition-->
+	<b:import resource="classpath:/net/hedtech/ucdavis/ps/banner/student/Zcadetq/model/ZCADETQ.Model.Config.xml"/>
+	
+	<task id="ZCADETQ.Task.Config" name="ZCADETQ">
+		<baseTaskConfiguration config="BASE.Task.Config"/>
+		<taskParts>
+			<taskPartConfiguration name="GOQOLIB" config="GOQOLIB.TaskPart.Config"/>
+			<taskPartConfiguration name="SOQOLIB" config="SOQOLIB.TaskPart.Config"/>
+		</taskParts>
+		<taskClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.ZcadetqTask</taskClass>
+		<!-- struct -->
+		<taskResources>/net/hedtech/ucdavis/ps/banner/student/Zcadetq/ZcadetqStruct.xml</taskResources>
+		<!-- support code -->
+		<supportCodeConfiguration>
+			<services>net.hedtech.ucdavis.ps.banner.student.Zcadetq.services.ZcadetqServices</services>
+				<!-- Package Beans-->
+
+			<packages>
+
+			</packages>
+			<attachedLibraries>
+	<!-- Attached Libs -->
+				<libraryConfiguration config="GOQWFLW.Lib.Config"/>
+				<libraryConfiguration config="GOQRPLS.Lib.Config"/>
+				<libraryConfiguration config="EOQRPLS.Lib.Config"/>
+			</attachedLibraries>
+		</supportCodeConfiguration>
+
+		<!-- model -->
+		<formModelConfiguration config="ZCADETQ.Model.Config"/>
+		<!-- controllers -->
+		<formController>net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.ZcadetqFormController</formController>
+		<blockControllers>
+			<block  name="G$_VPDI_BLOCK">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.GVpdiBlockController</block>
+			<block  name="G$_NAV_BLOCK">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.GNavBlockController</block>
+			<block  name="FORM_HEADER">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.FormHeaderController</block>
+			<block  name="KEY_BLOCK">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.KeyBlockController</block>
+			<block  name="SCBCRSE">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.ScbcrseController</block>
+			<block  name="GMOD_CTRL">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.GmodCtrlController</block>
+			<block  name="SCRGMOD">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.ScrgmodController</block>
+			<block  name="ZCBCRSE">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.ZcbcrseController</block>
+			<block  name="SCHD_CTRL">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.SchdCtrlController</block>
+			<block  name="SCRSCHD">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.ScrschdController</block>
+			<block  name="LEVL_CTRL">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.LevlCtrlController</block>
+			<block  name="SCRLEVL">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.ScrlevlController</block>
+			<block  name="TEXT_CTRL">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.TextCtrlController</block>
+			<block  name="SCRTEXT">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.ScrtextController</block>
+			<block  name="GECO_CTRL">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.GecoCtrlController</block>
+			<block  name="ZCRGECO">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.ZcrgecoController</block>
+			<block  name="EQIV_CTRL">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.EqivCtrlController</block>
+			<block  name="SCREQIV">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.ScreqivController</block>
+			<block  name="ATTR_CTRL">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.AttrCtrlController</block>
+			<block  name="SCRATTR">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.ScrattrController</block>
+			<block  name="RTST_CTRL">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.RtstCtrlController</block>
+			<block  name="SCRRTST">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.ScrrtstController</block>
+			<block  name="FEE_CTRL">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.FeeCtrlController</block>
+			<block  name="SCRFEES">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.ScrfeesController</block>
+			<block  name="SCRRCOL_1">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.Scrrcol1Controller</block>
+			<block  name="SCRRCOL_2">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.Scrrcol2Controller</block>
+			<block  name="RMAJ_CTRL_BLOCK">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.RmajCtrlBlockController</block>
+			<block  name="SCRRMAJ">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.ScrrmajController</block>
+			<block  name="SCRRCLS_1">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.Scrrcls1Controller</block>
+			<block  name="SCRRCLS_2">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.Scrrcls2Controller</block>
+			<block  name="SCRRLVL_1">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.Scrrlvl1Controller</block>
+			<block  name="SCRRLVL_2">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.Scrrlvl2Controller</block>
+			<block  name="SCRRDEG_1">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.Scrrdeg1Controller</block>
+			<block  name="SCRRDEG_2">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.Scrrdeg2Controller</block>
+			<block  name="SCRRPRG_1">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.Scrrprg1Controller</block>
+			<block  name="SCRRPRG_2">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.Scrrprg2Controller</block>
+			<block  name="SCRRCAM_1">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.Scrrcam1Controller</block>
+			<block  name="SCRRCAM_2">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.Scrrcam2Controller</block>
+			<block  name="SCRRDEP_1">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.Scrrdep1Controller</block>
+			<block  name="SCRRDEP_2">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.Scrrdep2Controller</block>
+			<block  name="SCRRATT_1">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.Scrratt1Controller</block>
+			<block  name="SCRRATT_2">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.Scrratt2Controller</block>
+			<block  name="SCRRCHR_1">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.Scrrchr1Controller</block>
+			<block  name="SCRRCHR_2">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.Scrrchr2Controller</block>
+			<block  name="DUPC_CTRL_BLOCK">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.DupcCtrlBlockController</block>
+			<block  name="ZCRDUPC">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.ZcrdupcController</block>
+			<block  name="ZCRDUPR">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.ZcrduprController</block>
+			<block  name="ZCRDUPS">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.ZcrdupsController</block>
+			<block  name="BUTTON_CONTROL_BLOCK">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.ButtonControlBlockController</block>
+		</blockControllers>
+		<menuControllers>
+			<menu  name="G$_DEFAULT_PM">net.hedtech.ucdavis.ps.banner.student.Zcadetq.controller.GDefaultPmContextController</menu>
+		</menuControllers>
+
+	</task>
+</b:beans>
+
+ 

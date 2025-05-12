@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="FEE_CTRL"/>
+	<interactionblock name="SCRFEES"/>
+	<interactionblock name="SCRRTST"/>
+	<interactionblock name="FORM_HEADER"/>
+	<interactionblock name="RTST_CTRL"/>
+	<interactionblock name="BUTTON_CONTROL_BLOCK"/>
+	<panel width="100%">
+		<collapsiblepanel label="zcrgeco.text69.text" name="rect715" width="100%">
+			<panel width="100%" style="ui-section">
+				
+				<gridlayout>
+					<gridcell>
+						<textbox block="RTST_CTRL" datatype="String" enabled="false" height="23px" label="rtstCtrl.scrrtstTermCodeFrom.prompt" member="SCRRTST_TERM_CODE_FROM" name="scrrtstTermCodeFrom" width="80px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="RTST_CTRL" datatype="String" enabled="false" height="23px" label="rtstCtrl.scrrtstTermCodeTo.prompt" member="SCRRTST_TERM_CODE_TO" name="scrrtstTermCodeTo" width="80px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+<!-- 					<gridcell> -->
+<!-- 						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="flashlit" label="buttonControlBlock.scrrtstLevlCodeLbt.label" member="SCRRTST_LEVL_CODE_LBT" name="scrrtstLevlCodeLbt" navigable="false" tooltip="buttonControlBlock.scrrtstLevlCodeLbt.tooltip" width="20px"> -->
+<!-- 							<xl:event action="WHEN-MOUSE-CLICK" name="click"/> -->
+<!-- 						</button> -->
+<!-- 					</gridcell> -->
+<!-- 					<gridcell> -->
+<!-- 						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="search" label="buttonControlBlock.scrrtstSubjCodePreqLbt.label" member="SCRRTST_SUBJ_CODE_PREQ_LBT" name="scrrtstSubjCodePreqLbt" navigable="false" tooltip="buttonControlBlock.scrrtstSubjCodePreqLbt.tooltip" width="20px"> -->
+<!-- 							<xl:event action="WHEN-MOUSE-CLICK" name="click"/> -->
+<!-- 						</button> -->
+<!-- 					</gridcell> -->
+<!-- 					<gridcell> -->
+<!-- 						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="search" label="buttonControlBlock.scrrtstTescCodeLbt.label" member="SCRRTST_TESC_CODE_LBT" name="scrrtstTescCodeLbt" navigable="false" tooltip="buttonControlBlock.scrrtstTescCodeLbt.tooltip" width="20px"> -->
+<!-- 							<xl:event action="WHEN-MOUSE-CLICK" name="click"/> -->
+<!-- 						</button> -->
+<!-- 					</gridcell> -->
+				</gridlayout>
+				</panel>
+				
+				<panel width="100%" style="ui-section">
+				<gridview block="SCRRTST"  name="grdScrrtst" width="100%">
+					<viewheader>
+						<viewcolumn block="SCRRTST" case="upper" datatype="String" keyactions="PREVIOUS_ITEM" label="scrrtst.scrrtstConnector.prompt" labelstyle="DEFAULT" member="SCRRTST_CONNECTOR" name="scrrtstConnector" textalign="center" width="80px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn autoskip="true" block="SCRRTST" case="upper" datatype="String" enabled="false" label="scrrtst.scrrtstLparen.prompt" labelstyle="DEFAULT" member="SCRRTST_LPAREN" name="scrrtstLparen" width="80px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn autoskip="true" block="SCRRTST" case="upper" datatype="String" enabled="false" keyactions="NEXT_ITEM" label="scrrtst.scrrtstTescCode.prompt" labelstyle="DEFAULT" member="SCRRTST_TESC_CODE" name="scrrtstTescCode" width="80px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<editor>
+								<lovbox></lovbox>
+							</editor>
+						</viewcolumn>
+						<viewcolumn autoskip="true" block="SCRRTST" case="upper" datatype="String" enabled="false" label="scrrtst.scrrtstTestScore.prompt" labelstyle="DEFAULT" member="SCRRTST_TEST_SCORE" name="scrrtstTestScore" width="80px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn autoskip="true" block="SCRRTST" case="upper" datatype="String" enabled="false" keyactions="NEXT_ITEM" label="scrrtst.scrrtstSubjCodePreq.prompt" labelstyle="DEFAULT" member="SCRRTST_SUBJ_CODE_PREQ" name="scrrtstSubjCodePreq" width="80px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<editor>
+								<lovbox></lovbox>
+							</editor>
+						</viewcolumn>
+						<viewcolumn block="SCRRTST" datatype="String" enabled="false" label="scrrtst.scrrtstCrseNumbPreq.prompt" labelstyle="DEFAULT" member="SCRRTST_CRSE_NUMB_PREQ" name="scrrtstCrseNumbPreq" width="80px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn block="SCRRTST" case="upper" datatype="String" enabled="false" label="scrrtst.scrrtstLevlCode.prompt" labelstyle="DEFAULT" member="SCRRTST_LEVL_CODE" name="scrrtstLevlCode" width="80px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<editor>
+								<lovbox></lovbox>
+							</editor>
+						</viewcolumn>
+						<viewcolumn autoskip="true" block="SCRRTST" case="upper" datatype="String" enabled="false" label="scrrtst.scrrtstMinGrde.prompt" labelstyle="DEFAULT" member="SCRRTST_MIN_GRDE" name="scrrtstMinGrde" textalign="right" width="90px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn autoskip="true" block="SCRRTST" enabled="false" label="scrrtst.scrrtstConcurrencyInd.prompt" labelstyle="DEFAULT" member="SCRRTST_CONCURRENCY_IND" name="scrrtstConcurrencyInd" unmatchedvalue="(None)" width="100px">
+							<editor>
+								<combobox action="WHEN-LIST-CHANGED">
+									<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+									<model/>
+								</combobox>
+							</editor>
+						</viewcolumn>
+						<viewcolumn autoskip="true" block="SCRRTST" case="upper" datatype="String" enabled="false" label="scrrtst.scrrtstRparen.prompt" labelstyle="DEFAULT" member="SCRRTST_RPAREN" name="scrrtstRparen" width="80px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+				
+				
+			</panel>
+		</collapsiblepanel>
+		<collapsiblepanel label="zcrgeco.text104.text" name="rect715" width="100%">
+			<panel width="100%" style="ui-section">
+	
+				<gridlayout>
+<!-- 					<gridcell> -->
+<!-- 						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="search" label="zcrgeco.text104.text" member="SCRFEES_DETL_CODE_LBT" name="scrfeesDetlCodeLbt" navigable="false" tooltip="buttonControlBlock.scrfeesDetlCodeLbt.tooltip" width="20px"> -->
+<!-- 							<xl:event action="WHEN-MOUSE-CLICK" name="click"/> -->
+<!-- 						</button> -->
+<!-- 					</gridcell> -->
+					<gridcell>
+						<textbox block="FEE_CTRL" datatype="String" enabled="false" height="23px" label="feeCtrl.scrfeesTermCodeFrom.prompt" member="SCRFEES_TERM_CODE_FROM" name="scrfeesTermCodeFrom" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="FEE_CTRL" datatype="String" enabled="false" height="23px" label="feeCtrl.scrfeesTermCodeTo.prompt" member="SCRFEES_TERM_CODE_TO" name="scrfeesTermCodeTo" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+				</gridlayout>
+				</panel>
+				
+		<panel width="100%" style="ui-section">
+				<gridview block="SCRFEES" name="grdScrfees" width="100%">
+					<viewheader>
+						<viewcolumn autoskip="true" block="SCRFEES" case="upper" datatype="String" keyactions="NEXT_ITEM" label="scrfees.scrfeesDetlCode.prompt" labelstyle="DEFAULT" member="SCRFEES_DETL_CODE" name="scrfeesDetlCode" width="80px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<editor>
+								<lovbox></lovbox>
+							</editor>
+						</viewcolumn>
+						<viewcolumn block="SCRFEES" datatype="String" label="scrfees.tbbdetcDesc.prompt" labelstyle="DEFAULT" member="TBBDETC_DESC" name="tbbdetcDesc" width="261px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn autoskip="true" block="SCRFEES" datatype="Number" enabled="false" label="scrfees.scrfeesFeeAmount.prompt" formatmask="99D99" labelstyle="DEFAULT" member="SCRFEES_FEE_AMOUNT" name="scrfeesFeeAmount" width="47px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn autoskip="true" block="SCRFEES" case="upper" datatype="String" enabled="false" label="scrfees.scrfeesFeeInd.prompt" labelstyle="DEFAULT" member="SCRFEES_FEE_IND" name="scrfeesFeeInd" width="80px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+				
+			</panel>
+		</collapsiblepanel>
+	</panel>
+</config>

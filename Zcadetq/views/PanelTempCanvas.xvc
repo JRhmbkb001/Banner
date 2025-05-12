@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="BUTTON_CONTROL_BLOCK"/>
+	<panel class="ContentCanvas" id="pnlTempCanvas" menu="G$_DEFAULT_PM" name="TEMP_CANVAS" visible="false" width="100%">
+		<panel width="100%">
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.scbcrseAprvCodeLbt.label" member="SCBCRSE_APRV_CODE_LBT" name="scbcrseAprvCodeLbt" navigable="false" width="144px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.scrschd2RollbackBtn.label" member="SCRSCHD_2_ROLLBACK_BTN" name="scrschd2RollbackBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.scrschd3RollbackBtn.label" member="SCRSCHD_3_ROLLBACK_BTN" name="scrschd3RollbackBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.scrschd3SaveBtn.label" member="SCRSCHD_3_SAVE_BTN" name="scrschd3SaveBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.scrschd2SaveBtn.label" member="SCRSCHD_2_SAVE_BTN" name="scrschd2SaveBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.scrschd2ExitBtn.label" member="SCRSCHD_2_EXIT_BTN" name="scrschd2ExitBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.scrschd3ExitBtn.label" member="SCRSCHD_3_EXIT_BTN" name="scrschd3ExitBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.scrschd1RollbackBtn.label" member="SCRSCHD_1_ROLLBACK_BTN" name="scrschd1RollbackBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.scrschd1SaveBtn.label" member="SCRSCHD_1_SAVE_BTN" name="scrschd1SaveBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+			<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="23px" label="buttonControlBlock.scrschd1ExitBtn.label" member="SCRSCHD_1_EXIT_BTN" name="scrschd1ExitBtn" navigable="false" width="80px">
+				<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+			</button>
+		</panel>
+	</panel>
+</config>

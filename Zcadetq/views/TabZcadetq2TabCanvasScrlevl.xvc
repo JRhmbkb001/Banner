@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="ATTR_CTRL"/>
+	<interactionblock name="SCRLEVL"/>
+	<interactionblock name="FORM_HEADER"/>
+	<interactionblock name="SCRTEXT"/>
+	<interactionblock name="LEVL_CTRL"/>
+	<interactionblock name="SCREQIV"/>
+	<interactionblock name="GECO_CTRL"/>
+	<interactionblock name="ZCRGECO"/>
+	<interactionblock name="BUTTON_CONTROL_BLOCK"/>
+	<interactionblock name="SCRATTR"/>
+	<interactionblock name="TEXT_CTRL"/>
+	<interactionblock name="EQIV_CTRL"/>
+	<panel width="100%">
+	
+		<collapsiblepanel label="scrlevl.text131.text" name="rect706" width="100%">
+			<panel width="100%" style="ui-section">
+				<gridlayout>
+<!-- 					<gridcell> -->
+<!-- 						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="search" label="scrlevl.text131.text" member="SCRLEVL_LEVL_CODE_LBT" name="scrlevlLevlCodeLbt" navigable="false" tooltip="buttonControlBlock.scrlevlLevlCodeLbt.tooltip" width="20px"> -->
+<!-- 							<xl:event action="WHEN-MOUSE-CLICK" name="click"/> -->
+<!-- 						</button> -->
+<!-- 					</gridcell> -->
+					<gridcell>
+						<textbox block="LEVL_CTRL" datatype="String" enabled="false" height="23px" label="levlCtrl.scrlevlTermCodeFrom.prompt" member="SCRLEVL_TERM_CODE_FROM" name="scrlevlTermCodeFrom" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="LEVL_CTRL" datatype="String" enabled="false" height="23px" label="levlCtrl.scrlevlTermCodeTo.prompt" member="SCRLEVL_TERM_CODE_TO" name="scrlevlTermCodeTo" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+				</gridlayout>
+			</panel>
+			
+			<panel width="100%" style="ui-section">
+				<gridview block="SCRLEVL"  name="grdScrlevl" width="100%">
+					<viewheader>
+						<viewcolumn autoskip="true" block="SCRLEVL" case="upper" datatype="String" keyactions="NEXT_ITEM" label="scrlevl.scrlevlLevlCode.prompt" labelstyle="DEFAULT" member="SCRLEVL_LEVL_CODE" name="scrlevlLevlCode" width="27px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<editor>
+							<lovbox></lovbox>
+							</editor>
+						</viewcolumn>
+						<viewcolumn block="SCRLEVL" datatype="String" label="scrlevl.stvlevlDesc.prompt" labelstyle="DEFAULT" member="STVLEVL_DESC" name="stvlevlDesc" width="366px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+			</panel>
+		</collapsiblepanel>
+		
+		<collapsiblepanel label="scrlevl.text83.text" name="rect707" width="100%">
+			<panel width="100%" style="ui-section">
+				<gridlayout>
+					<gridcell>
+						<textbox block="TEXT_CTRL" datatype="String" enabled="false" height="23px" label="textCtrl.scrtextTermCodeFrom.prompt" member="SCRTEXT_TERM_CODE_FROM" name="scrtextTermCodeFrom" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="TEXT_CTRL" datatype="String" enabled="false" height="23px" label="textCtrl.scrtextTermCodeTo.prompt" member="SCRTEXT_TERM_CODE_TO" name="scrtextTermCodeTo" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+				</gridlayout>
+			</panel>	
+			<panel width="100%" style="ui-section">	
+				<gridview block="SCRTEXT" name="grdScrtext" width="100%">
+					<viewheader>
+						<viewcolumn autoskip="true" block="SCRTEXT" datatype="String" labelstyle="DEFAULT" label="scrlevl.text83.text" member="SCRTEXT_TEXT" name="scrtextText" width="532px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+				
+			</panel>
+		</collapsiblepanel>
+		
+		<collapsiblepanel label="scrlevl.text119.text" name="rect708" width="100%">
+			<panel width="100%" style="ui-section">
+				<gridlayout cols="2" orientation="horizontal">
+					<gridcell>
+						<textbox block="GECO_CTRL" datatype="String" enabled="false" height="23px" label="gecoCtrl.zcrgecoTermCodeFrom.prompt" member="ZCRGECO_TERM_CODE_FROM" name="zcrgecoTermCodeFrom" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="GECO_CTRL" datatype="String" enabled="false" height="23px" label="gecoCtrl.zcrgecoTermCodeTo.prompt" member="ZCRGECO_TERM_CODE_TO" name="zcrgecoTermCodeTo" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+				</gridlayout>
+			</panel>	
+					
+			<panel width="100%" style="ui-section">
+				<gridlayout cols="2" orientation="horizontal">		
+					<gridcell>
+						<component label="zcrgeco.zcrgecoSubjCodeCocrse.prompt">
+						<textbox autoskip="true" block="ZCRGECO" case="upper" datatype="String" height="23px" keyactions="NEXT_ITEM" label="zcrgeco.zcrgecoSubjCodeCocrse.prompt" member="ZCRGECO_SUBJ_CODE_COCRSE" name="zcrgecoSubjCodeCocrse" style="ui-buttoninput ui-hidelabel" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="21px" icon="search" member="ZCRGECO_SUBJ_CODE_COCRSE_LBT" name="zcrgecoSubjCodeCocrseLbt" navigable="false" style="ui-buttoninput" tooltip="buttonControlBlock.zcrgecoSubjCodeCocrseLbt.tooltip" width="20px">
+							<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+						</button>
+						<textfield block="ZCRGECO" datatype="String" height="23px" member="ZCRGECO_SUBJ_CODE_COCRSE_DESC" name="zcrgecoSubjCodeCocrseDesc" width="314px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textfield>
+						</component>
+					</gridcell>
+					<gridcell>
+						<textbox autoskip="true" block="ZCRGECO" case="upper" datatype="String" enabled="false" height="23px" label="zcrgeco.zcrgecoCrseNumbCocrse.prompt" member="ZCRGECO_CRSE_NUMB_COCRSE" name="zcrgecoCrseNumbCocrse" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox autoskip="true" block="ZCRGECO" datatype="String" enabled="false" height="23px" label="zcrgeco.zcrgecoGeVersion.prompt" member="ZCRGECO_GE_VERSION" name="zcrgecoGeVersion" width="50px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+				</gridlayout>
+			</panel>
+		</collapsiblepanel>
+		
+		<collapsiblepanel label="scrlevl.text86.text" name="rect709" width="100%">
+			<panel width="100%" style="ui-section">
+				<gridlayout>
+					<gridcell>
+						<textbox block="EQIV_CTRL" datatype="String" enabled="false" height="23px" label="eqivCtrl.screqivTermCodeFrom.prompt" member="SCREQIV_TERM_CODE_FROM" name="screqivTermCodeFrom" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="EQIV_CTRL" datatype="String" enabled="false" height="23px" label="eqivCtrl.screqivTermCodeTo.prompt" member="SCREQIV_TERM_CODE_TO" name="screqivTermCodeTo" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+<!-- 					<gridcell> -->
+<!-- 						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="search" member="SCREQIV_SUBJ_CODE_EQIV_LBT" name="screqivSubjCodeEqivLbt" navigable="false" tooltip="buttonControlBlock.screqivSubjCodeEqivLbt.tooltip" width="20px"> -->
+<!-- 							<xl:event action="WHEN-MOUSE-CLICK" name="click"/> -->
+<!-- 						</button> -->
+<!-- 					</gridcell> -->
+				</gridlayout>
+			</panel>
+			
+			<panel width="100%" style="ui-section">
+				<gridview block="SCREQIV"  name="grdScreqiv" width="100%">
+					<viewheader>
+						<viewcolumn autoskip="true" block="SCREQIV" case="upper" datatype="String" keyactions="NEXT_ITEM" label="screqiv.screqivSubjCodeEqiv.prompt" labelstyle="DEFAULT" member="SCREQIV_SUBJ_CODE_EQIV" name="screqivSubjCodeEqiv" width="43px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<editor>
+								<lovbox></lovbox>
+							</editor>
+						</viewcolumn>
+						<viewcolumn block="SCREQIV" datatype="String" label="screqiv.screqivSubjCodeEqivDesc.prompt" labelstyle="DEFAULT" member="SCREQIV_SUBJ_CODE_EQIV_DESC" name="screqivSubjCodeEqivDesc" width="153px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn autoskip="true" block="SCREQIV" case="upper" datatype="String" enabled="false" label="screqiv.screqivCrseNumbEqiv.prompt" labelstyle="DEFAULT" member="SCREQIV_CRSE_NUMB_EQIV" name="screqivCrseNumbEqiv" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn autoskip="true" block="SCREQIV" case="upper" datatype="String" enabled="false" label="screqiv.screqivStartTerm.prompt" labelstyle="DEFAULT" member="SCREQIV_START_TERM" name="screqivStartTerm" width="48px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn autoskip="true" block="SCREQIV" case="upper" datatype="String" enabled="false" label="screqiv.screqivEndTerm.prompt" labelstyle="DEFAULT" member="SCREQIV_END_TERM" name="screqivEndTerm" width="48px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+			</panel>
+				
+			
+		</collapsiblepanel>
+		
+		<collapsiblepanel label="scrlevl.text89.text" name="rect710" width="100%">
+			<panel width="100%" style="ui-section">	
+				<gridlayout>
+					<gridcell>
+						<textbox block="ATTR_CTRL" datatype="String" enabled="false" height="23px" label="attrCtrl.scrattrTermCodeFrom.prompt" member="SCRATTR_TERM_CODE_FROM" name="scrattrTermCodeFrom" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="ATTR_CTRL" datatype="String" enabled="false" height="23px" label="attrCtrl.scrattrTermCodeTo.prompt" member="SCRATTR_TERM_CODE_TO" name="scrattrTermCodeTo" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+<!-- 					<gridcell> -->
+<!-- 						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="search" member="SCRATTR_ATTR_CODE_LBT" name="scrattrAttrCodeLbt" navigable="false" tooltip="buttonControlBlock.scrattrAttrCodeLbt.tooltip" width="20px"> -->
+<!-- 							<xl:event action="WHEN-MOUSE-CLICK" name="click"/> -->
+<!-- 						</button> -->
+<!-- 					</gridcell> -->
+				</gridlayout>
+			</panel>
+		
+			<panel width="100%" style="ui-section">
+				<gridview block="SCRATTR"  name="grdScrattr" width="100%">
+					<viewheader>
+						<viewcolumn autoskip="true" block="SCRATTR" case="upper" datatype="String" keyactions="NEXT_ITEM" label="scrattr.scrattrAttrCode.prompt" labelstyle="DEFAULT" member="SCRATTR_ATTR_CODE" name="scrattrAttrCode" width="43px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+							<editor>
+								<lovbox></lovbox>
+							</editor>
+						</viewcolumn>
+						<viewcolumn block="SCRATTR" datatype="String" label="scrattr.stvattrDesc.prompt" labelstyle="DEFAULT" member="STVATTR_DESC" name="stvattrDesc" width="273px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+			</panel>	
+				
+		
+		</collapsiblepanel>
+
+	</panel>
+</config>
