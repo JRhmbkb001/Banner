@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SCRRCHR_1.Manager.Config" name="SCRRCHR" targetTableName="SCRRCHR" >
+		
+		<items>
+			<item name="SCRRCHR_EFF_TERM" logicalName="scrrchrEffTerm" type="String" physicalName="SCRRCHR_EFF_TERM" key="true"> 
+				<copyValueFrom>
+					<item name="STVTERM_CODE" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRRCHR_SUBJ_CODE" logicalName="scrrchrSubjCode" type="String" physicalName="SCRRCHR_SUBJ_CODE" key="true"/> 
+			<item name="SCRRCHR_CRSE_NUMB" logicalName="scrrchrCrseNumb" type="String" physicalName="SCRRCHR_CRSE_NUMB" key="true"> 
+				<copyValueFrom>
+					<item name="SCACRSE_CRSE_NUMB" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRRCHR_CHRT_IE_CDE" logicalName="scrrchrChrtIeCde" type="String" physicalName="SCRRCHR_CHRT_IE_CDE" key="true"> 
+				<value>
+					<constant>E</constant>
+				</value>
+			</item>
+			<item name="SCRRCHR_TERM_CODE_FROM" logicalName="scrrchrTermCodeFrom" type="String" virtual="true"/> 
+			<item name="SCRRCHR_TERM_CODE_TO" logicalName="scrrchrTermCodeTo" type="String" virtual="true"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.Scrrchr1Adapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE scrrchr_rec_type = '1' AND scrrchr_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scrrchr_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND scrrchr_eff_term = (SELECT max(b.scrrchr_eff_term)  FROM scrrchr b  WHERE b.scrrchr_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND b.scrrchr_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND b.scrrchr_eff_term <= :KEY_BLOCK_STVTERM_CODE AND b.scrrchr_rec_type = '1' )]]></defaultWhereClause>	
+
+	</manager>
+</b:beans>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SCBCRSE.Manager.Config" name="SCBCRSE" targetTableName="SCBCRSE" keyMode="Unique" >
+		
+		<items>
+			<item name="SCBCRSE_CRSE_NUMB" logicalName="scbcrseCrseNumb" type="String" physicalName="SCBCRSE_CRSE_NUMB"> 
+				<copyValueFrom>
+					<item name="SCACRSE_CRSE_NUMB" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCBCRSE_SUBJ_CODE" logicalName="scbcrseSubjCode" type="String" physicalName="SCBCRSE_SUBJ_CODE"> 
+				<copyValueFrom>
+					<item name="SCACRSE_SUBJ_CODE" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCBCRSE_EFF_TERM" logicalName="scbcrseEffTerm" type="String" physicalName="SCBCRSE_EFF_TERM"/> 
+			<item name="SCBCRSE_TITLE" logicalName="scbcrseTitle" type="String" physicalName="SCBCRSE_TITLE"/> 
+			<item name="SCBCRKY_TERM_CODE_END" logicalName="scbcrkyTermCodeEnd" type="String" virtual="true"/> 
+			<item name="SCBCRSE_COLL_CODE" logicalName="scbcrseCollCode" type="String" physicalName="SCBCRSE_COLL_CODE"/> 
+			<item name="COLLEGE_DESCRIPTION" logicalName="collegeDescription" type="String" virtual="true"/> 
+			<item name="SCBCRSE_DEPT_CODE" logicalName="scbcrseDeptCode" type="String" physicalName="SCBCRSE_DEPT_CODE"/> 
+			<item name="DEPARTMENT_DESCRIPTION" logicalName="departmentDescription" type="String" virtual="true"/> 
+			<item name="SCBCRSE_CSTA_CODE" logicalName="scbcrseCstaCode" type="String" physicalName="SCBCRSE_CSTA_CODE"/> 
+			<item name="STATUS_DESCRIPTION" logicalName="statusDescription" type="String" virtual="true"/> 
+			<item name="SCBCRSE_CREDIT_HR_LOW" logicalName="scbcrseCreditHrLow" type="java.math.BigDecimal" physicalName="SCBCRSE_CREDIT_HR_LOW"/> 
+			<item name="SCBCRSE_CREDIT_HR_IND" logicalName="scbcrseCreditHrInd" type="String" physicalName="SCBCRSE_CREDIT_HR_IND"/> 
+			<item name="SCBCRSE_CREDIT_HR_HIGH" logicalName="scbcrseCreditHrHigh" type="java.math.BigDecimal" physicalName="SCBCRSE_CREDIT_HR_HIGH"/> 
+			<item name="SCBCRSE_BILL_HR_LOW" logicalName="scbcrseBillHrLow" type="java.math.BigDecimal" physicalName="SCBCRSE_BILL_HR_LOW"/> 
+			<item name="SCBCRSE_BILL_HR_IND" logicalName="scbcrseBillHrInd" type="String" physicalName="SCBCRSE_BILL_HR_IND"/> 
+			<item name="SCBCRSE_BILL_HR_HIGH" logicalName="scbcrseBillHrHigh" type="java.math.BigDecimal" physicalName="SCBCRSE_BILL_HR_HIGH"/> 
+			<item name="SCBCRSE_REPEAT_LIMIT" logicalName="scbcrseRepeatLimit" type="java.math.BigDecimal" physicalName="SCBCRSE_REPEAT_LIMIT"/> 
+			<item name="SCBCRSE_MAX_RPT_UNITS" logicalName="scbcrseMaxRptUnits" type="java.math.BigDecimal" physicalName="SCBCRSE_MAX_RPT_UNITS"/> 
+			<item name="SCBCRSE_REPS_CODE" logicalName="scbcrseRepsCode" type="String" physicalName="SCBCRSE_REPS_CODE"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.ScbcrseAdapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE scbcrse_eff_term = (SELECT max(scbcrse_eff_term)  FROM scbcrse  WHERE scbcrse_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scbcrse_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND scbcrse_eff_term <= :KEY_BLOCK_STVTERM_CODE ) AND scbcrse_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scbcrse_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB]]></defaultWhereClause>	
+
+	</manager>
+</b:beans>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SCRRPRG_1.Manager.Config" name="SCRRPRG" targetTableName="SCRRPRG" >
+		
+		<items>
+			<item name="SCRRPRG_TERM_CODE_EFFECTIVE" logicalName="scrrprgTermCodeEffective" type="String" physicalName="SCRRPRG_TERM_CODE_EFFECTIVE"> 
+				<copyValueFrom>
+					<item name="STVTERM_CODE" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRRPRG_CRSE_NUMB" logicalName="scrrprgCrseNumb" type="String" physicalName="SCRRPRG_CRSE_NUMB"> 
+				<copyValueFrom>
+					<item name="SCACRSE_CRSE_NUMB" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRRPRG_PROGRAM_IND" logicalName="scrrprgProgramInd" type="String" physicalName="SCRRPRG_PROGRAM_IND"> 
+				<value>
+					<constant>E</constant>
+				</value>
+			</item>
+			<item name="SCRRPRG_TERM_CODE_TO" logicalName="scrrprgTermCodeTo" type="String" virtual="true"/> 
+			<item name="SCRRPRG_TERM_CODE_FROM" logicalName="scrrprgTermCodeFrom" type="String" virtual="true"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.Scrrprg1Adapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE scrrprg_rec_type = '1' AND scrrprg_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scrrprg_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND scrrprg_term_code_effective = (SELECT max(b.scrrprg_term_code_effective)  FROM scrrprg b  WHERE b.scrrprg_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND b.scrrprg_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND b.scrrprg_term_code_effective <= :KEY_BLOCK_STVTERM_CODE AND b.scrrprg_rec_type = '1' )]]></defaultWhereClause>	
+
+	</manager>
+</b:beans>

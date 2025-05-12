@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SCRRMAJ.Manager.Config" name="SCRRMAJ" targetTableName="SCRRMAJ" keyMode="Unique" >
+		
+		<items>
+			<item name="SCRRMAJ_MAJR_CODE" logicalName="scrrmajMajrCode" type="String" physicalName="SCRRMAJ_MAJR_CODE" key="true"/> 
+			<item name="MAJOR_DESCRIPTION" logicalName="majorDescription" type="String" virtual="true"/> 
+			<item name="SCRRMAJ_ACTIVITY_DATE" logicalName="scrrmajActivityDate" type="java.util.Date" physicalName="SCRRMAJ_ACTIVITY_DATE"/> 
+			<item name="SCRRMAJ_EFF_TERM" logicalName="scrrmajEffTerm" type="String" physicalName="SCRRMAJ_EFF_TERM" key="true"> 
+				<copyValueFrom>
+					<item name="SCRRMAJ_EFF_TERM" businessObject="RMAJ_CTRL_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRRMAJ_CRSE_NUMB" logicalName="scrrmajCrseNumb" type="String" physicalName="SCRRMAJ_CRSE_NUMB" key="true"> 
+				<copyValueFrom>
+					<item name="SCRRMAJ_CRSE_NUMB" businessObject="RMAJ_CTRL_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRRMAJ_SUBJ_CODE" logicalName="scrrmajSubjCode" type="String" physicalName="SCRRMAJ_SUBJ_CODE" key="true"> 
+				<copyValueFrom>
+					<item name="SCRRMAJ_SUBJ_CODE" businessObject="RMAJ_CTRL_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRRMAJ_REC_TYPE" logicalName="scrrmajRecType" type="String" physicalName="SCRRMAJ_REC_TYPE" key="true"> 
+				<value>
+					<constant>2</constant>
+				</value>
+				<copyValueFrom>
+					<item name="REC_TYPE" businessObject="RMAJ_CTRL_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRRMAJ_LFST_CODE" logicalName="scrrmajLfstCode1" type="String" physicalName="scrrmaj_lfst_code" key="true"> 
+				<copyValueFrom>
+					<item name="SCRRMAJ_LFST_CODE" businessObject="RMAJ_CTRL_BLOCK"/>
+				</copyValueFrom>
+			</item>
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.ScrrmajAdapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE scrrmaj_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scrrmaj_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND scrrmaj_rec_type = '2' AND (nvl(scrrmaj_lfst_code, '~'), scrrmaj_eff_term) IN ((SELECT nvl(scrrmaj_lfst_code, '~'), max(scrrmaj_eff_term)  FROM scrrmaj  WHERE scrrmaj_eff_term <= :KEY_BLOCK_STVTERM_CODE AND scrrmaj_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scrrmaj_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB GROUP BY nvl(scrrmaj_lfst_code,'~'))) AND ((:RMAJ_CTRL_BLOCK_SCRRMAJ_LFST_CODE IS NOT NULL AND scrrmaj_lfst_code = :RMAJ_CTRL_BLOCK_SCRRMAJ_LFST_CODE) OR (:RMAJ_CTRL_BLOCK_SCRRMAJ_LFST_CODE IS NULL))]]></defaultWhereClause>	
+		<defaultOrderByClause><![CDATA[order by scrrmaj_majr_code]]></defaultOrderByClause>	
+		<queryAllRecords>true</queryAllRecords>	
+
+	</manager>
+</b:beans>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SCRRPRG_2.Manager.Config" name="SCRRPRG" targetTableName="SCRRPRG" keyMode="Unique" enforceUnique="true" >
+		
+		<items>
+			<item name="SCRRPRG_PROGRAM" logicalName="scrrprgProgram" type="String" physicalName="SCRRPRG_PROGRAM" key="true"/> 
+			<item name="PROGRAM_DESCRIPTION" logicalName="programDescription" type="String" virtual="true"/> 
+			<item name="SCRRPRG_SUBJ_CODE" logicalName="scrrprgSubjCode" type="String" physicalName="SCRRPRG_SUBJ_CODE" key="true"/> 
+			<item name="SCRRPRG_CRSE_NUMB" logicalName="scrrprgCrseNumb" type="String" physicalName="SCRRPRG_CRSE_NUMB" key="true"/> 
+			<item name="SCRRPRG_TERM_CODE_EFFECTIVE" logicalName="scrrprgTermCodeEffective" type="String" physicalName="SCRRPRG_TERM_CODE_EFFECTIVE" key="true"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.Scrrprg2Adapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE scrrprg_rec_type = '2' AND scrrprg_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scrrprg_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND scrrprg_term_code_effective = (SELECT max(b.scrrprg_term_code_effective)  FROM scrrprg b  WHERE b.scrrprg_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND b.scrrprg_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND b.scrrprg_term_code_effective <= :KEY_BLOCK_STVTERM_CODE AND b.scrrprg_rec_type = '2' )]]></defaultWhereClause>	
+		<defaultOrderByClause><![CDATA[order by scrrprg_program]]></defaultOrderByClause>	
+
+	</manager>
+</b:beans>

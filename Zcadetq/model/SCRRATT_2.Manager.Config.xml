@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SCRRATT_2.Manager.Config" name="SCRRATT" targetTableName="SCRRATT" >
+		
+		<items>
+			<item name="SCRRATT_ATTS_CODE" logicalName="scrrattAttsCode" type="String" physicalName="SCRRATT_ATTS_CODE"/> 
+			<item name="STVATTS_DESC" logicalName="stvattsDesc" type="String" virtual="true"/> 
+			<item name="SCRRATT_SUBJ_CODE" logicalName="scrrattSubjCode" type="String" physicalName="SCRRATT_SUBJ_CODE"/> 
+			<item name="SCRRATT_CRSE_NUMB" logicalName="scrrattCrseNumb" type="String" physicalName="SCRRATT_CRSE_NUMB"/> 
+			<item name="SCRRATT_EFF_TERM" logicalName="scrrattEffTerm" type="String" physicalName="SCRRATT_EFF_TERM"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.Scrratt2Adapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE scrratt_rec_type = '2' AND scrratt_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scrratt_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND scrratt_eff_term = (SELECT max(b.scrratt_eff_term)  FROM scrratt b  WHERE b.scrratt_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND b.scrratt_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND b.scrratt_eff_term <= :KEY_BLOCK_STVTERM_CODE AND b.scrratt_rec_type = '2' )]]></defaultWhereClause>	
+		<defaultOrderByClause><![CDATA[order by scrratt_atts_code]]></defaultOrderByClause>	
+
+	</manager>
+</b:beans>

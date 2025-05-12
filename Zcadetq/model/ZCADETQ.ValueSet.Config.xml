@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:valueset"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:valueset http://www.morphis-tech.com/schema/foundations/valueset.xsd">
+<valueSet id="STQTERM_RG.ValueSet.Config" name="STQTERM_RG">
+    <columns>
+		<column name="STVTERM_CODE" type="String" size="6"/>
+		<column name="STVTERM_DESC" type="String" size="30"/>
+		<column name="STVTERM_START_DATE" type="Date" size="7"/>
+		<column name="STVTERM_END_DATE" type="Date" size="7"/>
+		<column name="STVTERM_ACTIVITY_DATE" type="Date" size="7"/>
+	</columns>
+	<query><![CDATA[
+	SELECT stvterm_code, stvterm_desc, stvterm_start_date, stvterm_end_date, stvterm_activity_date  FROM stvterm  WHERE stvterm_code >= (SELECT scbcrky_term_code_start  FROM scbcrky  WHERE scbcrky_subj_code = :SCACRSE_SUBJ_CODE AND scbcrky_crse_numb = :SCACRSE_CRSE_NUMB ) AND stvterm_code <= (SELECT scbcrky_term_code_end  FROM scbcrky  WHERE scbcrky_subj_code = :SCACRSE_SUBJ_CODE AND scbcrky_crse_numb = :SCACRSE_CRSE_NUMB )  ORDER BY 1
+	]]>
+	</query>
+	
+    <parameters>
+		<parameter name="SCACRSE_SUBJ_CODE">
+			<value>
+				<item businessObject="KEY_BLOCK" name="SCACRSE_SUBJ_CODE"/>
+			</value>
+        </parameter>
+		<parameter name="SCACRSE_CRSE_NUMB">
+			<value>
+				<item businessObject="KEY_BLOCK" name="SCACRSE_CRSE_NUMB"/>
+			</value>
+        </parameter>
+	</parameters>
+</valueSet>
+<valueSet id="TBBDETC_RG.ValueSet.Config" name="TBBDETC_RG">
+    <columns>
+		<column name="TBBDETC_DETAIL_CODE" type="String" size="4"/>
+		<column name="TBBDETC_DESC" type="String" size="30"/>
+		<column name="TBBDETC_TYPE_IND" type="String" size="1"/>
+		<column name="TBBDETC_PRIORITY" type="String" size="3"/>
+		<column name="TBBDETC_LIKE_TERM_IND" type="String" size="1"/>
+		<column name="TBBDETC_DCAT_CODE" type="String" size="3"/>
+		<column name="TBBDETC_AMOUNT" type="Number" size="23"/>
+		<column name="TBBDETC_TERM_CODE" type="String" size="6"/>
+		<column name="TBBDETC_EFFECTIVE_DATE" type="Date" size="7"/>
+		<column name="TBBDETC_REFUNDABLE_IND" type="String" size="1"/>
+		<column name="TBBDETC_RECEIPT_IND" type="String" size="1"/>
+		<column name="TBBDETC_REFUND_IND" type="String" size="1"/>
+		<column name="TBBDETC_ACTIVITY_DATE" type="Date" size="7"/>
+		<column name="TBBDETC_PAYT_CODE" type="String" size="1"/>
+		<column name="TBBDETC_PREBILL_PRINT_IND" type="String" size="1"/>
+		<column name="TBBDETC_GL_NOS_ENTERABLE" type="String" size="1"/>
+		<column name="TBBDETC_TAXT_CODE" type="String" size="2"/>
+	</columns>
+	<query><![CDATA[
+	SELECT *  FROM tbbdetc  ORDER BY 1
+	]]>
+	</query>
+	
+    <parameters>
+	</parameters>
+</valueSet>
+<valueSet id="SCQSUBJ_RG.ValueSet.Config" name="SCQSUBJ_RG">
+    <columns>
+		<column name="SCBCRKY_SUBJ_CODE" type="String" size="4"/>
+		<column name="SCBCRKY_CRSE_NUMB" type="String" size="5"/>
+		<column name="SCBCRKY_TERM_CODE_START" type="String" size="6"/>
+		<column name="SCBCRKY_TERM_CODE_END" type="String" size="6"/>
+		<column name="SCBCRKY_ACTIVITY_DATE" type="Date" size="7"/>
+	</columns>
+	<query><![CDATA[
+	SELECT scbcrky_subj_code, scbcrky_crse_numb, scbcrky_term_code_start, scbcrky_term_code_end, scbcrky_activity_date  FROM scbcrky  WHERE scbcrky_subj_code = :SCACRSE_SUBJ_CODE  ORDER BY scbcrky_subj_code, scbcrky_crse_numb
+	]]>
+	</query>
+	
+    <parameters>
+		<parameter name="SCACRSE_SUBJ_CODE">
+			<value>
+				<item businessObject="KEY_BLOCK" name="SCACRSE_SUBJ_CODE"/>
+			</value>
+        </parameter>
+	</parameters>
+</valueSet>
+<valueSet id="STVTERM_RG.ValueSet.Config" name="STVTERM_RG">
+    <columns>
+		<column name="STVTERM_CODE" type="String" size="6"/>
+		<column name="STVTERM_DESC" type="String" size="30"/>
+		<column name="STVTERM_START_DATE" type="Date" size="7"/>
+		<column name="STVTERM_END_DATE" type="Date" size="7"/>
+		<column name="STVTERM_FA_PROC_YR" type="String" size="4"/>
+		<column name="STVTERM_ACTIVITY_DATE" type="Date" size="7"/>
+		<column name="STVTERM_FA_TERM" type="String" size="1"/>
+		<column name="STVTERM_FA_PERIOD" type="Number" size="23"/>
+		<column name="STVTERM_FA_END_PERIOD" type="Number" size="23"/>
+		<column name="STVTERM_ACYR_CODE" type="String" size="4"/>
+		<column name="STVTERM_HOUSING_START_DATE" type="Date" size="7"/>
+		<column name="STVTERM_HOUSING_END_DATE" type="Date" size="7"/>
+		<column name="STVTERM_SYSTEM_REQ_IND" type="String" size="1"/>
+		<column name="STVTERM_CONT_PROG_IND" type="String" size="1"/>
+		<column name="STVTERM_FULL_TIME_IND" type="String" size="1"/>
+		<column name="STVTERM_RESTRICT_HRS_IND" type="String" size="1"/>
+		<column name="STVTERM_TRMT_CODE" type="String" size="1"/>
+	</columns>
+	<query><![CDATA[
+	SELECT *  FROM stvterm  ORDER BY 1
+	]]>
+	</query>
+	
+    <parameters>
+	</parameters>
+</valueSet>
+<valueSet id="STVCLAS_RG.ValueSet.Config" name="STVCLAS_RG">
+    <columns>
+		<column name="STVCLAS_CODE" type="String" size="2"/>
+		<column name="STVCLAS_DESC" type="String" size="30"/>
+	</columns>
+	<query><![CDATA[
+	SELECT stvclas_code, stvclas_desc  FROM stvclas  ORDER BY stvclas_code
+	]]>
+	</query>
+	
+    <parameters>
+	</parameters>
+</valueSet>
+<valueSet id="STVATTR_RG.ValueSet.Config" name="STVATTR_RG">
+    <columns>
+		<column name="STVATTR_CODE" type="String" size="4"/>
+		<column name="STVATTR_DESC" type="String" size="30"/>
+	</columns>
+	<query><![CDATA[
+	SELECT stvattr_code, stvattr_desc  FROM stvattr  ORDER BY stvattr_code
+	]]>
+	</query>
+	
+    <parameters>
+	</parameters>
+</valueSet>
+<valueSet id="STVSCHD_RG.ValueSet.Config" name="STVSCHD_RG">
+    <columns>
+		<column name="STVSCHD_CODE" type="String" size="1"/>
+		<column name="STVSCHD_DESC" type="String" size="3"/>
+	</columns>
+	<query><![CDATA[
+	SELECT stvschd_code, stvschd_desc  FROM stvschd  ORDER BY stvschd_code
+	]]>
+	</query>
+	
+    <parameters>
+	</parameters>
+</valueSet>
+<valueSet id="STVGMOD_RG.ValueSet.Config" name="STVGMOD_RG">
+    <columns>
+		<column name="STVGMOD_CODE" type="String" size="1"/>
+		<column name="STVGMOD_DESC" type="String" size="30"/>
+	</columns>
+	<query><![CDATA[
+	SELECT stvgmod_code, stvgmod_desc  FROM stvgmod  ORDER BY stvgmod_code
+	]]>
+	</query>
+	
+    <parameters>
+	</parameters>
+</valueSet>
+<valueSet id="STVAPRV_RG.ValueSet.Config" name="STVAPRV_RG">
+    <columns>
+		<column name="STVAPRV_CODE" type="String" size="1"/>
+		<column name="STVAPRV_DESC" type="String" size="30"/>
+	</columns>
+	<query><![CDATA[
+	SELECT stvaprv_code, stvaprv_desc  FROM stvaprv  ORDER BY stvaprv_code
+	]]>
+	</query>
+	
+    <parameters>
+	</parameters>
+</valueSet>
+<valueSet id="STVCSTA_RG.ValueSet.Config" name="STVCSTA_RG">
+    <columns>
+		<column name="STVCSTA_CODE" type="String" size="1"/>
+		<column name="STVCSTA_DESC" type="String" size="30"/>
+	</columns>
+	<query><![CDATA[
+	SELECT stvcsta_code, stvcsta_desc  FROM stvcsta  ORDER BY stvcsta_code
+	]]>
+	</query>
+	
+    <parameters>
+	</parameters>
+</valueSet>
+<valueSet id="SCQSUBJT_RG.ValueSet.Config" name="SCQSUBJT_RG">
+    <columns>
+		<column name="SCBCRKY_SUBJ_CODE" type="String" size="4"/>
+		<column name="SCBCRKY_CRSE_NUMB" type="String" size="5"/>
+		<column name="SCBCRSE_TITLE" type="String" size="30"/>
+		<column name="SCBCRKY_TERM_CODE_START" type="String" size="6"/>
+		<column name="SCBCRKY_TERM_CODE_END" type="String" size="6"/>
+		<column name="SCBCRKY_ACTIVITY_DATE" type="Date" size="7"/>
+	</columns>
+	<query><![CDATA[
+	SELECT scbcrky_subj_code, scbcrky_crse_numb, scbcrse_title, scbcrky_term_code_start, scbcrky_term_code_end, scbcrky_activity_date  FROM scbcrse, scbcrky  WHERE (scbcrky_subj_code = :SCRRTST_SUBJ_CODE_PREQ OR :SCRRTST_SUBJ_CODE_PREQ IS NULL) AND scbcrky_subj_code = SCBCRSE_SUBJ_CODE AND scbcrky_crse_numb = SCBCRSE_CRSE_NUMB AND SCBCRKY_TERM_CODE_START = SCBCRSE_EFF_TERM  ORDER BY scbcrky_subj_code, scbcrky_crse_numb
+	]]>
+	</query>
+	
+    <parameters>
+		<parameter name="SCRRTST_SUBJ_CODE_PREQ">
+			<value>
+				<item businessObject="SCRRTST" name="SCRRTST_SUBJ_CODE_PREQ"/>
+			</value>
+        </parameter>
+	</parameters>
+</valueSet>
+<valueSet id="SCQSUBJX_RG.ValueSet.Config" name="SCQSUBJX_RG">
+    <columns>
+		<column name="SCBCRKY_SUBJ_CODE" type="String" size="4"/>
+		<column name="SCBCRKY_CRSE_NUMB" type="String" size="5"/>
+		<column name="SCBCRSE_TITLE" type="String" size="30"/>
+		<column name="SCBCRKY_TERM_CODE_START" type="String" size="6"/>
+		<column name="SCBCRKY_TERM_CODE_END" type="String" size="6"/>
+		<column name="SCBCRKY_ACTIVITY_DATE" type="Date" size="7"/>
+	</columns>
+	<query><![CDATA[
+	SELECT scbcrky_subj_code, scbcrky_crse_numb, scbcrse_title, scbcrky_term_code_start, scbcrky_term_code_end, scbcrky_activity_date  FROM scbcrse, scbcrky  WHERE scbcrky_subj_code = SCBCRSE_SUBJ_CODE AND scbcrky_crse_numb = SCBCRSE_CRSE_NUMB AND SCBCRKY_TERM_CODE_START = SCBCRSE_EFF_TERM  ORDER BY scbcrky_subj_code, scbcrky_crse_numb
+	]]>
+	</query>
+	
+    <parameters>
+	</parameters>
+</valueSet>
+<valueSet id="SMRPRLE_RG.ValueSet.Config" name="SMRPRLE_RG">
+    <columns>
+		<column name="SMRPRLE_PROGRAM" type="String" size="12"/>
+		<column name="SMRPRLE_PROGRAM_DESC" type="String" size="30"/>
+		<column name="SMRPRLE_COLL_CODE" type="String" size="2"/>
+		<column name="SMRPRLE_CAMP_CODE" type="String" size="3"/>
+		<column name="SMRPRLE_DEGC_CODE" type="String" size="6"/>
+		<column name="SMRPRLE_LEVL_CODE" type="String" size="2"/>
+		<column name="SMRPRLE_LEVL_CODE_STU" type="String" size="2"/>
+	</columns>
+	<query><![CDATA[
+	SELECT smrprle_program, smrprle_program_desc, smrprle_coll_code, smrprle_camp_code, smrprle_degc_code, smrprle_levl_code, smrprle_levl_code_stu  FROM smrprle  WHERE smrprle_curr_ind = 'Y'  ORDER BY smrprle_program
+	]]>
+	</query>
+	
+    <parameters>
+	</parameters>
+</valueSet>
+<valueSet id="STVATTS_RG.ValueSet.Config" name="STVATTS_RG">
+    <columns>
+		<column name="STVATTS_CODE" type="String" size="4"/>
+		<column name="STVATTS_DESC" type="String" size="30"/>
+		<column name="STVATTS_ACTIVITY_DATE" type="String" size="75"/>
+	</columns>
+	<query><![CDATA[
+	SELECT stvatts_code, stvatts_desc, to_char(stvatts_activity_date, G$_DATE.GET_NLS_DATE_FORMAT) stvatts_activity_date  FROM stvatts  WHERE NVL(stvatts_inactive_ind_acu, 'N') = 'N'  ORDER BY stvatts_code
+	]]>
+	</query>
+	
+    <parameters>
+	</parameters>
+</valueSet>
+<valueSet id="SCRRTST__SCRRTST_CONCURRENCY_IND_RG.ValueSet.Config" name="SCRRTST__SCRRTST_CONCURRENCY_IND_RG">
+    <columns>
+		<column name="LABEL" type="String" size="30"/>
+		<column name="DATA" type="String" size="30"/>
+	</columns>
+			<rows>
+			<row>
+				<LABEL><![CDATA[scrrtst.scrrtstConcurrencyInd.item0.label]]></LABEL>
+
+				<DATA><![CDATA[]]></DATA>
+			</row>	
+			<row>
+				<LABEL><![CDATA[scrrtst.scrrtstConcurrencyInd.item1.label]]></LABEL>
+
+				<DATA><![CDATA[Y]]></DATA>
+			</row>	
+			<row>
+				<LABEL><![CDATA[scrrtst.scrrtstConcurrencyInd.item2.label]]></LABEL>
+
+				<DATA><![CDATA[N]]></DATA>
+			</row>	
+		</rows>
+</valueSet>
+<valueSet id="ZCRDUPC__ZCRDUPC_TYPE_RG.ValueSet.Config" name="ZCRDUPC__ZCRDUPC_TYPE_RG">
+    <columns>
+		<column name="LABEL" type="String" size="30"/>
+		<column name="DATA" type="String" size="30"/>
+	</columns>
+			<rows>
+			<row>
+				<LABEL><![CDATA[zcrdupc.zcrdupcType.item0.label]]></LABEL>
+
+				<DATA><![CDATA[ANY]]></DATA>
+			</row>	
+			<row>
+				<LABEL><![CDATA[zcrdupc.zcrdupcType.item1.label]]></LABEL>
+
+				<DATA><![CDATA[ALL]]></DATA>
+			</row>	
+			<row>
+				<LABEL><![CDATA[zcrdupc.zcrdupcType.item2.label]]></LABEL>
+
+				<DATA><![CDATA[DYN]]></DATA>
+			</row>	
+		</rows>
+</valueSet>
+</b:beans>

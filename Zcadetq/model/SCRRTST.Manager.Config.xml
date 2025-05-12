@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SCRRTST.Manager.Config" name="SCRRTST" targetTableName="SCRRTST" keyMode="Unique" >
+		
+		<items>
+			<item name="SCRRTST_CONNECTOR" logicalName="scrrtstConnector" type="String" physicalName="SCRRTST_CONNECTOR"/> 
+			<item name="SCRRTST_ENDCOPY" logicalName="scrrtstEndcopy" type="String" virtual="true"/> 
+			<item name="SCRRTST_LPAREN" logicalName="scrrtstLparen" type="String" physicalName="SCRRTST_LPAREN"/> 
+			<item name="SCRRTST_TESC_CODE" logicalName="scrrtstTescCode" type="String" physicalName="SCRRTST_TESC_CODE"/> 
+			<item name="SCRRTST_TEST_SCORE" logicalName="scrrtstTestScore" type="String" physicalName="SCRRTST_TEST_SCORE"/> 
+			<item name="SCRRTST_SUBJ_CODE_PREQ" logicalName="scrrtstSubjCodePreq" type="String" physicalName="SCRRTST_SUBJ_CODE_PREQ"/> 
+			<item name="SCRRTST_CRSE_NUMB_PREQ" logicalName="scrrtstCrseNumbPreq" type="String" physicalName="SCRRTST_CRSE_NUMB_PREQ"/> 
+			<item name="SCRRTST_LEVL_CODE" logicalName="scrrtstLevlCode" type="String" physicalName="SCRRTST_LEVL_CODE"/> 
+			<item name="SCRRTST_MIN_GRDE" logicalName="scrrtstMinGrde" type="String" physicalName="SCRRTST_MIN_GRDE"/> 
+			<item name="SCRRTST_CONCURRENCY_IND" logicalName="scrrtstConcurrencyInd" type="String" physicalName="SCRRTST_CONCURRENCY_IND"> 
+				<value>
+					<constant>(None)</constant>
+				</value>
+			</item>
+			<item name="SCRRTST_RPAREN" logicalName="scrrtstRparen" type="String" physicalName="SCRRTST_RPAREN"/> 
+			<item name="SCRRTST_SUBJ_CODE" logicalName="scrrtstSubjCode" type="String" physicalName="SCRRTST_SUBJ_CODE"> 
+				<copyValueFrom>
+					<item name="SCACRSE_SUBJ_CODE" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRRTST_CRSE_NUMB" logicalName="scrrtstCrseNumb" type="String" physicalName="SCRRTST_CRSE_NUMB"> 
+				<copyValueFrom>
+					<item name="SCACRSE_CRSE_NUMB" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRRTST_TERM_CODE_EFF" logicalName="scrrtstTermCodeEff" type="String" physicalName="SCRRTST_TERM_CODE_EFF"/> 
+			<item name="SCRRTST_SEQNO" logicalName="scrrtstSeqno" type="java.math.BigDecimal" physicalName="SCRRTST_SEQNO"/> 
+			<item name="SCRRTST_ACTIVITY_DATE" logicalName="scrrtstActivityDate" type="java.util.Date" physicalName="SCRRTST_ACTIVITY_DATE"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.ScrrtstAdapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE scrrtst_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scrrtst_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND scrrtst_seqno IS NOT NULL AND scrrtst_term_code_eff = (SELECT max(x.scrrtst_term_code_eff)  FROM scrrtst x  WHERE x.scrrtst_term_code_eff <= :KEY_BLOCK_STVTERM_CODE AND x.scrrtst_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND x.scrrtst_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB )]]></defaultWhereClause>	
+		<defaultOrderByClause><![CDATA[order by scrrtst_seqno]]></defaultOrderByClause>	
+
+	</manager>
+</b:beans>

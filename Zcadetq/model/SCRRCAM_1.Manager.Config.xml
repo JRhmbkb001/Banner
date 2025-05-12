@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SCRRCAM_1.Manager.Config" name="SCRRCAM" targetTableName="SCRRCAM" >
+		
+		<items>
+			<item name="SCRRCAM_EFF_TERM" logicalName="scrrcamEffTerm" type="String" physicalName="SCRRCAM_EFF_TERM" key="true"> 
+				<copyValueFrom>
+					<item name="STVTERM_CODE" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRRCAM_SUBJ_CODE" logicalName="scrrcamSubjCode" type="String" physicalName="SCRRCAM_SUBJ_CODE" key="true"/> 
+			<item name="SCRRCAM_CRSE_NUMB" logicalName="scrrcamCrseNumb" type="String" physicalName="SCRRCAM_CRSE_NUMB" key="true"> 
+				<copyValueFrom>
+					<item name="SCACRSE_CRSE_NUMB" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRRCAM_CAMP_IND" logicalName="scrrcamCampInd" type="String" physicalName="SCRRCAM_CAMP_IND" key="true"> 
+				<value>
+					<constant>E</constant>
+				</value>
+			</item>
+			<item name="SCRRCAM_TERM_CODE_FROM" logicalName="scrrcamTermCodeFrom" type="String" virtual="true"/> 
+			<item name="SCRRCAM_TERM_CODE_TO" logicalName="scrrcamTermCodeTo" type="String" virtual="true"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.Scrrcam1Adapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE scrrcam_rec_type = '1' AND scrrcam_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scrrcam_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND scrrcam_eff_term = (SELECT max(b.scrrcam_eff_term)  FROM scrrcam b  WHERE b.scrrcam_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND b.scrrcam_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND b.scrrcam_eff_term <= :KEY_BLOCK_STVTERM_CODE AND b.scrrcam_rec_type = '1' )]]></defaultWhereClause>	
+
+	</manager>
+</b:beans>

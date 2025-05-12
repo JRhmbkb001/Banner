@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SCRSCHD.Manager.Config" name="SCRSCHD" targetTableName="SCRSCHD" keyMode="Unique" >
+		
+		<items>
+			<item name="SCRSCHD_SUBJ_CODE" logicalName="scrschdSubjCode" type="String" physicalName="SCRSCHD_SUBJ_CODE"> 
+				<copyValueFrom>
+					<item name="SCACRSE_SUBJ_CODE" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRSCHD_CRSE_NUMB" logicalName="scrschdCrseNumb" type="String" physicalName="SCRSCHD_CRSE_NUMB"> 
+				<copyValueFrom>
+					<item name="SCACRSE_CRSE_NUMB" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRSCHD_EFF_TERM" logicalName="scrschdEffTerm" type="String" physicalName="SCRSCHD_EFF_TERM"/> 
+			<item name="SCRSCHD_ACTIVITY_DATE" logicalName="scrschdActivityDate" type="java.util.Date" physicalName="SCRSCHD_ACTIVITY_DATE"/> 
+			<item name="SCHD_INSERT" logicalName="schdInsert" type="String" virtual="true"/> 
+			<item name="SCRSCHD_SCHD_CODE" logicalName="scrschdSchdCode" type="String" physicalName="SCRSCHD_SCHD_CODE"/> 
+			<item name="SCRSCHD_SEQ" logicalName="scrschdSeq" type="String" physicalName="SCRSCHD_SEQ"/> 
+			<item name="STVSCHD_DESC" logicalName="stvschdDesc" type="String" virtual="true"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.ScrschdAdapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE scrschd_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scrschd_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND scrschd_eff_term = (SELECT max(b.scrschd_eff_term)  FROM scrschd b  WHERE b.scrschd_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND b.scrschd_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND b.scrschd_eff_term <= :KEY_BLOCK_STVTERM_CODE )]]></defaultWhereClause>	
+		<defaultOrderByClause><![CDATA[order by scrschd_seq asc nulls first, scrschd_schd_code asc]]></defaultOrderByClause>	
+
+	</manager>
+</b:beans>

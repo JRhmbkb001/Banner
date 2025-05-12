@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SCRLEVL.Manager.Config" name="SCRLEVL" targetTableName="SCRLEVL" keyMode="Unique" >
+		
+		<items>
+			<item name="SCRLEVL_SUBJ_CODE" logicalName="scrlevlSubjCode" type="String" physicalName="SCRLEVL_SUBJ_CODE"> 
+				<copyValueFrom>
+					<item name="SCACRSE_SUBJ_CODE" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRLEVL_CRSE_NUMB" logicalName="scrlevlCrseNumb" type="String" physicalName="SCRLEVL_CRSE_NUMB"> 
+				<copyValueFrom>
+					<item name="SCACRSE_CRSE_NUMB" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRLEVL_EFF_TERM" logicalName="scrlevlEffTerm" type="String" physicalName="SCRLEVL_EFF_TERM"/> 
+			<item name="SCRLEVL_LEVL_CODE" logicalName="scrlevlLevlCode" type="String" physicalName="SCRLEVL_LEVL_CODE"/> 
+			<item name="STVLEVL_DESC" logicalName="stvlevlDesc" type="String" virtual="true"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.ScrlevlAdapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE (SCRLEVL_CRSE_NUMB = :KEY_BLOCK_SCACRSE_CRSE_NUMB OR :KEY_BLOCK_SCACRSE_CRSE_NUMB IS NULL) AND (SCRLEVL_SUBJ_CODE = :KEY_BLOCK_SCACRSE_SUBJ_CODE OR :KEY_BLOCK_SCACRSE_SUBJ_CODE IS NULL) AND scrlevl_eff_term = (SELECT max(scrlevl_eff_term)  FROM scrlevl b  WHERE b.scrlevl_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND b.scrlevl_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND b.scrlevl_eff_term <= :KEY_BLOCK_STVTERM_CODE )]]></defaultWhereClause>	
+		<defaultOrderByClause><![CDATA[order by scrlevl_levl_code]]></defaultOrderByClause>	
+
+	</manager>
+</b:beans>

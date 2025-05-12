@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SCRRDEG_1.Manager.Config" name="SCRRDEG" >
+		
+		<items>
+			<item name="SCRRDEG_TERM_CODE_EFFECTIVE" logicalName="scrrdegTermCodeEffective" type="String" physicalName="SCRRDEG_TERM_CODE_EFFECTIVE" key="true"> 
+				<copyValueFrom>
+					<item name="STVTERM_CODE" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRRDEG_SUBJ_CODE" logicalName="scrrdegSubjCode" type="String" physicalName="SCRRDEG_SUBJ_CODE" key="true"/> 
+			<item name="SCRRDEG_CRSE_NUMB" logicalName="scrrdegCrseNumb" type="String" physicalName="SCRRDEG_CRSE_NUMB" key="true"/> 
+			<item name="SCRRDEG_DEGC_IND" logicalName="scrrdegDegcInd" type="String" physicalName="SCRRDEG_DEGC_IND" key="true"> 
+				<value>
+					<constant>E</constant>
+				</value>
+			</item>
+			<item name="SCRRDEG_TERM_CODE_FROM" logicalName="scrrdegTermCodeFrom" type="String" virtual="true"/> 
+			<item name="SCRRDEG_TERM_CODE_TO" logicalName="scrrdegTermCodeTo" type="String" virtual="true"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.Scrrdeg1Adapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE scrrdeg_rec_type = '1' AND scrrdeg_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scrrdeg_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND scrrdeg_term_code_effective = (SELECT max(b.scrrdeg_term_code_effective)  FROM scrrdeg b  WHERE b.scrrdeg_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND b.scrrdeg_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND b.scrrdeg_term_code_effective <= :KEY_BLOCK_STVTERM_CODE AND b.scrrdeg_rec_type = '1' )]]></defaultWhereClause>	
+
+	</manager>
+</b:beans>

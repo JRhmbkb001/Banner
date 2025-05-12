@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="ZCRDUPR.Manager.Config" name="ZCRDUPR" targetTableName="ZCRDUPR" >
+		
+		<items>
+			<item name="ZCRDUPR_SUBJ_CODE" logicalName="zcrduprSubjCode" type="String" physicalName="ZCRDUPR_SUBJ_CODE"/> 
+			<item name="ZCRDUPR_SUBJ_CODE_DESC" logicalName="zcrduprSubjCodeDesc" type="String" virtual="true"/> 
+			<item name="ZCRDUPR_CRSE_NUMB" logicalName="zcrduprCrseNumb" type="String" physicalName="ZCRDUPR_CRSE_NUMB"/> 
+			<item name="ZCRDUPR_TERM_CODE_START" logicalName="zcrduprTermCodeStart" type="String" physicalName="ZCRDUPR_TERM_CODE_START"/> 
+			<item name="ZCRDUPR_TERM_CODE_END" logicalName="zcrduprTermCodeEnd" type="String" physicalName="ZCRDUPR_TERM_CODE_END"/> 
+			<item name="ZCRDUPR_GRDE_CODE_MIN" logicalName="zcrduprGrdeCodeMin" type="String" physicalName="ZCRDUPR_GRDE_CODE_MIN"/> 
+			<item name="ZCRDUPR_DUPC_RULE" logicalName="zcrduprDupcRule" type="java.math.BigDecimal" physicalName="ZCRDUPR_DUPC_RULE"> 
+				<copyValueFrom>
+					<item name="ZCRDUPC_RULE" businessObject="ZCRDUPC"/>
+				</copyValueFrom>
+			</item>
+			<item name="ZCRDUPR_ACTIVITY_DATE" logicalName="zcrduprActivityDate" type="java.util.Date" physicalName="ZCRDUPR_ACTIVITY_DATE"> 
+				<value>
+					<systemVariable name="DATETIME"/>
+				</value>
+			</item>
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.ZcrduprAdapter</adapterClass>
+
+	</manager>
+</b:beans>

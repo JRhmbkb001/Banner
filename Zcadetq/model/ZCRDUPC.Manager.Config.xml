@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="ZCRDUPC.Manager.Config" name="ZCRDUPC" targetTableName="ZCRDUPC" >
+		
+		<items>
+			<item name="ZCRDUPC_ENDCOPY" logicalName="zcrdupcEndcopy" type="String" virtual="true"/> 
+			<item name="ZCRDUPC_SUBJ_CODE" logicalName="zcrdupcSubjCode" type="String" physicalName="ZCRDUPC_SUBJ_CODE"> 
+				<copyValueFrom>
+					<item name="SCACRSE_SUBJ_CODE" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="ZCRDUPC_CRSE_NUMB" logicalName="zcrdupcCrseNumb" type="String" physicalName="ZCRDUPC_CRSE_NUMB"> 
+				<copyValueFrom>
+					<item name="SCACRSE_CRSE_NUMB" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="ZCRDUPC_TERM_CODE_EFF" logicalName="zcrdupcTermCodeEff" type="String" physicalName="ZCRDUPC_TERM_CODE_EFF"/> 
+			<item name="ZCRDUPC_RULE" logicalName="zcrdupcRule" type="java.math.BigDecimal" physicalName="ZCRDUPC_RULE"/> 
+			<item name="ZCRDUPC_TYPE" logicalName="zcrdupcType" type="String" physicalName="ZCRDUPC_TYPE"> 
+				<value>
+					<constant>ANY</constant>
+				</value>
+			</item>
+			<item name="ZCRDUPC_UNITS" logicalName="zcrdupcUnits" type="java.math.BigDecimal" physicalName="ZCRDUPC_UNITS"/> 
+			<item name="ZCRDUPC_ACTIVITY_DATE" logicalName="zcrdupcActivityDate" type="java.util.Date" physicalName="ZCRDUPC_ACTIVITY_DATE"> 
+				<value>
+					<systemVariable name="DATETIME"/>
+				</value>
+			</item>
+			<item name="RULE_INSERT" logicalName="ruleInsert" type="String" virtual="true"/> 
+			<item name="END_RULE" logicalName="endRule" type="String" virtual="true"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.ZcrdupcAdapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE zcrdupc_subj_code = :SCACRSE_SUBJ_CODE AND zcrdupc_crse_numb = :SCACRSE_CRSE_NUMB AND zcrdupc_term_code_eff = (SELECT max(zcrdupc_term_code_eff)  FROM zcrdupc  WHERE zcrdupc_term_code_eff <= :STVTERM_CODE AND zcrdupc_subj_code = :SCACRSE_SUBJ_CODE AND zcrdupc_crse_numb = :SCACRSE_CRSE_NUMB )]]></defaultWhereClause>	
+
+	</manager>
+</b:beans>

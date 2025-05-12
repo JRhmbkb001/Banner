@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SCRTEXT.Manager.Config" name="SCRTEXT" targetTableName="SCRTEXT" keyMode="Unique" >
+		
+		<items>
+			<item name="SCRTEXT_ACTIVITY_DATE" logicalName="scrtextActivityDate" type="java.util.Date" physicalName="SCRTEXT_ACTIVITY_DATE"/> 
+			<item name="SCRTEXT_TEXT_CODE" logicalName="scrtextTextCode" type="String" physicalName="SCRTEXT_TEXT_CODE"> 
+				<value>
+					<constant>A</constant>
+				</value>
+			</item>
+			<item name="SCRTEXT_EFF_TERM" logicalName="scrtextEffTerm" type="String" physicalName="SCRTEXT_EFF_TERM"/> 
+			<item name="SCRTEXT_CRSE_NUMB" logicalName="scrtextCrseNumb" type="String" physicalName="SCRTEXT_CRSE_NUMB"> 
+				<copyValueFrom>
+					<item name="SCACRSE_CRSE_NUMB" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRTEXT_SUBJ_CODE" logicalName="scrtextSubjCode" type="String" physicalName="SCRTEXT_SUBJ_CODE"> 
+				<copyValueFrom>
+					<item name="SCACRSE_SUBJ_CODE" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="TEXT_INSERT" logicalName="textInsert" type="String" virtual="true"/> 
+			<item name="END_TEXT" logicalName="endText" type="String" virtual="true"/> 
+			<item name="SCRTEXT_SEQNO" logicalName="scrtextSeqno" type="java.math.BigDecimal" physicalName="SCRTEXT_SEQNO"/> 
+			<item name="SCRTEXT_TEXT" logicalName="scrtextText" type="String" physicalName="SCRTEXT_TEXT"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.ScrtextAdapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE scrtext_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scrtext_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND scrtext_text_code IS NOT NULL AND scrtext_eff_term = (SELECT max(b.scrtext_eff_term)  FROM scrtext b  WHERE b.scrtext_eff_term <= :KEY_BLOCK_STVTERM_CODE AND b.scrtext_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND b.scrtext_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB )]]></defaultWhereClause>	
+		<defaultOrderByClause><![CDATA[order by scrtext_seqno]]></defaultOrderByClause>	
+
+	</manager>
+</b:beans>

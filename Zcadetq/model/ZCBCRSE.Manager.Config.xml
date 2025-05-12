@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="ZCBCRSE.Manager.Config" name="ZCBCRSE" targetTableName="ZCBCRSE" keyMode="Unique" >
+		
+		<items>
+			<item name="ZCBCRSE_SUBJ_CODE" logicalName="zcbcrseSubjCode" type="String" physicalName="ZCBCRSE_SUBJ_CODE"> 
+				<copyValueFrom>
+					<item name="SCACRSE_SUBJ_CODE" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="ZCBCRSE_CRSE_NUMB" logicalName="zcbcrseCrseNumb" type="String" physicalName="ZCBCRSE_CRSE_NUMB"> 
+				<copyValueFrom>
+					<item name="SCACRSE_CRSE_NUMB" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="ZCBCRSE_EFF_TERM" logicalName="zcbcrseEffTerm" type="String" physicalName="ZCBCRSE_EFF_TERM"/> 
+			<item name="ZCBCRSE_SUBJ_CODE_XLIST" logicalName="zcbcrseSubjCodeXlist" type="String" physicalName="ZCBCRSE_SUBJ_CODE_XLIST"/> 
+			<item name="SUBJ_CODE_XLIST_DESC" logicalName="subjCodeXlistDesc" type="String" virtual="true"/> 
+			<item name="ZCBCRSE_CRSE_NUMB_XLIST" logicalName="zcbcrseCrseNumbXlist" type="String" physicalName="ZCBCRSE_CRSE_NUMB_XLIST"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.ZcbcrseAdapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE zcbcrse_eff_term = (SELECT max(z2.zcbcrse_eff_term)  FROM zcbcrse z2  WHERE z2.zcbcrse_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND z2.zcbcrse_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND z2.zcbcrse_eff_term <= :KEY_BLOCK_STVTERM_CODE ) AND zcbcrse_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND zcbcrse_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB]]></defaultWhereClause>	
+
+	</manager>
+</b:beans>

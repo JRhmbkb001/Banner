@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SCRATTR.Manager.Config" name="SCRATTR" targetTableName="SCRATTR" keyMode="Unique" >
+		
+		<items>
+			<item name="SCRATTR_ACTIVITY_DATE" logicalName="scrattrActivityDate" type="java.util.Date" physicalName="SCRATTR_ACTIVITY_DATE"/> 
+			<item name="SCRATTR_EFF_TERM" logicalName="scrattrEffTerm" type="String" physicalName="SCRATTR_EFF_TERM"/> 
+			<item name="SCRATTR_SUBJ_CODE" logicalName="scrattrSubjCode" type="String" physicalName="SCRATTR_SUBJ_CODE"> 
+				<copyValueFrom>
+					<item name="SCACRSE_SUBJ_CODE" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRATTR_CRSE_NUMB" logicalName="scrattrCrseNumb" type="String" physicalName="SCRATTR_CRSE_NUMB"> 
+				<copyValueFrom>
+					<item name="SCACRSE_CRSE_NUMB" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="ATTR_INSERT" logicalName="attrInsert" type="String" virtual="true"/> 
+			<item name="END_ATTR" logicalName="endAttr" type="String" virtual="true"/> 
+			<item name="STVATTR_GE_USE_IND" logicalName="stvattrGeUseInd" type="String" virtual="true"/> 
+			<item name="SCRATTR_ATTR_CODE" logicalName="scrattrAttrCode" type="String" physicalName="SCRATTR_ATTR_CODE"/> 
+			<item name="STVATTR_DESC" logicalName="stvattrDesc" type="String" virtual="true"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.ScrattrAdapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE scrattr_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scrattr_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND scrattr_attr_code IS NOT NULL AND scrattr_eff_term = (SELECT max(scrattr_eff_term)  FROM scrattr  WHERE scrattr_eff_term <= :KEY_BLOCK_STVTERM_CODE AND scrattr_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scrattr_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB )]]></defaultWhereClause>	
+		<defaultOrderByClause><![CDATA[order by scrattr_attr_code]]></defaultOrderByClause>	
+
+	</manager>
+</b:beans>

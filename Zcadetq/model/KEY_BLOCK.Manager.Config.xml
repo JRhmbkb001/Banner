@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="KEY_BLOCK.Manager.Config" name="KeyBlock" keyMode="Unique" >
+		<kind>SimpleBusinessObject</kind>
+		<items>
+			<item name="SCACRSE_SUBJ_CODE" logicalName="scacrseSubjCode" type="String"/> 
+			<item name="SUBJ_DESC" logicalName="subjDesc" type="String"/> 
+			<item name="SUBJ_CODE" logicalName="subjCode" type="String"/> 
+			<item name="COURSE_ADD" logicalName="courseAdd" type="String"> 
+				<value>
+					<constant>N</constant>
+				</value>
+			</item>
+			<item name="LEVL_ADD" logicalName="levlAdd" type="Long"> 
+				<value>
+					<constant>0</constant>
+				</value>
+			</item>
+			<item name="GMOD_ADD" logicalName="gmodAdd" type="Long"> 
+				<value>
+					<constant>0</constant>
+				</value>
+			</item>
+			<item name="SCHD_ADD" logicalName="schdAdd" type="Long"> 
+				<value>
+					<constant>0</constant>
+				</value>
+			</item>
+			<item name="SCACRSE_CRSE_NUMB" logicalName="scacrseCrseNumb" type="String"/> 
+			<item name="STVTERM_CODE" logicalName="stvtermCode" type="String"/> 
+		</items>
+		
+			<managerClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.KeyBlock</managerClass>
+
+	</manager>
+</b:beans>

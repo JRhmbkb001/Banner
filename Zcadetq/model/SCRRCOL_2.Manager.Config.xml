@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SCRRCOL_2.Manager.Config" name="SCRRCOL" targetTableName="SCRRCOL" keyMode="Unique" >
+		
+		<items>
+			<item name="SCRRCOL_EFF_TERM" logicalName="scrrcolEffTerm" type="String" physicalName="SCRRCOL_EFF_TERM"> 
+				<copyValueFrom>
+					<item name="STVTERM_CODE" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRRCOL_SUBJ_CODE" logicalName="scrrcolSubjCode" type="String" physicalName="SCRRCOL_SUBJ_CODE" key="true"/> 
+			<item name="SCRRCOL_CRSE_NUMB" logicalName="scrrcolCrseNumb" type="String" physicalName="SCRRCOL_CRSE_NUMB"> 
+				<copyValueFrom>
+					<item name="SCACRSE_CRSE_NUMB" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="STVCOLL_DESC" logicalName="stvcollDesc" type="String" virtual="true"/> 
+			<item name="SCRRCOL_COLL_CODE" logicalName="scrrcolCollCode" type="String" physicalName="SCRRCOL_COLL_CODE"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.Scrrcol2Adapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE scrrcol_rec_type = '2' AND scrrcol_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scrrcol_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND scrrcol_eff_term = (SELECT max(b.scrrcol_eff_term)  FROM scrrcol b  WHERE b.scrrcol_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND b.scrrcol_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND b.scrrcol_eff_term <= :KEY_BLOCK_STVTERM_CODE AND b.scrrcol_rec_type = '2' )]]></defaultWhereClause>	
+		<defaultOrderByClause><![CDATA[order by scrrcol_coll_code]]></defaultOrderByClause>	
+
+	</manager>
+</b:beans>

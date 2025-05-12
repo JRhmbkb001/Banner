@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SCRRCLS_2.Manager.Config" name="SCRRCLS" targetTableName="SCRRCLS" keyMode="Unique" >
+		
+		<items>
+			<item name="SCRRCLS_EFF_TERM" logicalName="scrrclsEffTerm" type="String" physicalName="SCRRCLS_EFF_TERM" key="true"> 
+				<copyValueFrom>
+					<item name="STVTERM_CODE" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRRCLS_SUBJ_CODE" logicalName="scrrclsSubjCode" type="String" physicalName="SCRRCLS_SUBJ_CODE" key="true"/> 
+			<item name="SCRRCLS_CRSE_NUMB" logicalName="scrrclsCrseNumb" type="String" physicalName="SCRRCLS_CRSE_NUMB" key="true"> 
+				<copyValueFrom>
+					<item name="SCACRSE_CRSE_NUMB" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRRCLS_CLAS_CODE" logicalName="scrrclsClasCode" type="String" physicalName="SCRRCLS_CLAS_CODE" key="true"/> 
+			<item name="STVCLAS_DESC" logicalName="stvclasDesc" type="String" virtual="true"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.Scrrcls2Adapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE scrrcls_rec_type = '2' AND scrrcls_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scrrcls_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND scrrcls_eff_term = (SELECT max(b.scrrcls_eff_term)  FROM scrrcls b  WHERE b.scrrcls_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND b.scrrcls_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND b.scrrcls_eff_term <= :KEY_BLOCK_STVTERM_CODE AND b.scrrcls_rec_type = '2' )]]></defaultWhereClause>	
+		<defaultOrderByClause><![CDATA[order by scrrcls_clas_code]]></defaultOrderByClause>	
+
+	</manager>
+</b:beans>

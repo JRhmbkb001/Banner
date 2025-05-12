@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SCREQIV.Manager.Config" name="SCREQIV" targetTableName="SCREQIV" keyMode="Unique" >
+		
+		<items>
+			<item name="SCREQIV_SUBJ_CODE" logicalName="screqivSubjCode" type="String" physicalName="SCREQIV_SUBJ_CODE"> 
+				<copyValueFrom>
+					<item name="SCACRSE_SUBJ_CODE" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCREQIV_CRSE_NUMB" logicalName="screqivCrseNumb" type="String" physicalName="SCREQIV_CRSE_NUMB"> 
+				<copyValueFrom>
+					<item name="SCACRSE_CRSE_NUMB" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCREQIV_EFF_TERM" logicalName="screqivEffTerm" type="String" physicalName="SCREQIV_EFF_TERM"/> 
+			<item name="SCREQIV_ACTIVITY_DATE" logicalName="screqivActivityDate" type="java.util.Date" physicalName="SCREQIV_ACTIVITY_DATE"/> 
+			<item name="EQIV_INSERT" logicalName="eqivInsert" type="String" virtual="true"/> 
+			<item name="END_EQIV" logicalName="endEqiv" type="String" virtual="true"/> 
+			<item name="SCREQIV_SUBJ_CODE_EQIV" logicalName="screqivSubjCodeEqiv" type="String" physicalName="SCREQIV_SUBJ_CODE_EQIV"/> 
+			<item name="SCREQIV_SUBJ_CODE_EQIV_DESC" logicalName="screqivSubjCodeEqivDesc" type="String" virtual="true"/> 
+			<item name="SCREQIV_CRSE_NUMB_EQIV" logicalName="screqivCrseNumbEqiv" type="String" physicalName="SCREQIV_CRSE_NUMB_EQIV"/> 
+			<item name="SCREQIV_START_TERM" logicalName="screqivStartTerm" type="String" physicalName="SCREQIV_START_TERM"/> 
+			<item name="SCREQIV_END_TERM" logicalName="screqivEndTerm" type="String" physicalName="SCREQIV_END_TERM"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.ScreqivAdapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE screqiv_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND screqiv_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND screqiv_subj_code_eqiv IS NOT NULL AND screqiv_eff_term = (SELECT max(b.screqiv_eff_term)  FROM screqiv b  WHERE b.screqiv_eff_term <= :KEY_BLOCK_STVTERM_CODE AND b.screqiv_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND b.screqiv_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB )]]></defaultWhereClause>	
+		<defaultOrderByClause><![CDATA[order by screqiv_subj_code, screqiv_crse_numb_eqiv]]></defaultOrderByClause>	
+
+	</manager>
+</b:beans>

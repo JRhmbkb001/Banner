@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="GMOD_CTRL.Manager.Config" name="GmodCtrl" keyMode="Unique" >
+		<kind>SimpleBusinessObject</kind>
+		<items>
+			<item name="SCRGMOD_TERM_CODE_FROM" logicalName="scrgmodTermCodeFrom" type="String"/> 
+			<item name="SCRGMOD_TERM_CODE_TO" logicalName="scrgmodTermCodeTo" type="String"/> 
+		</items>
+		
+			<managerClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.GmodCtrl</managerClass>
+
+	</manager>
+</b:beans>

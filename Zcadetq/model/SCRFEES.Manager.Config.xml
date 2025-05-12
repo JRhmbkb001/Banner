@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="SCRFEES.Manager.Config" name="SCRFEES" targetTableName="SCRFEES" keyMode="Unique" >
+		
+		<items>
+			<item name="SCRFEES_ACTIVITY_DATE" logicalName="scrfeesActivityDate" type="java.util.Date" physicalName="SCRFEES_ACTIVITY_DATE"/> 
+			<item name="SCRFEES_EFF_TERM" logicalName="scrfeesEffTerm" type="String" physicalName="SCRFEES_EFF_TERM"/> 
+			<item name="SCRFEES_SUBJ_CODE" logicalName="scrfeesSubjCode" type="String" physicalName="SCRFEES_SUBJ_CODE"> 
+				<copyValueFrom>
+					<item name="SCACRSE_SUBJ_CODE" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="SCRFEES_CRSE_NUMB" logicalName="scrfeesCrseNumb" type="String" physicalName="SCRFEES_CRSE_NUMB"> 
+				<copyValueFrom>
+					<item name="SCACRSE_CRSE_NUMB" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="FEES_INSERT" logicalName="feesInsert" type="String" virtual="true"/> 
+			<item name="END_FEES" logicalName="endFees" type="String" virtual="true"/> 
+			<item name="SCRFEES_FEE_IND_IND" logicalName="scrfeesFeeIndInd" type="java.math.BigDecimal" physicalName="SCRFEES_FEE_IND_IND"/> 
+			<item name="SCRFEES_DETL_CODE" logicalName="scrfeesDetlCode" type="String" physicalName="SCRFEES_DETL_CODE"/> 
+			<item name="TBBDETC_DESC" logicalName="tbbdetcDesc" type="String" virtual="true"/> 
+			<item name="SCRFEES_FEE_AMOUNT" logicalName="scrfeesFeeAmount" type="java.math.BigDecimal" physicalName="SCRFEES_FEE_AMOUNT"/> 
+			<item name="SCRFEES_FEE_IND" logicalName="scrfeesFeeInd" type="String" physicalName="SCRFEES_FEE_IND"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcadetq.model.ScrfeesAdapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE scrfees_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scrfees_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB AND scrfees_detl_code IS NOT NULL AND scrfees_eff_term = (SELECT max(scrfees_eff_term)  FROM scrfees  WHERE scrfees_eff_term <= :KEY_BLOCK_STVTERM_CODE AND scrfees_subj_code = :KEY_BLOCK_SCACRSE_SUBJ_CODE AND scrfees_crse_numb = :KEY_BLOCK_SCACRSE_CRSE_NUMB )]]></defaultWhereClause>	
+		<defaultOrderByClause><![CDATA[order by scrfees_detl_code]]></defaultOrderByClause>	
+
+	</manager>
+</b:beans>
