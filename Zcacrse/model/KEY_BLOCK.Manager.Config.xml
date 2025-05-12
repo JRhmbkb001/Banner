@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="KEY_BLOCK.Manager.Config" name="KeyBlock" keyMode="Unique" >
+		<kind>SimpleBusinessObject</kind>
+		<items>
+			<item name="KB_SUBJ_CODE" logicalName="kbSubjCode" type="String"/> 
+			<item name="SUBJ_DESCRIPTION" logicalName="subjDescription" type="String"/> 
+			<item name="CRSE_TITLE" logicalName="crseTitle" type="String"/> 
+			<item name="KB_CRSE_NUMB" logicalName="kbCrseNumb" type="String"/> 
+			<item name="KB_TERM_CODE_EFF" logicalName="kbTermCodeEff" type="String"/> 
+			<item name="SUBJ_CODE" logicalName="subjCode" type="String"/> 
+			<item name="SCBCRKY_TERM_CODE_END" logicalName="scbcrkyTermCodeEnd" type="String"> 
+				<value>
+					<constant>999999</constant>
+				</value>
+			</item>
+			<item name="DELETE_SW" logicalName="deleteSw" type="String"/> 
+			<item name="SCHD_ADD" logicalName="schdAdd" type="Long"> 
+				<value>
+					<constant>0</constant>
+				</value>
+			</item>
+			<item name="COURSE_ADD" logicalName="courseAdd" type="String"> 
+				<value>
+					<constant>N</constant>
+				</value>
+			</item>
+		</items>
+		
+			<managerClass>net.hedtech.ucdavis.ps.banner.student.Zcacrse.model.KeyBlock</managerClass>
+
+	</manager>
+</b:beans>

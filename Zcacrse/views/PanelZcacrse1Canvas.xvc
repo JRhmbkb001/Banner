@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="KEY_BLOCK"/>
+	<interactionblock name="BUTTON_CONTROL_BLOCK"/>
+	<panel class="StackedCanvas" id="pnlZcacrse1Canvas" menu="G$_DEFAULT_PM" name="ZCACRSE_1_CANVAS" width="100%"/>
+</config>

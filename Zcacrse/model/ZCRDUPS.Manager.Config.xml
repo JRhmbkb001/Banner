@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="ZCRDUPS.Manager.Config" name="ZCRDUPS" targetTableName="ZCRDUPS" >
+		
+		<items>
+			<item name="ZCRDUPS_DESCRIPTION" logicalName="zcrdupsDescription" type="String" physicalName="ZCRDUPS_DESCRIPTION"/> 
+			<item name="ZCRDUPS_TERM_CODE_START" logicalName="zcrdupsTermCodeStart" type="String" physicalName="ZCRDUPS_TERM_CODE_START"/> 
+			<item name="ZCRDUPS_TERM_CODE_END" logicalName="zcrdupsTermCodeEnd" type="String" physicalName="ZCRDUPS_TERM_CODE_END"/> 
+			<item name="ZCRDUPS_FROM_TABLE" logicalName="zcrdupsFromTable" type="String" physicalName="ZCRDUPS_FROM_TABLE"/> 
+			<item name="ZCRDUPS_WHERE_PIDM" logicalName="zcrdupsWherePidm" type="String" physicalName="ZCRDUPS_WHERE_PIDM"/> 
+			<item name="ZCRDUPS_WHERE_LEVL" logicalName="zcrdupsWhereLevl" type="String" physicalName="ZCRDUPS_WHERE_LEVL"/> 
+			<item name="ZCRDUPS_WHERE_TERM" logicalName="zcrdupsWhereTerm" type="String" physicalName="ZCRDUPS_WHERE_TERM"/> 
+			<item name="ZCRDUPS_WHERE_STMT" logicalName="zcrdupsWhereStmt" type="String" physicalName="ZCRDUPS_WHERE_STMT"/> 
+			<item name="ZCRDUPS_DUPC_RULE" logicalName="zcrdupsDupcRule" type="java.math.BigDecimal" physicalName="ZCRDUPS_DUPC_RULE"> 
+				<copyValueFrom>
+					<item name="ZCRDUPC_RULE" businessObject="ZCRDUPC"/>
+				</copyValueFrom>
+			</item>
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcacrse.model.ZcrdupsAdapter</adapterClass>
+
+	</manager>
+</b:beans>

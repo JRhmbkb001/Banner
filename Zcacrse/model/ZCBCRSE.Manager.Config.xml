@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="ZCBCRSE.Manager.Config" name="ZCBCRSE" targetTableName="ZCBCRSE" >
+		
+		<items>
+			<item name="CRSE_INSERT" logicalName="crseInsert" type="String" virtual="true"/> 
+			<item name="ZCBCRSE_ENDCOPY" logicalName="zcbcrseEndcopy" type="String" virtual="true"/> 
+			<item name="END_CRSE" logicalName="endCrse" type="String" virtual="true"/> 
+			<item name="ZCBCRSE_SUBJ_CODE" logicalName="zcbcrseSubjCode" type="String" physicalName="ZCBCRSE_SUBJ_CODE"> 
+				<copyValueFrom>
+					<item name="KB_SUBJ_CODE" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="ZCBCRSE_CRSE_NUMB" logicalName="zcbcrseCrseNumb" type="String" physicalName="ZCBCRSE_CRSE_NUMB"> 
+				<copyValueFrom>
+					<item name="KB_CRSE_NUMB" businessObject="KEY_BLOCK"/>
+				</copyValueFrom>
+			</item>
+			<item name="ZCBCRSE_EFF_TERM" logicalName="zcbcrseEffTerm" type="String" physicalName="ZCBCRSE_EFF_TERM"/> 
+			<item name="ZCBCRSE_SUBJ_CODE_XLIST" logicalName="zcbcrseSubjCodeXlist" type="String" physicalName="ZCBCRSE_SUBJ_CODE_XLIST"/> 
+			<item name="ZCBCRSE_SUBJ_CODE_XLIST_DESC" logicalName="zcbcrseSubjCodeXlistDesc" type="String" virtual="true"/> 
+			<item name="ZCBCRSE_CRSE_NUMB_XLIST" logicalName="zcbcrseCrseNumbXlist" type="String" physicalName="ZCBCRSE_CRSE_NUMB_XLIST"/> 
+			<item name="ZCBCRSE_DUPL_OVER_IND" logicalName="zcbcrseDuplOverInd" type="String" physicalName="ZCBCRSE_DUPL_OVER_IND"/> 
+			<item name="ZCBCRSE_DATA_ORIGIN" logicalName="zcbcrseDataOrigin" type="String" physicalName="ZCBCRSE_DATA_ORIGIN"/> 
+			<item name="ZCBCRSE_USER_ID" logicalName="zcbcrseUserId" type="String" physicalName="ZCBCRSE_USER_ID"/> 
+			<item name="ZCBCRSE_ACTIVITY_DATE" logicalName="zcbcrseActivityDate" type="java.util.Date" physicalName="ZCBCRSE_ACTIVITY_DATE"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcacrse.model.ZcbcrseAdapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE zcbcrse_subj_code = :KEY_BLOCK_KB_SUBJ_CODE AND zcbcrse_crse_numb = :KEY_BLOCK_KB_CRSE_NUMB AND zcbcrse_eff_term = (SELECT max(zcbcrse_eff_term)  FROM zcbcrse  WHERE zcbcrse_subj_code = :KEY_BLOCK_KB_SUBJ_CODE AND zcbcrse_crse_numb = :KEY_BLOCK_KB_CRSE_NUMB AND zcbcrse_eff_term <= :KB_TERM_CODE_EFF )]]></defaultWhereClause>	
+
+	</manager>
+</b:beans>

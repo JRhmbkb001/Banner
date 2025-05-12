@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:task http://www.morphis-tech.com/schema/foundations/task.xsd">
+	<!-- Attached Libs -->
+	<b:import resource="classpath:net/hedtech/general/common/libraries/Goqrpls/GOQRPLS.Library.Config.xml"/>		
+	<b:import resource="classpath:net/hedtech/general/common/libraries/Goqwflw/GOQWFLW.Library.Config.xml"/>		
+	<b:import resource="classpath:net/hedtech/general/common/libraries/Eoqrpls/EOQRPLS.Library.Config.xml"/>		
+	
+	
+	
+	<!-- model definition-->
+	<b:import resource="classpath:/net/hedtech/ucdavis/ps/banner/student/Zcacrse/model/ZCACRSE.Model.Config.xml"/>
+	
+	<task id="ZCACRSE.Task.Config" name="ZCACRSE">
+		<baseTaskConfiguration config="BASE.Task.Config"/>
+		<taskParts>
+			<taskPartConfiguration name="GOQOLIB" config="GOQOLIB.TaskPart.Config"/>
+			<taskPartConfiguration name="SOQOLIB" config="SOQOLIB.TaskPart.Config"/>
+		</taskParts>
+		<taskClass>net.hedtech.ucdavis.ps.banner.student.Zcacrse.ZcacrseTask</taskClass>
+		<!-- struct -->
+		<taskResources>/net/hedtech/ucdavis/ps/banner/student/Zcacrse/ZcacrseStruct.xml</taskResources>
+		<!-- support code -->
+		<supportCodeConfiguration>
+			<services>net.hedtech.ucdavis.ps.banner.student.Zcacrse.services.ZcacrseServices</services>
+				<!-- Package Beans-->
+
+			<packages>
+
+			</packages>
+			<attachedLibraries>
+	<!-- Attached Libs -->
+				<libraryConfiguration config="GOQRPLS.Lib.Config"/>
+				<libraryConfiguration config="GOQWFLW.Lib.Config"/>
+				<libraryConfiguration config="EOQRPLS.Lib.Config"/>
+			</attachedLibraries>
+		</supportCodeConfiguration>
+
+		<!-- model -->
+		<formModelConfiguration config="ZCACRSE.Model.Config"/>
+		<!-- controllers -->
+		<formController>net.hedtech.ucdavis.ps.banner.student.Zcacrse.controller.ZcacrseFormController</formController>
+		<blockControllers>
+			<block  name="G$_VPDI_BLOCK">net.hedtech.ucdavis.ps.banner.student.Zcacrse.controller.GVpdiBlockController</block>
+			<block  name="G$_NAV_BLOCK">net.hedtech.ucdavis.ps.banner.student.Zcacrse.controller.GNavBlockController</block>
+			<block  name="FORM_HEADER">net.hedtech.ucdavis.ps.banner.student.Zcacrse.controller.FormHeaderController</block>
+			<block  name="KEY_BLOCK">net.hedtech.ucdavis.ps.banner.student.Zcacrse.controller.KeyBlockController</block>
+			<block  name="ZCBCRSE_CTRL_BLOCK">net.hedtech.ucdavis.ps.banner.student.Zcacrse.controller.ZcbcrseCtrlBlockController</block>
+			<block  name="ZCBCRSE">net.hedtech.ucdavis.ps.banner.student.Zcacrse.controller.ZcbcrseController</block>
+			<block  name="SCHD_CTRL_BLOCK">net.hedtech.ucdavis.ps.banner.student.Zcacrse.controller.SchdCtrlBlockController</block>
+			<block  name="SCRSCHD">net.hedtech.ucdavis.ps.banner.student.Zcacrse.controller.ScrschdController</block>
+			<block  name="GECO_CTRL_BLOCK">net.hedtech.ucdavis.ps.banner.student.Zcacrse.controller.GecoCtrlBlockController</block>
+			<block  name="ZCRGECO">net.hedtech.ucdavis.ps.banner.student.Zcacrse.controller.ZcrgecoController</block>
+			<block  name="DUPC_CTRL_BLOCK">net.hedtech.ucdavis.ps.banner.student.Zcacrse.controller.DupcCtrlBlockController</block>
+			<block  name="ZCRDUPC">net.hedtech.ucdavis.ps.banner.student.Zcacrse.controller.ZcrdupcController</block>
+			<block  name="ZCRDUPR">net.hedtech.ucdavis.ps.banner.student.Zcacrse.controller.ZcrduprController</block>
+			<block  name="ZCRDUPS">net.hedtech.ucdavis.ps.banner.student.Zcacrse.controller.ZcrdupsController</block>
+			<block  name="BUTTON_CONTROL_BLOCK">net.hedtech.ucdavis.ps.banner.student.Zcacrse.controller.ButtonControlBlockController</block>
+			<block  name="G$_OPT_BLOCK">net.hedtech.ucdavis.ps.banner.student.Zcacrse.controller.GOptBlockController</block>
+		</blockControllers>
+		<menuControllers>
+			<menu  name="G$_DEFAULT_PM">net.hedtech.ucdavis.ps.banner.student.Zcacrse.controller.GDefaultPmContextController</menu>
+		</menuControllers>
+
+	</task>
+</b:beans>
+
+ 

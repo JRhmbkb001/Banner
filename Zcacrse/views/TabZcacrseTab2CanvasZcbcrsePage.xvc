@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="SCHD_CTRL_BLOCK" />
+	<interactionblock name="BUTTON_CONTROL_BLOCK" />
+	<interactionblock name="ZCBCRSE" />
+	<interactionblock name="ZCBCRSE_CTRL_BLOCK" />
+	<interactionblock name="SCRSCHD" />
+	<interactionblock name="GECO_CTRL_BLOCK" />
+	<interactionblock name="ZCRGECO" />
+	<interactionblock name="FORM_HEADER" />
+	<panel width="100%">
+		<collapsiblepanel label="zcbcrsePage.text58.text" name="rect1" width="100%">
+			<panel width="100%" style="ui-section">
+				<gridlayout cols="3" orientation="vertical">
+					<gridcell>
+						<textbox block="ZCBCRSE_CTRL_BLOCK" datatype="String" enabled="false" label="zcbcrseCtrlBlock.zcbcrseTermCodeFrom.prompt" member="ZCBCRSE_TERM_CODE_FROM" name="zcbcrseTermCodeFrom" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+						</textbox>
+					</gridcell>
+					<gridcell style="empty">
+						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="maintenance" label="buttonControlBlock.zcbcrseEndcopyLbt.label" member="ZCBCRSE_ENDCOPY_LBT" name="zcbcrseEndcopyLbt" navigable="false" tooltip="buttonControlBlock.zcbcrseEndcopyLbt.tooltip">
+							<xl:event action="WHEN-MOUSE-CLICK" name="click" />
+						</button>
+					</gridcell>
+					<gridcell>
+						<textbox block="ZCBCRSE_CTRL_BLOCK" datatype="String" enabled="false" label="zcbcrseCtrlBlock.zcbcrseTermCodeTo.prompt" member="ZCBCRSE_TERM_CODE_TO" name="zcbcrseTermCodeTo" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+						</textbox>
+					</gridcell>
+				</gridlayout>
+			</panel>
+			<panel width="100%" style="ui-section">
+				<gridlayout cols="2" orientation="vertical">
+					<gridcell>
+						<component label="zcbcrse.zcbcrseSubjCodeXlist.prompt">
+							<textbox autoskip="true" block="ZCBCRSE" case="upper" datatype="String" keyactions="NEXT_ITEM" label="zcbcrse.zcbcrseSubjCodeXlist.prompt" member="ZCBCRSE_SUBJ_CODE_XLIST" name="zcbcrseSubjCodeXlist" style="ui-buttoninput ui-hidelabel" width="53px">
+								<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+							</textbox>
+							<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" icon="search" member="ZCBCRSE_SUBJ_CODE_XLIST_LBT" name="zcbcrseSubjCodeXlistLbt" navigable="false" style="ui-buttoninput" width="20px">
+								<xl:event action="WHEN-MOUSE-CLICK" name="click" />
+							</button>
+							<textfield block="ZCBCRSE" datatype="String" member="ZCBCRSE_SUBJ_CODE_XLIST_DESC" name="zcbcrseSubjCodeXlistDesc" width="239px">
+								<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+							</textfield>
+						</component>
+					</gridcell>
+					<gridcell>
+						<component label="zcbcrse.zcbcrseCrseNumbXlist.prompt">
+							<textbox autoskip="true" block="ZCBCRSE" case="upper" datatype="String" keyactions="NEXT_ITEM" label="zcbcrse.zcbcrseCrseNumbXlist.prompt" member="ZCBCRSE_CRSE_NUMB_XLIST" name="zcbcrseCrseNumbXlist" style="ui-buttoninput ui-hidelabel" width="50px">
+								<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+							</textbox>
+							<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" icon="search" member="ZCBCRSE_CRSE_NUMB_XLIST_LBT" name="zcbcrseCrseNumbXlistLbt" navigable="false" style="ui-buttoninput" width="20px">
+								<xl:event action="WHEN-MOUSE-CLICK" name="click" />
+							</button>
+						</component>
+					</gridcell>
+					<gridcell>
+						<textbox block="ZCBCRSE" datatype="String" enabled="false" label="zcbcrse.zcbcrseDataOrigin.prompt" member="ZCBCRSE_DATA_ORIGIN" name="zcbcrseDataOrigin" width="166px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+						</textbox>
+					</gridcell>
+					<!-- <gridcell> <textbox block="ZCBCRSE" datatype="String" enabled="false" label="zcbcrse.zcbcrseUserId.prompt" member="ZCBCRSE_USER_ID" name="zcbcrseUserId" width="166px"> <xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/> </textbox> </gridcell> -->
+					<gridcell>
+						<checkbox block="ZCBCRSE" height="19px" label="zcbcrse.zcbcrseDuplOverInd.label" member="ZCBCRSE_DUPL_OVER_IND" name="zcbcrseDuplOverInd" value="Y" width="158px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+						</checkbox>
+					</gridcell>
+					<!-- <gridcell> <calendar block="ZCBCRSE" case="upper" datatype="Date" enabled="false" formatmask="DD-MON-YYYY" keyactions="NEXT_ITEM" label="zcbcrse.zcbcrseActivityDate.prompt" member="ZCBCRSE_ACTIVITY_DATE" name="zcbcrseActivityDate" width="140px"> <xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/> </calendar> </gridcell> -->
+				</gridlayout>
+			</panel>
+		</collapsiblepanel>
+		<collapsiblepanel label="zcbcrsePage.text89.text" name="graphic88" width="100%">
+			<panel width="100%" style="ui-section">
+				<gridlayout cols="3" orientation="vertical">
+					<gridcell>
+						<textbox block="SCHD_CTRL_BLOCK" datatype="String" enabled="false" label="schdCtrlBlock.scrschdTermCodeFrom.prompt" member="SCRSCHD_TERM_CODE_FROM" name="scrschdTermCodeFrom" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+						</textbox>
+					</gridcell>
+					<gridcell style="empty">
+						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="ui-icon-copy" label="buttonControlBlock.scrschd7CopyBtn.label" member="SCRSCHD_7_COPY_BTN" name="scrschd7CopyBtn" navigable="false" tooltip="buttonControlBlock.scrschd7CopyBtn.tooltip">
+							<xl:event action="WHEN-MOUSE-CLICK" name="click" />
+						</button>
+					</gridcell>
+					<gridcell>
+						<textbox block="SCHD_CTRL_BLOCK" datatype="String" enabled="false" label="schdCtrlBlock.scrschdTermCodeTo.prompt" member="SCRSCHD_TERM_CODE_TO" name="scrschdTermCodeTo" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+						</textbox>
+					</gridcell>
+				</gridlayout>
+			</panel>
+
+			<panel width="100%" style="ui-section">
+				<gridview block="SCRSCHD" name="grdScrschd" width="100%">
+					<viewheader>
+						<viewcolumn autoskip="true" block="SCRSCHD" case="upper" datatype="String" keyactions="NEXT_ITEM" label="scrschd.scrschdSchdCode.prompt" labelstyle="DEFAULT" member="SCRSCHD_SCHD_CODE" name="scrschdSchdCode" width="39px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+							<editor>
+								<lovbox action="WHEN-BUTTON-PRESSED" />
+							</editor>
+						</viewcolumn>
+						<viewcolumn autoskip="true" block="SCRSCHD" datatype="String" label="scrschd.scrschdSeq.prompt" labelstyle="DEFAULT" member="SCRSCHD_SEQ" name="scrschdSeq" width="24px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+						</viewcolumn>
+						<viewcolumn block="SCRSCHD" datatype="String" label="scrschd.schdDescription.prompt" labelstyle="DEFAULT" member="SCHD_DESCRIPTION" name="schdDescription" width="233px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+			</panel>
+
+		</collapsiblepanel>
+		<collapsiblepanel label="zcbcrsePage.text91.text" name="graphic92" width="100%">
+			<panel width="100%" style="ui-section">
+				<gridlayout cols="3" orientation="vertical">
+					<gridcell>
+						<textbox block="GECO_CTRL_BLOCK" datatype="String" enabled="false" label="gecoCtrlBlock.zcrgecoTermCodeFrom.prompt" member="ZCRGECO_TERM_CODE_FROM" name="zcrgecoTermCodeFrom" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+						</textbox>
+					</gridcell>
+					<gridcell style="empty">
+						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="maintenance" label="buttonControlBlock.zcrgecoEndcopyLbt.label" member="ZCRGECO_ENDCOPY_LBT" name="zcrgecoEndcopyLbt" navigable="false" tooltip="buttonControlBlock.zcrgecoEndcopyLbt.tooltip">
+							<xl:event action="WHEN-MOUSE-CLICK" name="click" />
+						</button>
+					</gridcell>
+					<gridcell>
+						<textbox block="GECO_CTRL_BLOCK" datatype="String" enabled="false" label="gecoCtrlBlock.zcrgecoTermCodeTo.prompt" member="ZCRGECO_TERM_CODE_TO" name="zcrgecoTermCodeTo" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+						</textbox>
+					</gridcell>
+				</gridlayout>
+			</panel>
+
+			<panel width="100%" style="ui-section">
+				<gridview block="ZCRGECO" name="grdZcrgeco" width="100%">
+					<viewheader>
+						<viewcolumn autoskip="true" block="ZCRGECO" case="upper" datatype="String" keyactions="NEXT_ITEM" label="zcrgeco.zcrgecoSubjCodeCocrse.prompt" labelstyle="DEFAULT" member="ZCRGECO_SUBJ_CODE_COCRSE" name="zcrgecoSubjCodeCocrse" width="53px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+							<editor>
+								<lovbox action="WHEN-BUTTON-PRESSED" />
+							</editor>
+						</viewcolumn>
+						<viewcolumn block="ZCRGECO" datatype="String" label="zcrgeco.zcrgecoSubjCodeCocrseDesc.prompt" labelstyle="DEFAULT" member="ZCRGECO_SUBJ_CODE_COCRSE_DESC" name="zcrgecoSubjCodeCocrseDesc" width="173px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+						</viewcolumn>
+						<viewcolumn autoskip="true" block="ZCRGECO" case="upper" datatype="String" keyactions="NEXT_ITEM" label="zcrgeco.zcrgecoCrseNumbCocrse.prompt" labelstyle="DEFAULT" member="ZCRGECO_CRSE_NUMB_COCRSE" name="zcrgecoCrseNumbCocrse" width="48px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+							<editor>
+								<lovbox action="WHEN-BUTTON-PRESSED" />
+							</editor>
+						</viewcolumn>
+						<viewcolumn autoskip="true" block="ZCRGECO" case="upper" datatype="String" keyactions="NEXT_ITEM" label="zcrgeco.zcrgecoGeVersion.prompt" labelstyle="DEFAULT" member="ZCRGECO_GE_VERSION" name="zcrgecoGeVersion" width="60px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+							<editor>
+								<lovbox action="WHEN-BUTTON-PRESSED" />
+							</editor>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+			</panel>
+
+		</collapsiblepanel>
+	</panel>
+</config>

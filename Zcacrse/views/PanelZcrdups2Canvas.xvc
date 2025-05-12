@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="ZCRDUPR" />
+	<interactionblock name="BUTTON_CONTROL_BLOCK" />
+	<!-- <panel class="StackedCanvas" id="pnlZcrdups2Canvas" menu="G$_DEFAULT_PM" name="ZCRDUPS_2_CANVAS" width="100%"> -->
+	<panel id="pnlZcrdups2Canvas" name="ZCRDUPS_2_CANVAS" width="100%">
+		<collapsiblepanel label="zcrdupcPage.text101.text" name="rect98" width="100%">
+			<panel width="100%">
+				<gridview block="ZCRDUPR" name="grdZcrdupr" width="100%">
+					<viewheader>
+						<viewcolumn autoskip="true" block="ZCRDUPR" case="upper" datatype="String" keyactions="NEXT_ITEM" label="zcrdupr.zcrduprSubjCode.prompt" labelstyle="DEFAULT" member="ZCRDUPR_SUBJ_CODE" name="zcrduprSubjCode" width="53px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+							<editor>
+								<lovbox action="WHEN-BUTTON-PRESSED" />
+							</editor>
+						</viewcolumn>
+						<viewcolumn block="ZCRDUPR" datatype="String" label="zcrdupr.zcrduprSubjCodeDesc.prompt" labelstyle="DEFAULT" member="ZCRDUPR_SUBJ_CODE_DESC" name="zcrduprSubjCodeDesc" width="239px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+							<editor>
+								<lovbox action="WHEN-BUTTON-PRESSED" />
+							</editor>
+						</viewcolumn>
+						<viewcolumn block="ZCRDUPR" case="upper" datatype="String" keyactions="NEXT_ITEM" label="zcrdupr.zcrduprCrseNumb.prompt" labelstyle="DEFAULT" member="ZCRDUPR_CRSE_NUMB" name="zcrduprCrseNumb" width="48px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+							<editor>
+								<lovbox action="WHEN-BUTTON-PRESSED" />
+							</editor>
+						</viewcolumn>
+						<viewcolumn autoskip="true" block="ZCRDUPR" case="upper" datatype="String" keyactions="NEXT_ITEM" label="zcrdupr.zcrduprTermCodeStart.prompt" labelstyle="DEFAULT" member="ZCRDUPR_TERM_CODE_START" name="zcrduprTermCodeStart" width="64px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+							<editor>
+								<lovbox action="WHEN-BUTTON-PRESSED" />
+							</editor>
+						</viewcolumn>
+						<viewcolumn autoskip="true" block="ZCRDUPR" case="upper" datatype="String" keyactions="NEXT_ITEM" label="zcrdupr.zcrduprTermCodeEnd.prompt" labelstyle="DEFAULT" member="ZCRDUPR_TERM_CODE_END" name="zcrduprTermCodeEnd" width="64px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+							<editor>
+								<lovbox action="WHEN-BUTTON-PRESSED" />
+							</editor>
+						</viewcolumn>
+						<viewcolumn block="ZCRDUPR" case="upper" datatype="String" keyactions="NEXT_ITEM" label="zcrdupr.zcrduprGrdeCodeMin.prompt" labelstyle="DEFAULT" member="ZCRDUPR_GRDE_CODE_MIN" name="zcrduprGrdeCodeMin" width="40px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+							<editor>
+								<lovbox action="WHEN-BUTTON-PRESSED" />
+							</editor>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+			</panel>
+		</collapsiblepanel>
+	</panel>
+</config>

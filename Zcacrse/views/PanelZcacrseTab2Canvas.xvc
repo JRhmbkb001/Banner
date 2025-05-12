@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<panel width="100%">
+		<tabpanel id="tabZcacrseTab2Canvas" name="ZCACRSE_TAB_2_CANVAS">
+			<xl:event action="WHEN-TAB-PAGE-CHANGED" name="change"/>
+			<tab id="page_zcbcrsePage" label="zcbcrsePage.label" name="ZCBCRSE_PAGE">
+				<include src="net/hedtech/ucdavis/ps/banner/student/Zcacrse/views/TabZcacrseTab2CanvasZcbcrsePage"/>
+			</tab>
+			<tab id="page_zcrdupcPage" label="zcrdupcPage.label" name="ZCRDUPC_PAGE">
+				<include src="net/hedtech/ucdavis/ps/banner/student/Zcacrse/views/TabZcacrseTab2CanvasZcrdupcPage"/>
+			<include src="net/hedtech/ucdavis/ps/banner/student/Zcacrse/views/PanelZcrdups1Canvas"/>
+			<include src="net/hedtech/ucdavis/ps/banner/student/Zcacrse/views/PanelZcrdups2Canvas"/>
+			</tab>
+		</tabpanel>
+	</panel>
+</config>

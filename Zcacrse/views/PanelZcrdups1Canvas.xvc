@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="ZCRDUPS" />
+	<interactionblock name="BUTTON_CONTROL_BLOCK" />
+	<!-- <panel class="StackedCanvas" id="pnlZcrdups1Canvas" menu="G$_DEFAULT_PM" name="ZCRDUPS_1_CANVAS" width="100%"> -->
+	<panel id="pnlZcrdups1Canvas" name="ZCRDUPS_1_CANVAS" width="100%">
+		<collapsiblepanel label="zcrdupcPage.text103.text" name="rect99" width="100%">
+			<panel width="100%">
+				<gridlayout cols="2" orientation="vertical">
+					<gridcell>
+						<textbox block="ZCRDUPS" datatype="String" label="zcrdups.zcrdupsDescription.prompt" maxlength="60" member="ZCRDUPS_DESCRIPTION" name="zcrdupsDescription" required="true" width="239px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox autoskip="true" block="ZCRDUPS" case="upper" datatype="String" keyactions="NEXT_ITEM" label="zcrdups.zcrdupsTermCodeStart.prompt" maxlength="30" member="ZCRDUPS_TERM_CODE_START" name="zcrdupsTermCodeStart" required="true" style="ui-buttoninput" validation="server" width="64px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+						</textbox>
+						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" icon="search" member="ZCRDUPS_TERM_CODE_START_LBT" name="zcrdupsTermCodeStartLbt" navigable="false" style="ui-buttoninput" width="20px">
+							<xl:event action="WHEN-MOUSE-CLICK" name="click" />
+						</button>
+					</gridcell>
+					<gridcell>
+						<textbox autoskip="true" block="ZCRDUPS" case="upper" datatype="String" keyactions="NEXT_ITEM" label="zcrdups.zcrdupsTermCodeEnd.prompt" maxlength="30" member="ZCRDUPS_TERM_CODE_END" name="zcrdupsTermCodeEnd" required="true" style="ui-buttoninput" validation="server" width="64px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+						</textbox>
+						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" icon="search" member="ZCRDUPS_TERM_CODE_END_LBT" name="zcrdupsTermCodeEndLbt" navigable="false" style="ui-buttoninput" width="20px">
+							<xl:event action="WHEN-MOUSE-CLICK" name="click" />
+						</button>
+					</gridcell>
+					<gridcell>
+						<textbox block="ZCRDUPS" datatype="String" label="zcrdups.zcrdupsFromTable.prompt" maxlength="40" member="ZCRDUPS_FROM_TABLE" name="zcrdupsFromTable" required="true" width="335px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="ZCRDUPS" datatype="String" label="zcrdups.zcrdupsWherePidm.prompt" maxlength="30" member="ZCRDUPS_WHERE_PIDM" name="zcrdupsWherePidm" required="true" width="335px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="ZCRDUPS" datatype="String" label="zcrdups.zcrdupsWhereLevl.prompt" maxlength="30" member="ZCRDUPS_WHERE_LEVL" name="zcrdupsWhereLevl" required="true" width="335px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<textbox block="ZCRDUPS" datatype="String" label="zcrdups.zcrdupsWhereTerm.prompt" maxlength="30" member="ZCRDUPS_WHERE_TERM" name="zcrdupsWhereTerm" required="true" width="335px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+						</textbox>
+					</gridcell>
+					<gridcell>
+						<component label="zcrdups.zcrdupsWhereStmt.prompt">
+							<textbox block="ZCRDUPS" datatype="String" height="37px" style="ui-hidelabel" label="zcrdups.zcrdupsWhereStmt.prompt" maxlength="500" member="ZCRDUPS_WHERE_STMT" multiline="true" name="zcrdupsWhereStmt" required="true" width="650px">
+								<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick" />
+							</textbox>
+						</component>
+
+					</gridcell>
+				</gridlayout>
+			</panel>
+		</collapsiblepanel>
+	</panel>
+</config>

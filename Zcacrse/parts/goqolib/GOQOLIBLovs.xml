@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Lovs>
+	<Lov Name="GTVVPDI_LOV"/>
+	<Lov Name="G$_VPDI_ALL_LOV"/>
+	<Lov Name="G$_SEARCH_LOV"/>
+	<Lov Name="STVSUBJ_LOV"/>
+	<Lov Name="STVTERM_LOV"/>
+	<Lov Name="GTVINSM_LOV"/>
+</Lovs>
+ 

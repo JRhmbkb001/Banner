@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:formmodel"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:formmodel http://www.morphis-tech.com/schema/foundations/formmodel.xsd">
+	
+		<b:import resource="classpath:/net/hedtech/ucdavis/ps/banner/student/Zcacrse/model/FORM_HEADER.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/ucdavis/ps/banner/student/Zcacrse/model/KEY_BLOCK.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/ucdavis/ps/banner/student/Zcacrse/model/ZCBCRSE_CTRL_BLOCK.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/ucdavis/ps/banner/student/Zcacrse/model/ZCBCRSE.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/ucdavis/ps/banner/student/Zcacrse/model/SCHD_CTRL_BLOCK.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/ucdavis/ps/banner/student/Zcacrse/model/SCRSCHD.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/ucdavis/ps/banner/student/Zcacrse/model/GECO_CTRL_BLOCK.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/ucdavis/ps/banner/student/Zcacrse/model/ZCRGECO.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/ucdavis/ps/banner/student/Zcacrse/model/DUPC_CTRL_BLOCK.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/ucdavis/ps/banner/student/Zcacrse/model/ZCRDUPC.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/ucdavis/ps/banner/student/Zcacrse/model/ZCRDUPR.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/ucdavis/ps/banner/student/Zcacrse/model/ZCRDUPS.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/ucdavis/ps/banner/student/Zcacrse/model/BUTTON_CONTROL_BLOCK.Manager.Config.xml"/>
+		<b:import resource="classpath:/net/hedtech/ucdavis/ps/banner/student/Zcacrse/model/ZCACRSE.ValueSet.Config.xml"/>
+
+	
+	<formModel id="ZCACRSE.Model.Config" name="ZCACRSE" concurrencyCheckConstraints="KeyBased">
+		<modelClass>net.hedtech.ucdavis.ps.banner.student.Zcacrse.model.ZcacrseModel</modelClass>
+		<parameters>
+		</parameters>
+		
+		<businessObjects>
+			<businessObject name="FORM_HEADER" manager="FORM_HEADER.Manager.Config">
+		
+		
+			</businessObject>
+			<businessObject name="KEY_BLOCK" manager="KEY_BLOCK.Manager.Config">
+		
+		
+			</businessObject>
+			<businessObject name="ZCBCRSE_CTRL_BLOCK" manager="ZCBCRSE_CTRL_BLOCK.Manager.Config">
+		
+		
+			</businessObject>
+			<businessObject name="ZCBCRSE" manager="ZCBCRSE.Manager.Config">
+		
+		
+			</businessObject>
+			<businessObject name="SCHD_CTRL_BLOCK" manager="SCHD_CTRL_BLOCK.Manager.Config">
+		
+		
+			</businessObject>
+			<businessObject name="SCRSCHD" manager="SCRSCHD.Manager.Config">
+		
+		
+			</businessObject>
+			<businessObject name="GECO_CTRL_BLOCK" manager="GECO_CTRL_BLOCK.Manager.Config">
+		
+		
+			</businessObject>
+			<businessObject name="ZCRGECO" manager="ZCRGECO.Manager.Config">
+		
+		
+			</businessObject>
+			<businessObject name="DUPC_CTRL_BLOCK" manager="DUPC_CTRL_BLOCK.Manager.Config">
+		
+		
+			</businessObject>
+			<businessObject name="ZCRDUPC" manager="ZCRDUPC.Manager.Config">
+				<associations>
+					<association child ="ZCRDUPR"  >
+						<mapping parent="ZCRDUPC_RULE" child="ZCRDUPR_DUPC_RULE"/>
+					</association>
+					<association child ="ZCRDUPS"  >
+						<mapping parent="ZCRDUPC_RULE" child="ZCRDUPS_DUPC_RULE"/>
+					</association>
+				</associations>
+		
+		
+			</businessObject>
+			<businessObject name="ZCRDUPR" manager="ZCRDUPR.Manager.Config">
+		
+		
+			</businessObject>
+			<businessObject name="ZCRDUPS" manager="ZCRDUPS.Manager.Config">
+		
+		
+			</businessObject>
+			<businessObject name="BUTTON_CONTROL_BLOCK" manager="BUTTON_CONTROL_BLOCK.Manager.Config">
+		
+		
+			</businessObject>
+		</businessObjects>
+		<valueSets>
+				<valueSet config="STQTERM_RG.ValueSet.Config"/>
+				<valueSet config="USCQSUBJC_RG.ValueSet.Config"/>
+				<valueSet config="USCQSUBJD_RG.ValueSet.Config"/>
+				<valueSet config="SCQSUBJZ_RG.ValueSet.Config"/>
+				<valueSet config="ZGRGEAR_RG.ValueSet.Config"/>
+				<valueSet config="SCQSUBJ_RG.ValueSet.Config"/>
+				<valueSet config="SCQSUBJC_RG.ValueSet.Config"/>
+				<valueSet config="SHRGRDE_RG.ValueSet.Config"/>
+				<valueSet config="ZCRDUPC__ZCRDUPC_TYPE_RG.ValueSet.Config"/>
+		</valueSets>
+
+	</formModel>
+</b:beans>

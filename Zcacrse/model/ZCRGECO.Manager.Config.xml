@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans 
+	xmlns="urn:schemas:morphis:foundations:businessobject"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:b="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd urn:schemas:morphis:foundations:businessobject http://www.morphis-tech.com/schema/foundations/businessobject.xsd">
+	<manager id="ZCRGECO.Manager.Config" name="ZCRGECO" targetTableName="ZCRGECO" keyMode="Unique" >
+		
+		<items>
+			<item name="GECO_INSERT" logicalName="gecoInsert" type="String" virtual="true"/> 
+			<item name="ZCRGECO_ENDCOPY" logicalName="zcrgecoEndcopy" type="String" virtual="true"/> 
+			<item name="END_GECO" logicalName="endGeco" type="String" virtual="true"/> 
+			<item name="ZCRGECO_EFF_TERM" logicalName="zcrgecoEffTerm" type="String" physicalName="ZCRGECO_EFF_TERM"/> 
+			<item name="ZCRGECO_SUBJ_CODE" logicalName="zcrgecoSubjCode" type="String" physicalName="ZCRGECO_SUBJ_CODE"/> 
+			<item name="ZCRGECO_CRSE_NUMB" logicalName="zcrgecoCrseNumb" type="String" physicalName="ZCRGECO_CRSE_NUMB"/> 
+			<item name="ZCRGECO_TYPE" logicalName="zcrgecoType" type="String" physicalName="ZCRGECO_TYPE"/> 
+			<item name="ZCRGECO_ACTIVITY_DATE" logicalName="zcrgecoActivityDate" type="java.util.Date" physicalName="ZCRGECO_ACTIVITY_DATE"> 
+				<value>
+					<systemVariable name="DATE"/>
+				</value>
+			</item>
+			<item name="ZCRGECO_SUBJ_CODE_COCRSE" logicalName="zcrgecoSubjCodeCocrse" type="String" physicalName="ZCRGECO_SUBJ_CODE_COCRSE"/> 
+			<item name="ZCRGECO_SUBJ_CODE_COCRSE_DESC" logicalName="zcrgecoSubjCodeCocrseDesc" type="String" virtual="true"/> 
+			<item name="ZCRGECO_CRSE_NUMB_COCRSE" logicalName="zcrgecoCrseNumbCocrse" type="String" physicalName="ZCRGECO_CRSE_NUMB_COCRSE"/> 
+			<item name="ZCRGECO_GE_VERSION" logicalName="zcrgecoGeVersion" type="String" physicalName="ZCRGECO_GE_VERSION"/> 
+		</items>
+		
+    <managerClass>morphis.foundations.flavors.forms.appsupportlib.model.DBBusinessObject</managerClass>
+		<adapterClass>net.hedtech.ucdavis.ps.banner.student.Zcacrse.model.ZcrgecoAdapter</adapterClass>
+		<defaultWhereClause><![CDATA[WHERE zcrgeco_subj_code = :KB_SUBJ_CODE AND zcrgeco_crse_numb = :KB_CRSE_NUMB AND zcrgeco_subj_code_cocrse IS NOT NULL AND zcrgeco_eff_term = (SELECT max(zcrgeco_eff_term)  FROM zcrgeco  WHERE zcrgeco_eff_term <= :KB_TERM_CODE_EFF AND zcrgeco_subj_code = :KB_SUBJ_CODE AND zcrgeco_crse_numb = :KB_CRSE_NUMB )]]></defaultWhereClause>	
+
+	</manager>
+</b:beans>

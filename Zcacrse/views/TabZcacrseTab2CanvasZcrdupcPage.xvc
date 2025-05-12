@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<config layout="horizontal" xmlns="urn:schemas:morphis:frames:view" xmlns:xl="urn:schemas:morphis:frames:logic">
+	<interactionblock name="ZCRDUPC"/>
+	<interactionblock name="BUTTON_CONTROL_BLOCK"/>
+	<interactionblock name="FORM_HEADER"/>
+	<interactionblock name="ZCRDUPR"/>
+	<interactionblock name="ZCRDUPS"/>
+	<interactionblock name="DUPC_CTRL_BLOCK"/>
+	<panel width="100%">
+		<collapsiblepanel label="zcrdupcPage.text102.text" name="graphic97" width="100%">
+			<panel width="100%" style="ui-section">
+				<gridlayout cols="3" orientation="vertical">
+					<gridcell>
+						<textbox block="DUPC_CTRL_BLOCK" datatype="String" enabled="false" height="23px" label="dupcCtrlBlock.zcrdupcTermCodeFrom.prompt" member="ZCRDUPC_TERM_CODE_FROM" name="zcrdupcTermCodeFrom" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+					<gridcell style="empty">
+						<button action="WHEN-BUTTON-PRESSED" block="BUTTON_CONTROL_BLOCK" height="20px" icon="maintenance" label="buttonControlBlock.zcrdupcEndcopyLbt.label" member="ZCRDUPC_ENDCOPY_LBT" name="zcrdupcEndcopyLbt" navigable="false">
+								<xl:event action="WHEN-MOUSE-CLICK" name="click"/>
+						</button>
+					</gridcell>
+					<gridcell>
+						<textbox block="DUPC_CTRL_BLOCK" datatype="String" enabled="false" height="23px" label="dupcCtrlBlock.zcrdupcTermCodeTo.prompt" member="ZCRDUPC_TERM_CODE_TO" name="zcrdupcTermCodeTo" width="56px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</textbox>
+					</gridcell>
+				</gridlayout>
+			</panel>
+
+			<panel width="100%" style="ui-section">
+				<gridview block="ZCRDUPC" name="grdZcrdupc" width="100%">
+					<viewheader>
+						<viewcolumn block="ZCRDUPC" datatype="Number" label="zcrdupc.zcrdupcRule.prompt" labelstyle="DEFAULT" member="ZCRDUPC_RULE" name="zcrdupcRule" width="64px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+						<viewcolumn block="ZCRDUPC" label="zcrdupc.zcrdupcType.prompt" labelstyle="DEFAULT" member="ZCRDUPC_TYPE" name="zcrdupcType" width="93px">
+							<editor>
+								<combobox action="WHEN-LIST-CHANGED">
+									<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+									<model>
+										<item label="zcrdupc.zcrdupcType.item0.label" value="ANY" />
+										<item label="zcrdupc.zcrdupcType.item1.label" value="ALL" />
+										<item label="zcrdupc.zcrdupcType.item2.label" value="DYN" />
+									</model>
+								</combobox>
+							</editor>
+						</viewcolumn>
+						<!-- <viewcolumn block="ZCRDUPC" datatype="String" labelstyle="DEFAULT" member="ZCRDUPC_ENDCOPY" name="zcrdupcEndcopy" width="64px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn> -->
+						<viewcolumn block="ZCRDUPC" datatype="Number" label="zcrdupc.zcrdupcUnits.prompt" labelstyle="DEFAULT" member="ZCRDUPC_UNITS" name="zcrdupcUnits" width="64px">
+							<xl:event action="WHEN-MOUSE-DOUBLECLICK" name="doubleClick"/>
+						</viewcolumn>
+					</viewheader>
+				</gridview>
+			</panel>
+		</collapsiblepanel>
+	</panel>
+</config>
